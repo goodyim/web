@@ -1,0 +1,133 @@
+.header
+  background-color: #f8aa3e
+  padding: 25px 0
+  
+  +respond-to($header_breakpoint_small)
+    padding: 10px 0
+
+.header__wrapper
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.header__logo
+  display: flex
+  align-items: center
+  color: #ffffff
+  +OpenSansSemiBold
+  +font-smoothing
+  font-size: 30px
+
+  +respond-to($header_breakpoint_small)
+    display: none
+
+.header__logo-picture
+  margin-right: 16px
+
+  +respond-to($header_breakpoint_medium)
+    display: none
+
+  img
+    display: block
+
+.header__navigation
+  display: flex
+
+  +respond-to($header_breakpoint_medium)
+    display: none
+
+    &.header__navigation--is-show
+      position: fixed
+      display: flex
+      left: -80%
+      top: 0
+      flex-direction: column
+      justify-content: center
+      height: 100vh
+
+.header__navigation-link
+  margin: 0 25px
+  color: #fff
+  +OpenSansSemiBold
+  +font-smoothing
+  font-size: 18px
+
+  +respond-to(1024px)
+    margin: 0
+    
+    &:not(:last-child)
+      margin-right: 15px
+  
+  +respond-to($header_breakpoint_small)
+    display: flex
+    align-items: center
+
+    .header__navigation--is-show &
+      +OpenSansRegular
+      font-size: 18px
+      color: #fff
+      
+      &:not(:last-child)
+        margin-bottom: 24px
+
+.header__navigation-link--events
+  +respond-from($header_breakpoint_medium)
+    order: 1
+
+.header__navigation-link--goody
+  +respond-from($header_breakpoint_medium)
+    order: 2
+
+.header__navigation-link--map
+  +respond-from($header_breakpoint_medium)
+    order: 3
+
+.header__navigation-link--nko
+  +respond-from($header_breakpoint_medium)
+    order: 4
+
+.header__navigation-link--desktop-invisible
+  +respond-from($header_breakpoint_medium)
+    display: none
+
+.header__navigation-icon
+  width: 24px
+  display: none
+  
+  +respond-to($header_breakpoint_medium)
+    display: block
+
+  +respond-to($header_breakpoint_small)
+    margin-right: 14px
+
+  svg
+    display: block
+    margin: auto
+
+.header__actions
+  display: flex
+  color: #fff
+
+.header__actions-item
+  width: 32px
+  height: 32px
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: transparent
+  border: none
+  cursor: pointer
+
+  &:not(:last-child)
+    margin-right: 20px
+
+.header__burger
+  margin-left: 15px
+  margin-right: auto
+  display: none
+  background-color: transparent
+  border: none
+  cursor: pointer
+
+  +respond-to($header_breakpoint_medium)
+    display: block

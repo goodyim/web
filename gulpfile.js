@@ -2,6 +2,7 @@ var gulp          = require('gulp'),
     browserSync   = require('browser-sync'),
     sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
+    htmlbeautify  = require('gulp-html-beautify'),
     jade          = require('gulp-jade');
 
 gulp.task('sass', function(){
@@ -56,3 +57,14 @@ gulp.task('watch', ['browser-sync', 'sass'], function(){
   gulp.watch('./dist/**/*', browserSync.reload);
 
 });
+
+
+gulp.task('htmlbeautify', () =>
+  gulp.src('./dist/*.html')
+    .pipe(htmlbeautify({
+      indent_size: 2,
+      end_with_newline: true,
+      unescape_strings: true
+    }))
+    .pipe(gulp.dest('./dist/'))
+);
