@@ -1,0 +1,454 @@
+.auth
+  height: 100vh
+  overflow: hidden
+  background: url('../images/auth-bg-desktop.png') no-repeat
+  background-size: cover
+
+  +respond-to(1024px)
+    background: url('../images/auth-bg-tablet.png') no-repeat
+    background-size: cover
+  
+  +respond-to(768px)
+    background: url('../images/auth-bg-mobile.png') no-repeat
+    background-position-y: -130px
+    background-size: cover
+  
+  +respond-to(540px)
+    background-position-y: 0
+
+.auth__header
+  position: absolute
+  left: 20px
+  right: 20px
+  top: 50px
+  display: flex
+  justify-content: space-between
+
+  +respond-to(768px)
+    display: none
+
+.auth__header-logo
+  display: flex
+  align-items: center
+  +OpenSansSemiBold
+  font-size: 30px
+  color: #243238
+
+.auth__header-logo-picture
+  margin-right: 18px
+
+  img
+    display: block
+
+.auth__header-btn
+  background-color: #fff
+  box-shadow: 0 1px 1px 0 #da3a29
+  border-radius: 32px
+  +OpenSansSemiBold
+  font-size: 14px
+  color: #f06e55
+  line-height: 40px
+  padding: 0 23px
+  cursor: pointer
+  border: none
+
+.auth__content
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+
+  +respond-to(768px)
+    padding: 0 20px
+
+.auth__advertising
+  display: flex
+
+.auth__form-registration,
+.auth__form-account
+  @extend %page-wrapper
+  padding: 60px 140px 75px
+  width: 310px
+  box-sizing: content-box
+
+  +respond-to(1024px)
+    padding: 60px 85px 70px
+
+  +respond-to(768px)
+    background-color: transparent
+    box-shadow: none
+
+.auth__form-title
+  +OpenSansSemiBold
+  font-size: 46px
+  color: #243238
+  margin: 0 0 8px
+
+  +respond-to(768px)
+    font-size: 38px
+
+  .auth__form-registration &
+    font-size: 34px
+    text-align: center
+    margin-bottom: 24px
+
+.auth__form-subtitle
+  +OpenSansRegular
+  font-size: 24px
+  color: #babbbb
+  margin: 0 0 24px
+
+  +respond-to(768px)
+    font-size: 20px
+
+.auth__form-field
+  display: block
+  width: 310px
+
+  +respond-to(768px)
+    width: 270px
+  
+  &:not(:last-child)
+    margin-bottom: 20px
+
+.auth__form-field--flex-column
+  display: flex
+  flex-direction: column
+
+.auth__form-field--relative
+  position: relative
+
+.auth__form-field-title
+  +OpenSansRegular
+  font-size: 14px
+  color: #babbbb
+  margin-bottom: 16px
+  display: block
+
+.auth__form-field-icon
+  position: absolute
+  width: 20px
+  height: 20px
+  bottom: 12px
+  right: 20px
+
+  svg
+    max-width: 100%
+    max-height: 100%
+
+.auth__form-field-radios,
+.auth__form-field-radio
+  display: flex
+
+.auth__form-field-radio
+  span
+    +OpenSansRegular
+    font-size: 14px
+    color: #243238
+    margin-left: 8px
+  
+  &:not(:last-child)
+    margin-right: 24px
+
+.auth__form-field-radio-wrapper
+  position: relative
+  width: 15px
+  height: 15px
+
+  input
+    width: 100%
+    height: 100%
+    
+    &:checked + .auth__form-field-radio-circle
+      display: block
+
+  &:before
+    content: ''
+    position: absolute
+    border-radius: 50%
+    border: 1px solid #ccc
+    left: -2px
+    top: 0
+    background-color: #fff
+    width: 18px
+    height: 18px
+  
+  .auth__form-field-radio-circle
+    content: ''
+    position: absolute
+    width: 6px
+    height: 6px
+    background-color: #dfe0e0
+    top: 6px
+    left: 4px
+    border-radius: 50%
+    margin: 0
+    display: none
+
+.auth__form-field-select
+  width: 33.3333%
+
+  .ui-selectmenu-button
+    padding: 12px 20px
+
+  .ui-selectmenu-button.ui-button
+    width: 100%
+    box-shadow: 0 3px 4px 0 rgba(225, 224, 224, .5)
+    +OpenSansRegular
+    font-size: 14px
+    color: #243238
+    background-color: #fff
+    display: flex
+    align-items: center
+    flex-direction: row-reverse
+    justify-content: space-between
+  
+.ui-state-active,
+.ui-widget-content .ui-state-active
+  background-color: #ecf0f1 !important
+  color: #333 !important
+  border-color: transparent !important
+
+.auth__form-field-select--first .ui-selectmenu-button
+  border-top-left-radius: 32px
+  border-bottom-left-radius: 32px
+  border-bottom-right-radius: 0
+  border-top-right-radius: 0
+
+.auth__form-field-select--second .ui-selectmenu-button
+  border-radius: 0
+
+.auth__form-field-select--third .ui-selectmenu-button
+  border-top-left-radius: 0
+  border-bottom-left-radius: 0
+  border-bottom-right-radius: 32px
+  border-top-right-radius: 32px
+
+.auth__form-field-input
+  border: 1px solid #d7d7d7
+  box-shadow: 0 3px 4px 0 rgba(225, 224, 224, .5)
+  border-radius: 32px
+  +OpenSansRegular
+  font-size: 14px
+  color: #243238
+  padding: 12px 20px
+  width: 100%
+
+.auth__form-wrapper
+  margin-top: 24px
+  display: flex
+  align-items: center
+
+  span
+    +OpenSansSemiBold
+    font-size: 14px
+    color: #bab9b9
+
+.auth__form-submit
+  border: none
+  cursor: pointer
+  background-image: linear-gradient(-269deg, #fc9e67 0%, #fb786b 100%)
+  box-shadow: 0 3px 4px 0 rgba(225, 224, 224, .5)
+  border-radius: 32px
+  margin-right: 24px
+  padding: 12px 36px
+  +OpenSansSemiBold
+  font-size: 14px
+  color: #fff
+
+.auth__form-submit--registration
+  padding: 12px 0
+  width: 170px
+  text-align: center
+  font-size: 12px
+
+.auth__form-socials
+  display: flex
+  margin-left: 16px
+
+.auth__form-social
+  height: 14px
+  max-width: 20px
+
+  svg
+    max-height: 100%
+    max-width: 100%
+  
+  &:not(:last-child)
+    margin-right: 8px
+
+.auth__forgot-password
+  +OpenSansSemiBold
+  font-size: 12px
+  color: #babbbb
+  
+  +respond-from(769px)
+    display: none
+
+.auth__mobile-registration
+  position: fixed
+  bottom: 20px
+  left: 20px
+  right: 20px
+
+  +respond-from(769px)
+    display: none
+
+  span
+    width: 280px
+    margin: 0 auto
+    display: block
+    margin-bottom: 16px
+    +OpenSansRegular
+    font-size: 12px
+    color: #babbbb
+
+.auth__mobile-registration-link
+  width: 280px
+  margin: 0 auto
+  background: #fff
+  box-shadow: 0 1px 9px 0 rgba(210, 209, 208, .75)
+  border-radius: 32px
+  +OpenSansSemiBold
+  font-size: 14px
+  color: #babbbb
+  text-align: center
+  display: block
+  padding: 12px 16px
+
+.auth__form-redirect
+  +OpenSansSemiBold
+  font-size: 12px
+  color: #ffa10b
+  display: flex
+  align-items: center
+
+  +respond-to(768px)
+    display: none
+
+  svg
+    margin-left: 8px
+
+.auth__advertising
+  display: flex
+  align-items: center
+  margin-left: 85px
+
+  +respond-to(1024px)
+    display: none
+
+.auth__advertising-content
+  margin-left: 74px
+
+.auth__advertising-title
+  +OpenSansLight
+  font-size: 24px
+  color: #fff
+  margin-bottom: 16px
+
+.auth__form-resources
+  display: flex
+  justify-content: space-between
+
+.auth__form-resource
+  width: 44px
+  height: 44px
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: background-color .1s ease-out
+  cursor: pointer
+
+  &:not(.auth__form-resource--plus)
+    border-radius: 50%
+    border: 1px solid #f6b173
+
+  svg *
+    transition: fill .05s ease-out
+
+  &:hover
+    &:not(.auth__form-resource--plus)
+      background-color: #f6b173
+    
+      svg *
+        fill: #fff
+
+.auth__form-resource--education
+  svg
+    margin-left: 6px
+
+#auth__form-field-input-country-button,
+#auth__form-field-input-city-button
+  border: 1px solid #d7d7d7
+  box-shadow: 0 3px 4px 0 rgba(225, 224, 224, .5)
+  border-radius: 32px
+  +OpenSansRegular
+  font-size: 14px
+  color: #243238
+  padding: 12px 20px
+  width: 100%
+  background-color: #fff
+
+#ui-datepicker-div
+  &.ui-datepicker table
+    margin: 0
+
+  &.ui-widget.ui-widget-content
+    margin-left: 20px
+    padding: 0
+    +OpenSansRegular
+
+  .ui-datepicker-month,
+  .ui-datepicker-year,
+  &.ui-datepicker th
+    +OpenSansSemiBold
+
+  &.ui-datepicker td
+    padding: 0
+
+  .ui-state-default.ui-state-highlight
+    background-image: linear-gradient(-269deg, #fc9e67 0%, #fb786b 100%)
+    color: #fff
+    border-color: #fc9e67
+
+  .ui-datepicker-prev.ui-corner-all,
+  .ui-datepicker-next.ui-corner-all
+    border: 1px solid transparent
+    cursor: pointer
+
+  .ui-datepicker-prev.ui-corner-all.ui-state-hover
+    border: 1px solid #ccc
+    left: 2px
+    top: 2px
+
+  .ui-datepicker-next.ui-corner-all.ui-state-hover
+    border: 1px solid #ccc
+    right: 2px
+    top: 2px
+
+  .ui-widget-header
+    background-color: #fafafa
+
+  .ui-state-default,
+  &.ui-widget-content .ui-state-default
+    border: 1px solid #f0f0f0
+    background-color: #fafafa
+    text-align: center
+
+  &.ui-widget-content .ui-state-hover
+    background-color: #f0f0f0
+
+  .ui-state-active,
+  &.ui-widget-content .ui-state-highlight.ui-state-active
+    color: #fff !important
+
+  &.ui-widget-content .ui-state-active
+    border-color: #fc9e67 !important
+
+[aria-labelledby='auth__form-field-input-country-button'],
+[aria-labelledby='auth__form-field-input-city-button']
+  width: 270px !important
+  margin-left: 20px
+
+  & > li > div
+    padding: 8px 16px !important

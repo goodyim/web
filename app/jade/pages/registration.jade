@@ -1,0 +1,136 @@
+include ../includes/variables.jade
+include ../includes/mixins/mixins.jade
+
+doctype html
+html(lang='en')
+  include ../includes/dependecies/js-jquery.jade
+  include ../includes/dependecies/js-jqueryui.jade
+  include ../includes/head.jade
+
+  body
+    main.auth
+      .container.container--relative.auth__wrapper
+        header.auth__header
+          a.auth__header-logo(href='/')
+            .auth__header-logo-picture
+              +retina_img_png('logotype', 'Goody')
+
+            | Goody
+
+          a.auth__header-btn(href='login.html')
+            | Войти
+        
+        .auth__steps
+          //- .auth__content.auth__step
+          //-   .auth__form.auth__form-registration
+          //-     h1.auth__form-title
+          //-       | Регистрация
+
+          //-     form.auth__form-fields
+          //-       label.auth__form-field
+          //-         input.auth__form-field-input(type='text', name='name', placeholder='@имя', autocomplete='on', required)
+
+          //-       label.auth__form-field
+          //-         input.auth__form-field-input(type='email', name='email', placeholder='E-mail', autocomplete='off', required)
+                
+          //-       label.auth__form-field
+          //-         input.auth__form-field-input(type='password', name='password', placeholder='Пароль', autocomplete='off', required)
+
+          //-       label.auth__form-field.auth__form-field--relative
+          //-         span.auth__form-field-title
+          //-           | Дата рождения
+
+          //-         input.auth__form-field-input.auth__form-field-input-datapicker(type='text', id='registration-datapicker', placeholder='dd/mm/yyyy')
+          //-         span.auth__form-field-icon
+          //-           +calendar_icon
+
+          //-       .auth__form-field.auth__form-field--relative
+          //-         span.auth__form-field-title
+          //-           | Ваш пол
+
+          //-         .auth__form-field-radios
+          //-           label.auth__form-field-radio
+          //-             .auth__form-field-radio-wrapper
+          //-               input(type='radio', name='sex')
+          //-               span.auth__form-field-radio-circle
+
+          //-             span
+          //-               | Женский
+
+          //-           label.auth__form-field-radio
+          //-             .auth__form-field-radio-wrapper
+          //-               input(type='radio', name='sex')
+          //-               span.auth__form-field-radio-circle
+
+          //-             span
+          //-               | Мужской
+
+          //-       .auth__form-wrapper
+          //-         button.auth__form-submit.auth__form-submit--registration(type='submit')
+          //-           | Зарегистрироваться
+
+          //-         span или
+          //-         .auth__form-socials
+          //-           a.auth__form-social(href=empty_href)
+          //-             +facebook_icon
+
+          //-           a.auth__form-social(href=empty_href)
+          //-             +vk_icon
+
+          //-           a.auth__form-social(href=empty_href)
+          //-             +google_plus_icon
+
+          .auth__content.auth__step
+            .auth__form.auth__form-account
+              form.auth__form-fields
+                .auth__form-field
+                  select#auth__form-field-input-country.auth__form-field-select(name='country', required)
+                    option(value='Россия') Россия
+                    option(value='Украина') Украина
+
+                .auth__form-field
+                  select#auth__form-field-input-city.auth__form-field-select(type='city', required)
+                    option(value='Москва') Москва
+                    option(value='Киев') Киев
+
+                .auth__form-field.auth__form-field--relative
+                  span.auth__form-field-title
+                    | Какими ресурсами вы обладаете?
+
+                  .auth__form-resources
+                    .auth__form-resource
+                      +ruble_icon
+
+                    .auth__form-resource
+                      +car_icon
+
+                    .auth__form-resource
+                      +clock_icon
+
+                    .auth__form-resource.auth__form-resource--education
+                      +education_icon
+
+                    .auth__form-resource.auth__form-resource--plus
+                      +plus_icon
+
+                .auth__form-field.auth__form-field--relative
+                  span.auth__form-field-title
+                    | Кому вы можете помочь?
+
+                  .auth__form-resources
+                    .auth__form-resource
+                      +child_icon
+
+                    .auth__form-resource
+                      +animal_icon
+
+                    .auth__form-resource
+                      +grand_parent_icon
+
+                    .auth__form-resource
+                      +car_icon
+
+                    .auth__form-resource.auth__form-resource--plus
+                      +plus_icon
+
+    script(src='js/pages/registration-page.js')

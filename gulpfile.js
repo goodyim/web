@@ -6,7 +6,7 @@ var gulp          = require('gulp'),
     jade          = require('gulp-jade');
 
 gulp.task('sass', function(){
-  return gulp.src('./app/sass/main.sass')
+  return gulp.src('./app/sass/**/*.sass')
   .pipe(sass())
   .pipe(autoprefixer())
   .pipe(gulp.dest('./dist/css'))
@@ -48,12 +48,18 @@ gulp.task('moveImg', () =>
       .pipe(gulp.dest('./dist/images'))
 );
 
-gulp.task('watch', ['browser-sync', 'sass'], function(){
+gulp.task('moveLibs', () =>
+  gulp.src('./app/libs/**/*')
+      .pipe(gulp.dest('./dist/libs'))
+);
+
+gulp.task('watch', ['browser-sync', 'sass', 'moveImg', 'moveLibs'], function(){
   gulp.watch('./app/sass/**/*.sass', ['sass']);
   gulp.watch('./app/jade/**/*.jade', ['jadeh']);
   gulp.watch('./app/img/**/*', ['moveImg']);
   gulp.watch('./app/js/**/*.js', ['movejs']);
   gulp.watch('./app/fonts/**/*', ['moveFonts']);
+  gulp.watch('./app/libs/**/*', ['moveLibs']);
   gulp.watch('./dist/**/*', browserSync.reload);
 
 });

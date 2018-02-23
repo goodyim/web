@@ -1,0 +1,120 @@
+include ../includes/variables.jade
+include ../includes/mixins/mixins.jade
+
+doctype html
+html(lang='en')
+  include ../includes/head.jade
+
+  body
+    #page.page
+      .content
+        include ../includes/header.jade
+        main.container
+          section.partners
+            .partners__wrapper
+              .partners__nav
+                .partners__tabs
+                  button.partners__tab.partners__tab--active
+                    | Онлайн
+                  
+                  button.partners__tab
+                    | Рядом со мной
+ 
+              ul.partners__list
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +all_partners_icon
+
+                    .partners__list-item-name
+                      | Все
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +car_partners_icon
+
+                    .partners__list-item-name
+                      | Автомобили
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +ticket_partners_icon
+
+                    .partners__list-item-name
+                      | Билеты
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +all_in_partners_icon
+
+                    .partners__list-item-name
+                      | Все в одном
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +child_things_partners_icon
+
+                    .partners__list-item-name
+                      | Детские товары
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +books_partners_icon
+
+                    .partners__list-item-name
+                      | Книги
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +bauty_and_health_partners_icon
+
+                    .partners__list-item-name
+                      | Красота и здоровье
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +furniture_partners_icon
+
+                    .partners__list-item-name
+                      | Мебель
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +communication_services_partners_icon
+
+                    .partners__list-item-name
+                      | Услуги связи
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +clothes_and_footwear_partners_icon
+
+                    .partners__list-item-name
+                      | Одежда и обувь
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +paymens_systems_partners_icon
+
+                    .partners__list-item-name
+                      | Платежные системы
+                
+                li.partners__list-item
+                  a.partners__list-item-link(href=empty_href)
+                    .partners__list-item-circle
+                      +products_partners_icon
+
+                    .partners__list-item-name
+                      | Продукты
+
+    include ../includes/footer.jade
