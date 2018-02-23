@@ -67,3 +67,5 @@ gulp.task('htmlbeautify', () =>
     }))
     .pipe(gulp.dest('./dist/'))
 );
+
+gulp.task('default', ['watch'])
