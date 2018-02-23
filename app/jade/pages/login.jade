@@ -1,0 +1,61 @@
+include ../includes/variables.jade
+include ../includes/mixins/mixins.jade
+
+doctype html
+html(lang='en')
+  include ../includes/head.jade
+
+  body
+    main.auth
+      .container.container--relative.auth__wrapper
+        header.auth__header
+          a.auth__header-logo(href='/')
+            .auth__header-logo-picture
+              +retina_img_png('logotype', 'Goody')
+
+            | Goody
+
+          a.auth__header-btn(href='registration.html')
+            | Регистрация
+
+        .auth__content
+          .auth__form.auth__form-login
+            h1.auth__form-title
+              | Goody
+
+            h2.auth__form-subtitle
+              | Сделаем добро вместе
+
+            .auth__form-fields
+              label.auth__form-field
+                input.auth__form-field-input(type='text', name='name', placeholder='79055056785', autocomplete='on')
+
+              label.auth__form-field
+                input.auth__form-field-input(type='password', name='password', autocomplete='off', placeholder='Ваш пароль')
+
+            .auth__form-wrapper
+              button.auth__form-submit(type='submit')
+                | Войти
+
+              a.auth__form-redirect(href='registration.html')
+                | Создать аккаунт 
+                +login_arrow_right_icon
+              
+              a.auth__forgot-password(href=empty_href)
+                | Забыли пароль?
+
+          .auth__advertising
+            .auth__advertising-picture
+              +retina_img_png('login-preview', 'Login preview telephone')
+
+            .auth__advertising-content
+              .auth__advertising-title
+                | Скачивайте Goody
+
+              .auth__advertising-download
+                +google_play_icon
+
+        .auth__mobile-registration
+          span Еще не зарегистрированы?
+          a.auth__mobile-registration-link(href='registration.html')
+            | Регистрация

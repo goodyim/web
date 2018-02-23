@@ -1,0 +1,88 @@
+.partners
+  @extend %page-wrapper
+  margin-top: 50px
+
+  +respond-to(1024px)
+    margin-top: 0
+    box-shadow: none
+    background-color: transparent
+
+.partners__wrapper
+  max-width: 750px
+  width: 100%
+  margin: 0 auto
+  padding: 30px 0 120px
+
+  +respond-to(1024px)
+    padding-bottom: 40px
+
+.partners__nav
+  display: flex
+  justify-content: center
+  margin-bottom: 80px
+
+  +respond-to(1024px)
+    margin-bottom: 40px
+
+.partners__tabs
+  border-bottom: 1px solid #d5d4d4
+
+.partners__tab
+  padding: 18px 35px
+  border: none
+  background-color: transparent
+  border-bottom: 5px solid transparent
+  display: inline-block
+  +OpenSansRegular
+  font-size: 18px
+  color: #a2a0a0
+  cursor: pointer
+
+.partners__tab--active
+  border-bottom: 5px solid #f7ab41
+  color: #1f1e1e
+
+.partners__list
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+
+.partners__list-item
+  width: 33.3333%
+  
+  &:nth-child(n + 4)
+    margin-top: 84px
+
+    +respond-to(1024px)
+      margin-top: 40px
+    
+    +respond-to(650px)
+      padding: 0 5px
+
+.partners__list-item-circle
+  background-image: linear-gradient(-90deg, #89a4f6 0%, #67dbfb 100%)
+  width: 140px
+  height: 140px
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 50%
+  margin: 0 auto
+
+  +respond-to(650px)
+    width: 60px
+    height: 60px
+
+    svg
+      max-width: 25px
+      max-height: 25px
+
+.partners__list-item-name
+  margin-top: 24px
+  +OpenSansRegular
+  font-size: 20px
+  color: #1f1e1e
+  text-align: center
+
+  +respond-to(650px)
+    font-size: 14px
