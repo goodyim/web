@@ -1,0 +1,53 @@
+<svg width="15" height="14" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>noun_1519146_cc</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-16201 -3729)">
+<rect x="16201" y="3729" width="15" height="14" fill="#FFFFFF"/>
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 15719 3114L 17159 3114L 17159 4039L 15719 4039L 15719 3114Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="Goody_profil_new" clip-path="url(#clip-0)">
+<path d="M 15719 3114L 17159 3114L 17159 4039L 15719 4039L 15719 3114Z" fill="#F9F9F9"/>
+<g id="Group">
+<g id="Rectangle 10" filter="url(#filter0_d)">
+<use xlink:href="#path0_fill" transform="translate(15840 3234)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="&#208;&#161;&#208;&#190;&#208;&#177;&#209;&#139;&#209;&#130;&#208;&#184;&#208;&#181;3">
+<g id="Rectangle 10 Copy" filter="url(#filter1_d)">
+<use xlink:href="#path1_fill" transform="translate(16134 3340)" fill="#FFFFFF"/>
+</g>
+<g id="like+comment">
+<g id="noun_1519146_cc">
+<g id="Shape">
+<use xlink:href="#path2_fill" transform="translate(16201 3729)" fill="#CAC9C9"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="15836" y="3232" width="1208" height="742" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="2"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.588235 0 0 0 0 0.584314 0 0 0 0 0.584314 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<filter id="filter1_d" filterUnits="userSpaceOnUse" x="16130" y="3338" width="268" height="448" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="2"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.588235 0 0 0 0 0.584314 0 0 0 0 0.584314 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 5.99998C 0 2.68627 2.68629 0 6 0L 1194 0C 1197.31 0 1200 2.68629 1200 6L 1200 728C 1200 731.314 1197.31 734 1194 734L 5.99999 734C 2.68629 734 0 731.314 0 728L 0 5.99998Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 0 5.99999C 0 2.68629 2.68629 0 6 0L 254 0C 257.314 0 260 2.68629 260 6L 260 434C 260 437.314 257.314 440 254 440L 6.00001 440C 2.6863 440 0 437.314 0 434L 0 5.99999Z"/>
+<path id="path2_fill" d="M 13.125 0L 1.875 0C 0.840937 0 0 0.784875 0 1.75L 0 13.5625C 0 13.727 0.0984375 13.8784 0.255937 13.9528C 0.323437 13.9843 0.396563 14 0.46875 14C 0.56625 14 0.66375 13.9711 0.745313 13.9151C 0.745313 13.9151 2.11069 12.4462 3.11863 11.758C 3.35069 11.5995 3.62592 11.375 3.62592 11.375L 13.125 11.375C 14.1591 11.375 15 10.5901 15 9.625L 15 1.75C 15 0.784875 14.1591 0 13.125 0Z"/>
+</defs>
+</svg>
