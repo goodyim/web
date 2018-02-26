@@ -37,12 +37,12 @@ html(lang='en')
               button.auth__form-submit(type='submit')
                 | Войти
 
+              a.auth__forgot-password(href=empty_href)
+                | Забыли пароль?
+
               a.auth__form-redirect(href='registration.html')
                 | Создать аккаунт 
                 +login_arrow_right_icon
-              
-              a.auth__forgot-password(href=empty_href)
-                | Забыли пароль?
 
           .auth__advertising
             .auth__advertising-picture

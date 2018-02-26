@@ -45,7 +45,7 @@ gulp.task('fileMove', () => {
   gulp.src(path.js.watch).pipe(gulp.dest('./dist/js'))
   gulp.src(path.fonts.watch).pipe(gulp.dest('./dist/fonts'))
   gulp.src(path.img.watch).pipe(gulp.dest('./dist/images'))
-  gulp.src(path.img.watch).pipe(gulp.dest('./dist/libs'))
+  gulp.src(path.libs.watch).pipe(gulp.dest('./dist/libs'))
 });
 
 gulp.task('watch', ['browser-sync', 'sass', 'jadeh', 'fileMove'], function(){

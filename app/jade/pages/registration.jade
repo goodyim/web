@@ -21,66 +21,66 @@ html(lang='en')
             | Войти
         
         .auth__steps
-          //- .auth__content.auth__step
-          //-   .auth__form.auth__form-registration
-          //-     h1.auth__form-title
-          //-       | Регистрация
+          #first-step.auth__content.auth__step
+            .auth__form.auth__form-registration
+              h1.auth__form-title
+                | Регистрация
 
-          //-     form.auth__form-fields
-          //-       label.auth__form-field
-          //-         input.auth__form-field-input(type='text', name='name', placeholder='@имя', autocomplete='on', required)
+              form#registration-form.auth__form-fields
+                label.auth__form-field
+                  input.auth__form-field-input(type='text', name='name', placeholder='@имя', autocomplete='on', required)
 
-          //-       label.auth__form-field
-          //-         input.auth__form-field-input(type='email', name='email', placeholder='E-mail', autocomplete='off', required)
+                label.auth__form-field
+                  input.auth__form-field-input(type='email', name='email', placeholder='E-mail', autocomplete='off', required)
                 
-          //-       label.auth__form-field
-          //-         input.auth__form-field-input(type='password', name='password', placeholder='Пароль', autocomplete='off', required)
+                label.auth__form-field
+                  input.auth__form-field-input(type='password', name='password', placeholder='Пароль', autocomplete='off', required)
 
-          //-       label.auth__form-field.auth__form-field--relative
-          //-         span.auth__form-field-title
-          //-           | Дата рождения
+                label.auth__form-field.auth__form-field--relative
+                  span.auth__form-field-title
+                    | Дата рождения
 
-          //-         input.auth__form-field-input.auth__form-field-input-datapicker(type='text', id='registration-datapicker', placeholder='dd/mm/yyyy')
-          //-         span.auth__form-field-icon
-          //-           +calendar_icon
+                  input.auth__form-field-input.auth__form-field-input-datapicker(type='text', id='registration-datapicker', placeholder='dd/mm/yyyy')
+                  span.auth__form-field-icon
+                    +calendar_icon
 
-          //-       .auth__form-field.auth__form-field--relative
-          //-         span.auth__form-field-title
-          //-           | Ваш пол
+                .auth__form-field.auth__form-field--relative
+                  span.auth__form-field-title
+                    | Ваш пол
 
-          //-         .auth__form-field-radios
-          //-           label.auth__form-field-radio
-          //-             .auth__form-field-radio-wrapper
-          //-               input(type='radio', name='sex')
-          //-               span.auth__form-field-radio-circle
+                  .auth__form-field-radios
+                    label.auth__form-field-radio
+                      .auth__form-field-radio-wrapper
+                        input(type='radio', name='sex', checked)
+                        span.auth__form-field-radio-circle
 
-          //-             span
-          //-               | Женский
+                      span
+                        | Женский
 
-          //-           label.auth__form-field-radio
-          //-             .auth__form-field-radio-wrapper
-          //-               input(type='radio', name='sex')
-          //-               span.auth__form-field-radio-circle
+                    label.auth__form-field-radio
+                      .auth__form-field-radio-wrapper
+                        input(type='radio', name='sex')
+                        span.auth__form-field-radio-circle
 
-          //-             span
-          //-               | Мужской
+                      span
+                        | Мужской
 
-          //-       .auth__form-wrapper
-          //-         button.auth__form-submit.auth__form-submit--registration(type='submit')
-          //-           | Зарегистрироваться
+                .auth__form-wrapper
+                  button.auth__form-submit.auth__form-submit--registration(type='submit')
+                    | Зарегистрироваться
 
-          //-         span или
-          //-         .auth__form-socials
-          //-           a.auth__form-social(href=empty_href)
-          //-             +facebook_icon
+                  span или
+                  .auth__form-socials
+                    a.auth__form-social(href=empty_href)
+                      +facebook_icon
 
-          //-           a.auth__form-social(href=empty_href)
-          //-             +vk_icon
+                    a.auth__form-social(href=empty_href)
+                      +vk_icon
 
-          //-           a.auth__form-social(href=empty_href)
-          //-             +google_plus_icon
+                    a.auth__form-social(href=empty_href)
+                      +google_plus_icon
 
-          .auth__content.auth__step
+          #second-step.auth__content.auth__step
             .auth__form.auth__form-account
               form.auth__form-fields
                 .auth__form-field
@@ -98,39 +98,57 @@ html(lang='en')
                     | Какими ресурсами вы обладаете?
 
                   .auth__form-resources
-                    .auth__form-resource
-                      +ruble_icon
+                    label.auth__form-resource
+                      input(type='checkbox', value='money')
+                      .auth__form-resource-mask
+                        +ruble_icon
 
-                    .auth__form-resource
-                      +car_icon
+                    label.auth__form-resource
+                      input(type='checkbox', value='car')
+                      .auth__form-resource-mask
+                        +car_icon
 
-                    .auth__form-resource
-                      +clock_icon
+                    label.auth__form-resource
+                      input(type='checkbox', value='time')
+                      .auth__form-resource-mask
+                        +clock_icon
 
-                    .auth__form-resource.auth__form-resource--education
-                      +education_icon
-
-                    .auth__form-resource.auth__form-resource--plus
-                      +plus_icon
+                    label.auth__form-resource.auth__form-resource--education
+                      input(type='checkbox', value='education')
+                      .auth__form-resource-mask
+                        +education_icon
 
                 .auth__form-field.auth__form-field--relative
                   span.auth__form-field-title
                     | Кому вы можете помочь?
 
                   .auth__form-resources
-                    .auth__form-resource
-                      +child_icon
+                    label.auth__form-resource
+                      input(type='checkbox', value='children')
+                      .auth__form-resource-mask
+                        +child_icon
 
-                    .auth__form-resource
-                      +animal_icon
+                    label.auth__form-resource
+                      input(type='checkbox', value='animals')
+                      .auth__form-resource-mask
+                        +animal_icon
 
-                    .auth__form-resource
-                      +grand_parent_icon
+                    label.auth__form-resource
+                      input(type='checkbox', value='pensioners')
+                      .auth__form-resource-mask
+                        +grand_parent_icon
 
-                    .auth__form-resource
-                      +car_icon
+                    label.auth__form-resource
+                      input(type='checkbox', value='cars')
+                      .auth__form-resource-mask
+                        +car_icon
+                
+                .auth__form-wrapper.auth__form-wrapper--second
+                  button.auth__form-submit.auth__form-submit--registration(type='submit')
+                    | Перейти в профиль
 
-                    .auth__form-resource.auth__form-resource--plus
-                      +plus_icon
+                  //- button.auth__form-notifications(type='button')
+                  //-   +settings_icon
+                  //-   | оповещения
 
     script(src='js/pages/registration-page.js')
