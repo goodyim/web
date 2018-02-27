@@ -1,51 +1,33 @@
-var allTabs = document.querySelectorAll('.user-profile__tab')
+(function () {
 
-function savedI(arg) {
-  return arg;
-}
+  function HTMLCollectionToArray (HTMLCollection) {
+    return Array.prototype.slice.call(HTMLCollection)
+  }
 
-var n;
+  var ACTIVE_CLASSES = {
+    tab: 'user-profile__tab--active',
+    list: 'user-profile__item-list--active'
+  }
 
-for(var i = 0; i < allTabs.length; i++){
-  allTabs[i].addEventListener('click', function(e) {
-    e.preventDefault();
-    var index = (function(x){
-      return n = i;
-    })(i);
-    console.log(allTabs[n]);
-  });
-};
+  var tabs = HTMLCollectionToArray(document.getElementsByClassName('user-profile__tab'))
+  var lists = HTMLCollectionToArray(document.getElementsByClassName('user-profile__item-list'))
 
+  tabs[0].classList.add(ACTIVE_CLASSES.tab)
+  lists[0].classList.add(ACTIVE_CLASSES.list)
 
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', setActiveTab)
+  }
 
+  function setActiveTab () {
+    tabs.map((el) => el.classList.remove(ACTIVE_CLASSES.tab))
+    lists.map((el) => el.classList.remove(ACTIVE_CLASSES.list))
+    this.classList.add(ACTIVE_CLASSES.tab)
+    lists[getActiveTabIndex(this)].classList.add(ACTIVE_CLASSES.list)
+  }
 
+  function getActiveTabIndex (tab) {
+    return tabs.indexOf(tab)
+  }
 
-var tabs = [
-  document.getElementById("first-tab"),
-  document.getElementById("second-tab"),
-  document.getElementById("third-tab")
-]
-
-var lists = [
-  document.getElementById("first-list"),
-  document.getElementById("second-list"),
-  document.getElementById("third-list")
-]
-
-for(var i = 0; i < tabs.length; i++) {
-  console.dir(tabs[i])
-  tabs[i].addEventListener('click', function(e) {
-    e.preventDefault();
-    console.dir(i);
-    // .classList.add("user-profile__tab--active");
-    // tabs[i + 1].classList.remove("user-profile__tab--active");
-    // tabs[i - 1].classList.remove("user-profile__tab--active");
-    // lists[i].classList.add("user-profile__item-list--active");
-    // lists[i + 1].classList.remove("user-profile__item-list--active");
-    // lists[i - 1].classList.remove("user-profile__item-list--active");
-  });
-}
-
-
-tabs[0].classList.add("user-profile__tab--active");
-lists[0].classList.add("user-profile__item-list--active");
+})()
