@@ -1,41 +1,51 @@
-var firstTab = document.getElementById("first-tab");
-var secondTab = document.getElementById("second-tab");
-var thirdTab = document.getElementById("third-tab");
+var allTabs = document.querySelectorAll('.user-profile__tab')
 
-var firstList = document.getElementById("first-list");
-var secondList = document.getElementById("second-list");
-var thirdList = document.getElementById("third-list");
+function savedI(arg) {
+  return arg;
+}
 
-firstList.style.display = "flex";
-secondList.style.display = "none";
-thirdList.style.display = "none";
+var n;
 
-firstTab.addEventListener('click', function(event) {
-  event.preventDefault();
-  firstTab.classList.add("user-profile__tab--active");
-  secondTab.classList.remove("user-profile__tab--active");
-  thirdTab.classList.remove("user-profile__tab--active");
-  firstList.style.display = "flex";
-  secondList.style.display = "none";
-  thirdList.style.display = "none";
-})
+for(var i = 0; i < allTabs.length; i++){
+  allTabs[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    var index = (function(x){
+      return n = i;
+    })(i);
+    console.log(allTabs[n]);
+  });
+};
 
-secondTab.addEventListener('click', function(event) {
-  event.preventDefault();
-  secondTab.classList.add("user-profile__tab--active");
-  firstTab.classList.remove("user-profile__tab--active");
-  thirdTab.classList.remove("user-profile__tab--active");
-  secondList.style.display = "flex";
-  firstList.style.display = "none";  
-  thirdList.style.display = "none";
-})
 
-thirdTab.addEventListener('click', function(event) {
-  event.preventDefault();
-  thirdTab.classList.add("user-profile__tab--active");
-  firstTab.classList.remove("user-profile__tab--active");
-  secondTab.classList.remove("user-profile__tab--active");
-  thirdList.style.display = "flex";
-  secondList.style.display = "none";
-  firstList.style.display = "none";    
-})
+
+
+
+var tabs = [
+  document.getElementById("first-tab"),
+  document.getElementById("second-tab"),
+  document.getElementById("third-tab")
+]
+
+var lists = [
+  document.getElementById("first-list"),
+  document.getElementById("second-list"),
+  document.getElementById("third-list")
+]
+
+for(var i = 0; i < tabs.length; i++) {
+  console.dir(tabs[i])
+  tabs[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    console.dir(i);
+    // .classList.add("user-profile__tab--active");
+    // tabs[i + 1].classList.remove("user-profile__tab--active");
+    // tabs[i - 1].classList.remove("user-profile__tab--active");
+    // lists[i].classList.add("user-profile__item-list--active");
+    // lists[i + 1].classList.remove("user-profile__item-list--active");
+    // lists[i - 1].classList.remove("user-profile__item-list--active");
+  });
+}
+
+
+tabs[0].classList.add("user-profile__tab--active");
+lists[0].classList.add("user-profile__item-list--active");
