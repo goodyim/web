@@ -10,5 +10,21 @@ html(lang='en')
       .content
         include ../includes/header.jade
         main.container
-          section
-            
+          section.feed
+            .feed__tabs
+              button.feed__tab.feed__tab--active(type='button')
+                | Все записи
+              button.feed__tab(type='button')
+                | Добрости
+              button.feed__tab(type='button')
+                | Все события
+
+            .feed__post
+              .feed__post-tabs
+                .feed__post-tab.feed__post-tab--event
+                  button.feed__post-tab-btn(type='button')
+                    | Событие
+
+                .feed__post-tab.feed__post-tab--note
+                  button.feed__post-tab-btn(type='button')
+                    | Запись
