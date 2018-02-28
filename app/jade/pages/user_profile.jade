@@ -41,157 +41,25 @@ html(lang='en')
                   +retina_img_png('goodyback-icon', '')
 
             .user-profile__activity
-              .user-profile__tabs
-                button(type='button').user-profile__tab#first-tab Активные
-                button(type='button').user-profile__tab#second-tab В процессе
-                button(type='button').user-profile__tab#third-tab Завершенные
+              .user-profile__switcher
+                button(type='button').user-profile__switcher-tab Активные
+                button(type='button').user-profile__switcher-tab В процессе
+                button(type='button').user-profile__switcher-tab Завершенные
 
               .user-profile__content 
                 ul.user-profile__item-list#first-list
                   - for (var i=0; i<3; i++) {
-                    li.user-profile__item
-                      h3.user-profile__item-title Помощь детям
-                      .user-profile__item-block
-                        .user-profile__item-pic
-                          +retina_img_png('userprofile-item1', '')
-                          
-                        .user-profile__item-inner
-                          .user-profile__item-userpic
-                            +retina_img_png('userprofile-user1', '')
-                          .user-profile__item-dis
-                            span.user-profile__item-name Ivan Ognevich
-                            time.user-profile__item-time 15:34
-
-                        p.user-profile__item-text
-                          | Ребят, давайте отвезем сегодня 
-                          | продукты в питомник для 
-                          | собак?
-
-                        .user-profile__item-wrap 
-                          .user-profile__item-icon-bg
-                            .user-profile__item-icon-clock
-                              +clock-icon
-                          | 5 декабря в 10:00
-
-                        .user-profile__item-wrap
-                          .user-profile__item-icon-bg
-                            .user-profile__item-icon-location
-                              +location-icon
-                          | Милютинский переулок,5
-
-                        .user-profile__item-btns-bot
-                          button(type='button').user-profile__item-like-btn.user-profile__item-like-btn--active
-                            .user-profile__item-like-icon
-                              +like-icon
-                            | 14
-
-                          button(type='button').user-profile__item-comments-btn
-                            .user-profile__item-comments-icon
-                              +comments-icon
-                            | 2
-
-                          button(type='button').user-profile__item-notifications-btn
-                            .user-profile__item-notifications-icon
-                              +notifications-icon
-                            | 1
+                    include ../includes/blocks/card_01_small.jade
                   - }
 
                 ul.user-profile__item-list#second-list
                   - for (var i=0; i<3; i++) {
-                    li.user-profile__item
-                      h3.user-profile__item-title Помощь детям
-                      .user-profile__item-block
-                        .user-profile__item-pic
-                          +retina_img_png('userprofile-item2', '')
-                          
-                        .user-profile__item-inner
-                          .user-profile__item-userpic
-                            +retina_img_png('userprofile-user1', '')
-                          .user-profile__item-dis
-                            span.user-profile__item-name Ivan Ognevich
-                            time.user-profile__item-time 15:34
-
-                        p.user-profile__item-text
-                          | Ребят, давайте отвезем сегодня 
-                          | продукты в питомник для 
-                          | собак?
-
-                        .user-profile__item-wrap 
-                          .user-profile__item-icon-bg
-                            .user-profile__item-icon-clock
-                              +clock-icon
-                          | 5 декабря в 10:00
-
-                        .user-profile__item-wrap
-                          .user-profile__item-icon-bg
-                            .user-profile__item-icon-location
-                              +location-icon
-                          | Милютинский переулок,5
-
-                        .user-profile__item-btns-bot
-                          button(type='button').user-profile__item-like-btn.user-profile__item-like-btn--active
-                            .user-profile__item-like-icon
-                              +like-icon
-                            | 14
-
-                          button(type='button').user-profile__item-comments-btn
-                            .user-profile__item-comments-icon
-                              +comments-icon
-                            | 2
-
-                          button(type='button').user-profile__item-notifications-btn
-                            .user-profile__item-notifications-icon
-                              +notifications-icon
-                            | 1
+                    include ../includes/blocks/card_01_small.jade
                   - }
 
                 ul.user-profile__item-list#third-list
                   - for (var i=0; i<3; i++) {
-                    li.user-profile__item
-                      h3.user-profile__item-title Помощь детям
-                      .user-profile__item-block
-                        .user-profile__item-pic
-                          +retina_img_png('userprofile-item1', '')
-                          
-                        .user-profile__item-inner
-                          .user-profile__item-userpic
-                            +retina_img_png('userprofile-user2', '')
-                          .user-profile__item-dis
-                            span.user-profile__item-name Ivan Ognevich
-                            time.user-profile__item-time 15:34
-
-                        p.user-profile__item-text
-                          | Ребят, давайте отвезем сегодня 
-                          | продукты в питомник для 
-                          | собак?
-
-                        .user-profile__item-wrap 
-                          .user-profile__item-icon-bg
-                            .user-profile__item-icon-clock
-                              +clock-icon
-                          | 5 декабря в 10:00
-
-                        .user-profile__item-wrap
-                          .user-profile__item-icon-bg
-                            .user-profile__item-icon-location
-                              +location-icon
-                          | Милютинский переулок,5
-
-                        .user-profile__item-btns-bot
-                          button(type='button').user-profile__item-like-btn.user-profile__item-like-btn--active
-                            .user-profile__item-like-icon
-                              +like-icon
-                            | 14
-
-                          button(type='button').user-profile__item-comments-btn
-                            .user-profile__item-comments-icon
-                              +comments-icon
-                            | 2
-
-                          button(type='button').user-profile__item-notifications-btn
-                            .user-profile__item-notifications-icon
-                              +notifications-icon
-                            | 1
+                    include ../includes/blocks/card_01_small.jade
                   - }
 
     script(src='js/pages/user-profile-page.js')

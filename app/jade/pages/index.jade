@@ -15,14 +15,16 @@ html(lang='en')
         main.container
           section.feed
             .feed__tabs
-              button.feed__tab.feed__tab--active(type='button')
-                | Все записи
-              button.feed__tab(type='button')
-                | Добрости
-              button.feed__tab(type='button')
-                | Все события
+              button.feed__tab(type='button') Все записи
+              button.feed__tab(type='button') Добрости
+              button.feed__tab(type='button') Все события
 
             include ../includes/blocks/post_create.jade
+
+            .feed__content
+              include ../includes/blocks/card_02_feed.jade
+              include ../includes/blocks/card_02_feed.jade
+              include ../includes/blocks/card_02_feed.jade
 
     script(src='js/pages/feed-page.js')
     include ../includes/footer.jade

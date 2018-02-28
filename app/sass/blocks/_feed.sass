@@ -2,3 +2,18 @@
   margin-left: auto
   margin-right: auto
   max-width: 600px
+
+.feed__tabs
+  @extend %switcher
+  margin-bottom: 48px
+  margin-top: 12px
+
+.feed__tab
+  @extend %switcher__tab
+
+  &--active
+    border-bottom: 5px solid #FA796A
+    color: #1f1e1e
+
+.feed__content
+  margin-top: 32px

@@ -5,12 +5,12 @@
   }
 
   var ACTIVE_CLASSES = {
-    tab: 'user-profile__switcher-tab--active',
-    list: 'user-profile__item-list--active'
+    tab: 'nco__switcher-tab--active',
+    list: 'nco__item-list--active'
   }
 
-  var tabs = HTMLCollectionToArray(document.getElementsByClassName('user-profile__switcher-tab'))
-  var lists = HTMLCollectionToArray(document.getElementsByClassName('user-profile__item-list'))
+  var tabs = HTMLCollectionToArray(document.getElementsByClassName('nco__switcher-tab'))
+  var lists = HTMLCollectionToArray(document.getElementsByClassName('nco__item-list'))
 
   tabs[0].classList.add(ACTIVE_CLASSES.tab)
   lists[0].classList.add(ACTIVE_CLASSES.list)
@@ -30,4 +30,4 @@
     return tabs.indexOf(tab)
   }
 
-})()
+})();

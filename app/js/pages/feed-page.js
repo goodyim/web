@@ -5,6 +5,35 @@ if (window.jQuery || typeof jQuery !== 'undefined') {
   });
 }
 
+(function () {
+
+  function HTMLCollectionToArray (HTMLCollection) {
+    return Array.prototype.slice.call(HTMLCollection)
+  }
+
+  var ACTIVE_CLASSES = {
+    tab: 'feed__tab--active'
+  }
+
+  var tabs = HTMLCollectionToArray(document.getElementsByClassName('feed__tab'))
+
+  tabs[0].classList.add(ACTIVE_CLASSES.tab)
+
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', setActiveTab)
+  }
+
+  function setActiveTab () {
+    tabs.map((el) => el.classList.remove(ACTIVE_CLASSES.tab))
+    this.classList.add(ACTIVE_CLASSES.tab)
+  }
+
+  function getActiveTabIndex (tab) {
+    return tabs.indexOf(tab)
+  }
+
+})();
+
 // adding things to template
 (function () {
   var btn = document.getElementById('add-things')

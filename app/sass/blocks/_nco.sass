@@ -1,0 +1,258 @@
+.nco
+  @extend %page-wrapper  
+  display: flex
+  align-items: flex-start
+  margin-top: 50px
+  min-height: 1105px
+
+.nco__information
+  flex-shrink: 0
+  width: 220px
+  align-self: stretch
+  padding-top: 25px
+  background: #FFFFFF
+  box-shadow: 0px 4px 7px rgba(160, 159, 159, 0.5)
+  border-radius: 6px
+
+.nco__title
+  position: relative
+  +OpenSansSemiBold
+  margin-bottom: 13px
+  text-align: center
+  font-size: 22px  
+
+  &--active
+    position: relative
+    padding-right: 16px
+
+    &::before,
+    &::after
+      position: absolute
+      content: ''
+      top: 19px
+      right: 33px
+      width: 8px
+      height: 3px
+      background: linear-gradient(180deg, #FAA572 0%, #FB8E6B 100%)
+      transform: rotate(45deg)
+      border-radius: 1px
+
+    &::after
+      top: 16px
+      right: 22px
+      width: 16px
+      height: 3px
+      transform: rotate(-44deg) 
+
+.nco__userpic
+  width: 123px
+  height: 123px
+  margin: 0 auto 21px
+
+.nco__subscribe-btn
+  @extend %transparent-btn
+  display: block
+  margin: 0 auto 12px
+
+.nco__case
+  padding-top: 8px
+  padding-bottom: 8px
+  font-size: 16px
+  color: #A2A0A0
+  text-align: center
+  border-bottom: 1px solid #D8D8D8    
+
+  &:last-of-type
+    border-bottom: none
+
+.nco__case-title 
+  display: block  
+  +OpenSansSemiBold  
+  margin-bottom: 5px
+
+.nco__case-number
+  display: block  
+  +OpenSansRegular
+
+.nco__activity-grid
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  padding: 33px 74px
+
+.nco__dis-card
+  @extend %block-wrap
+  width: 517px  
+  padding: 23px 60px 23px 40px
+
+.nco__dis-card-title   
+  margin-bottom: 14px
+  +LatoRegular
+  font-size: 22px
+  color: #494848
+
+.nco__dis-card-text
+  margin-bottom: 25px
+  +LatoRegular
+  line-height: 20px
+  font-size: 16px
+  color: #494848
+
+.nco__dis-card-links
+  display: flex
+  flex-wrap: wrap
+  align-content: space-between
+  height: 61px
+
+.nco__dis-card-link
+  display: flex
+  margin-right: 21px
+  +OpenSansRegular
+  font-size: 15px
+  color: #FD8E3F
+  text-decoration: 
+  cursor: pointer
+
+.nco__dis-card-icon
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 22px
+  height: 22px
+  margin-right: 6px
+  border-radius: 50%
+  background: linear-gradient(180deg, #FF9F80 2.07%, #F9B65D 100%)
+
+.nco__location-icon
+  svg
+    display: block
+    width: 8px
+    height: 13px
+
+.nco__phone-icon
+  svg
+    display: block
+    width: 10px
+    height: 10px
+
+.nco__letter-icon
+  svg
+    display: block
+    width: 12px
+    height: 8px
+
+.nco__form-donations
+  @extend %block-wrap
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  align-content: flex-start
+  width: 290px
+  padding: 23px 30px
+
+.nco__form-title
+  width: 100%
+  margin-bottom: 22px
+  +LatoRegular
+  font-size: 19px
+  text-align: center
+  color: #FC9C67
+
+.nco__donat-btn
+  @extend %square-btn-transparent
+  width: 72px
+  margin-bottom: 11px
+
+  &--active
+    background-color: #FCAB6D
+    color: #FFFFFF
+
+.nco__input
+  width: 100%
+  height: 40px
+  margin-bottom: 11px
+  padding: 0 30px
+  +LatoRegular
+  text-align: center
+  border: 1px solid #FAA74A
+  box-sizing: border-box  
+  border-radius: 6px
+
+  &::placeholder
+    text-align: center
+    color: #929191
+
+.nco__submit-btn
+  @extend %square-btn-gradient
+  width: 100%
+  margin-bottom: 17px
+
+.nco__checkbox-wrap
+
+.nco__checkbox
+  display: none
+
+.nco__checkbox:checked 
+  & + .nco__label
+    i::before 
+      position: absolute
+      top: 7px
+      left: 1px
+      content: ""
+      width: 5px
+      height: 1px
+      background-color: #BAB9B9
+      transform: rotate(40deg)
+
+    i::after 
+      position: absolute
+      top: 5px
+      left: 4px
+      content: ""
+      width: 8px
+      height: 1px
+      background-color: #BAB9B9
+      transform: rotate(-45deg)
+
+.nco__label
+  display: flex
+  align-items: center
+  +LatoRegular
+  font-size: 14px
+  color: #A8A7A7
+  cursor: pointer
+
+  i
+    position: relative
+    display: block
+    width: 14px
+    height: 14px
+    margin-left: 15px
+    border: 1px solid #BAB9B9
+    box-sizing: border-box
+
+.nco__tabs-wrap
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  padding-top: 24px
+
+.nco__switcher
+  @extend %switcher
+
+.nco__switcher-tab
+  @extend %switcher__tab
+
+  &--active
+    border-bottom: 5px solid #FA796A
+    color: #1f1e1e
+
+.nco__item-list
+  display: none
+  justify-content: space-between
+  width: 825px
+  padding-top: 15px
+
+  &--active
+    display: flex  

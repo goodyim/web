@@ -1,0 +1,116 @@
+include ../includes/variables.jade
+include ../includes/mixins/mixins.jade
+
+doctype html
+html(lang='en')
+  include ../includes/head.jade
+
+  body
+    #page.page
+      .content
+        include ../includes/header.jade
+        main.container
+          .nco
+            .nco__information
+              h2.nco__title.nco__title--active 
+                | Детский дом
+
+              .nco__userpic
+                +retina_img_png('orphan_asylum', 'Детский дом')
+              
+              button(type='button').nco__subscribe-btn Подписаться
+
+              ul.nco__cases-list
+                li.nco__case
+                  span.nco__case-title Записей
+                  span.nco__case-number 17
+                li.nco__case
+                  span.nco__case-title Добрых дел
+                  span.nco__case-number 17
+                li.nco__case
+                  span.nco__case-title Наград
+                  span.nco__case-number 17
+
+            .nco__activity-grid
+              .nco__dis-card
+                h2.nco__dis-card-title 
+                  | Детский дом №5
+
+                p.nco__dis-card-text
+                  | Наш Детский дом №5 находится в ЮАО г. Москвы,
+                  | в районе Бирюлево-Восточное, который был открыт
+                  | 06 ноября 1996 года для детей-сирот с отклонениями
+                  | в развитии и в котором теперь постоянно проживают 
+                  | 50 – 60 детей в возрасте от 4 до 18 лет. Поэтому 
+                  | основной нашей задачей является подготовка детей 
+                  | к самостоятельной жизни в обществе. Вся работа нашей
+                  | большой семьи спланирована с учетом имеющихся нарушений
+                  | у воспитанников — нами созданы благоприятные условия.
+
+                .nco__dis-card-links
+                  a(href='#').nco__dis-card-link
+                    span.nco__dis-card-icon.nco__location-icon
+                      +location-icon
+                    | Проспект Мира 5, 1с
+
+                  a(href='tel:+79665836645').nco__dis-card-link
+                    span.nco__dis-card-icon.nco__phone-icon
+                      +phone-icon
+                    | +7 966 58366 45
+
+                  a(href='www.detdom5.ru').nco__dis-card-link
+                    span.nco__dis-card-icon.nco__letter-icon
+                      +letter-icon
+                    | www.detdom5.ru
+
+              form.nco__form-donations
+                h2.nco__form-title
+                  | Сделать пожертвование
+
+                button(type='button').nco__donat-btn
+                  | 300 &#8381;
+
+                button(type='button').nco__donat-btn.nco__donat-btn--active
+                  | 500 &#8381;
+
+                button(type='button').nco__donat-btn
+                  | 700 &#8381;
+
+                input(type='number' placeholder='Своя сумма').nco__input
+
+                input(type='text' placeholder='Ваше имя').nco__input
+
+                input(type='email' placeholder='Ваш E-mail').nco__input
+
+                button(type='submit').nco__submit-btn
+                  | Отправить
+
+                .nco__checkbox-wrap
+                  input(type='checkbox' id='monthly').nco__checkbox
+                  label(for='monthly').nco__label
+                    | Помогать ежемесячно 
+                    i
+
+              .nco__tabs-wrap
+                .nco__switcher
+                  button(type='button').nco__switcher-tab Активные
+                  button(type='button').nco__switcher-tab В процессе
+                  button(type='button').nco__switcher-tab Завершенные
+
+                .nco__content 
+                  ul.nco__item-list#first-list
+                    - for (var i=0; i<3; i++) {
+                      include ../includes/blocks/card_01_small.jade
+                    - }
+
+                  ul.nco__item-list#second-list
+                    - for (var i=0; i<3; i++) {
+                      include ../includes/blocks/card_01_small.jade
+                    - }
+
+                  ul.nco__item-list#third-list
+                    - for (var i=0; i<3; i++) {
+                      include ../includes/blocks/card_01_small.jade
+                    - }
+
+    script(src='js/pages/nco-page.js')
