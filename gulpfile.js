@@ -29,6 +29,15 @@ gulp.task('jadeh', function() {
       pretty: true
     }))
     .pipe(gulp.dest('./dist/'))
+  
+  gulp.src('./app/jade/helpers/*.jade')
+    .pipe(jade({
+      data: {
+        require: require
+      },
+      pretty: true
+    }))
+    .pipe(gulp.dest('./dist/admin/'))
 });
 
 gulp.task('browser-sync', function(){

@@ -42,24 +42,24 @@ html(lang='en')
 
             .user-profile__activity
               .user-profile__switcher
-                button(type='button').user-profile__switcher-tab#first-tab Активные
-                button(type='button').user-profile__switcher-tab#second-tab В процессе
-                button(type='button').user-profile__switcher-tab#third-tab Завершенные
+                button(type='button').user-profile__switcher-tab Активные
+                button(type='button').user-profile__switcher-tab В процессе
+                button(type='button').user-profile__switcher-tab Завершенные
 
               .user-profile__content 
                 ul.user-profile__item-list#first-list
                   - for (var i=0; i<3; i++) {
-                    include ../includes/card.jade
+                    include ../includes/blocks/card_01_small.jade
                   - }
 
                 ul.user-profile__item-list#second-list
                   - for (var i=0; i<3; i++) {
-                    include ../includes/card.jade
+                    include ../includes/blocks/card_01_small.jade
                   - }
 
                 ul.user-profile__item-list#third-list
                   - for (var i=0; i<3; i++) {
-                    include ../includes/card.jade
+                    include ../includes/blocks/card_01_small.jade
                   - }
 
     script(src='js/pages/user-profile-page.js')

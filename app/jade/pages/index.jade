@@ -4,11 +4,27 @@ include ../includes/mixins/mixins.jade
 doctype html
 html(lang='en')
   include ../includes/head.jade
+  include ../includes/dependecies/js-jquery.jade
+  include ../includes/dependecies/js-jqueryui.jade
+  include ../includes/dependecies/js-tokenize2.jade
 
   body
     #page.page
       .content
         include ../includes/header.jade
         main.container
-          section
-            
+          section.feed
+            .feed__tabs
+              button.feed__tab(type='button') Все записи
+              button.feed__tab(type='button') Добрости
+              button.feed__tab(type='button') Все события
+
+            include ../includes/blocks/post_create.jade
+
+            .feed__content
+              include ../includes/blocks/card_02_feed.jade
+              include ../includes/blocks/card_02_feed.jade
+              include ../includes/blocks/card_02_feed.jade
+
+    script(src='js/pages/feed-page.js')
+    include ../includes/footer.jade

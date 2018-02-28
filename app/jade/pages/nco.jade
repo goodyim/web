@@ -93,24 +93,24 @@ html(lang='en')
 
               .nco__tabs-wrap
                 .nco__switcher
-                  button(type='button').nco__switcher-tab#first-tab Активные
-                  button(type='button').nco__switcher-tab#second-tab В процессе
-                  button(type='button').nco__switcher-tab#third-tab Завершенные
+                  button(type='button').nco__switcher-tab Активные
+                  button(type='button').nco__switcher-tab В процессе
+                  button(type='button').nco__switcher-tab Завершенные
 
                 .nco__content 
                   ul.nco__item-list#first-list
                     - for (var i=0; i<3; i++) {
-                      include ../includes/card.jade
+                      include ../includes/blocks/card_01_small.jade
                     - }
 
                   ul.nco__item-list#second-list
                     - for (var i=0; i<3; i++) {
-                      include ../includes/card.jade
+                      include ../includes/blocks/card_01_small.jade
                     - }
 
                   ul.nco__item-list#third-list
                     - for (var i=0; i<3; i++) {
-                      include ../includes/card.jade
+                      include ../includes/blocks/card_01_small.jade
                     - }
 
     script(src='js/pages/nco-page.js')

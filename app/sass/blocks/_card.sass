@@ -6,13 +6,22 @@
   box-shadow: 0px 2px 20px 2px rgba(150, 149, 149, 0.5)
   border-radius: 6px
 
+  &.card--feed
+    width: 100%
+    padding: 15px 25px
+
+    &:not(:last-child)
+      margin-bottom: 32px
+
 .card__head
   display: flex
   justify-content: space-between
   padding-top: 8px
 
+  .card--feed &
+    padding: 0
+
 .card__title
-  height: 15px
   position: relative
   padding-left: 15px
   margin-bottom: 10px
@@ -20,9 +29,13 @@
   font-size: 15px
   color: #FC8C69
 
-  &::before
+  .card--feed &
+    font-size: 22px
+    +OpenSansSemiBold
+
+  &:before
     position: absolute
-    top: 4px
+    top: calc(50% - 5px)
     left: 0
     content: ''
     width: 11px
@@ -47,8 +60,8 @@
     border-radius: 50%
     background-color: #D6D5D5
 
-    &::before,
-    &::after
+    &:before,
+    &:after
       position: absolute
       top: 0
       left: -7px
@@ -58,7 +71,7 @@
       border-radius: 50%
       background-color: #D6D5D5
 
-    &::after
+    &:after
       left: auto
       right: -7px
 
@@ -68,6 +81,13 @@
   width: 241px
   height: 160px
   margin-bottom: 2px
+
+  .card--feed &
+    width: 100%
+    height: inherit
+
+    img
+      width: 100%
 
 .card__pic-btn
   position: absolute
@@ -79,10 +99,18 @@
   border: none
   cursor: pointer
 
+  .card--feed &
+    width: 24px
+    height: 24px
+
   svg
     display: block
     width: 21px
     height: 21px
+
+    .card--feed &
+      width: 100%
+      height: 100%
 
 .card__inner-wrap
   display: flex
@@ -99,13 +127,23 @@
   height: 28px
   margin-right: 8px
 
+  .card--feed &
+    width: 50px
+    height: 50px
+
+    img
+      width: 100%
+      height: 100%
+
 .card__user-name
   display: block
-  height: 13px
   margin-bottom: 3px
   +OpenSansSemiBold
   font-size: 13px
   color: #A2A0A0
+
+  .card--feed &
+    font-size: 16px
 
 .card__time
   display: block
@@ -113,10 +151,16 @@
   font-size: 11px
   color: #A2A0A0
 
+  .card--feed &
+    font-size: 16px
+
 .card__event-participants
   display: flex
   justify-content: space-evenly
   width: 50px
+
+  .card--feed &
+    width: inherit
 
 .card__participant
   position: relative
@@ -125,6 +169,15 @@
   border-radius: 50%
   overflow: hidden
   z-index: 3
+
+  .card--feed &
+    width: 34px
+    height: 34px
+    border: 2px solid #fff
+    
+    img
+      width: 100%
+      height: 100%
 
   &:nth-child(2)
     left: -5px
@@ -143,14 +196,33 @@
   color: #262525
   overflow-y: auto
 
+  a
+    color: #FC8C69
+
+  .card--feed &
+    width: 100%
+    font-size: 24px
+    color: #4d4c4c
+    +LatoSemiBold
+
+.card__item-wrapper
+  .card--feed &
+    display: flex
+
 .card__item
   display: flex
   align-items: center
-  height: 21px
   margin-bottom: 6px
   +OpenSansRegular
   font-size: 14px
   color: #3E3D3D
+  
+  .card--feed &
+    font-size: 17px
+    +OpenSansSemiBold
+    
+    &:not(:last-child)
+      margin-right: 16px
 
 .card__icon-bg
   display: flex
@@ -173,7 +245,8 @@
     height: 11px
 
 .card__tags-wrap
-  display: flex  
+  display: flex
+  flex-wrap: wrap
   padding-top: 6px
 
 .card__tag
@@ -189,16 +262,19 @@
   +OpenSansRegular
   font-size: 14px
   color: #A2A0A0
-  border: 1px solid #C9C6C6
+  border: 1px solid rgba(#C9C6C6, .7)
   box-sizing: border-box
   border-radius: 32px
   cursor: pointer
   transition: all ease 0.2s
 
+  .card--feed &
+    font-size: 17px
+
   &:hover
-    color: #FFFFFF
-    background: linear-gradient(270deg, #F9B65D 0.11%, #FF9E80 100%)
-    border: 1px solid #FD8E3F
+    color: #fff
+    background: linear-gradient(270deg, #f9b65d .1%, #ff9e80 100%)
+    border: 1px solid #fd8e3f
 
 .card__btns-bot
   display: flex
@@ -247,3 +323,27 @@
   svg
     width: 16px
     height: 16px  
+
+.card__footer
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.card__status-btn
+  box-shadow: 0 3px 4px 0 rgba(225, 224, 224, .5)
+  border-radius: 32px
+  +OpenSansSemiBold
+  font-size: 17px
+  color: #fff
+  padding: 8px 24px
+  border: none
+  cursor: pointer
+
+.card__status-btn--in-progress
+  background-image: linear-gradient(-269deg, #F9CF49 0%, #F6BB5B 100%)
+
+.card__status-btn--help
+  background-image: linear-gradient(-90deg, #FB776A 0%, #FC9E67 100%)
+
+.card__status-btn--done
+  background-image: linear-gradient(-90deg, #B3D648 0%, #D9E15F 100%)
