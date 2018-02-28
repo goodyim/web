@@ -1,0 +1,249 @@
+.card
+  width: 260px
+  min-height: 454px
+  padding: 0 9px
+  background: #FFFFFF
+  box-shadow: 0px 2px 20px 2px rgba(150, 149, 149, 0.5)
+  border-radius: 6px
+
+.card__head
+  display: flex
+  justify-content: space-between
+  padding-top: 8px
+
+.card__title
+  height: 15px
+  position: relative
+  padding-left: 15px
+  margin-bottom: 10px
+  +LatoBold
+  font-size: 15px
+  color: #FC8C69
+
+  &::before
+    position: absolute
+    top: 4px
+    left: 0
+    content: ''
+    width: 11px
+    height: 11px
+    border-radius: 50%
+    background: linear-gradient(90deg, #FB776A 0%, #FC9E67 100%)
+
+.card__actions-btn
+  position: relative
+  width: 29px
+  height: 23px
+  border: none
+  background-color: transparent
+  cursor: pointer
+
+  i
+    position: absolute
+    top: 8px
+    right: 10px
+    width: 3px
+    height: 3px
+    border-radius: 50%
+    background-color: #D6D5D5
+
+    &::before,
+    &::after
+      position: absolute
+      top: 0
+      left: -7px
+      content: ''
+      width: 3px
+      height: 3px
+      border-radius: 50%
+      background-color: #D6D5D5
+
+    &::after
+      left: auto
+      right: -7px
+
+.card__pic
+  display: block
+  position: relative
+  width: 241px
+  height: 160px
+  margin-bottom: 2px
+
+.card__pic-btn
+  position: absolute
+  top: 8px
+  right: 7px
+  width: 21px
+  height: 21px
+  background-color: transparent
+  border: none
+  cursor: pointer
+
+  svg
+    display: block
+    width: 21px
+    height: 21px
+
+.card__inner-wrap
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 11px
+
+.card__user
+  display: flex
+  align-items: center
+
+.card__userpic
+  width: 28px
+  height: 28px
+  margin-right: 8px
+
+.card__user-name
+  display: block
+  height: 13px
+  margin-bottom: 3px
+  +OpenSansSemiBold
+  font-size: 13px
+  color: #A2A0A0
+
+.card__time
+  display: block
+  +OpenSansRegular
+  font-size: 11px
+  color: #A2A0A0
+
+.card__event-participants
+  display: flex
+  justify-content: space-evenly
+  width: 50px
+
+.card__participant
+  position: relative
+  width: 19px
+  height: 19px
+  border-radius: 50%
+  overflow: hidden
+  z-index: 3
+
+  &:nth-child(2)
+    left: -5px
+    z-index: 2
+
+  &:nth-child(3)
+    left: -10px
+    z-index: 1
+
+.card__text
+  width: 242px
+  height: 60px
+  margin-bottom: 14px
+  +LatoSemiBold
+  font-size: 14px
+  color: #262525
+  overflow-y: auto
+
+.card__item
+  display: flex
+  align-items: center
+  height: 21px
+  margin-bottom: 6px
+  +OpenSansRegular
+  font-size: 14px
+  color: #3E3D3D
+
+.card__icon-bg
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 20px
+  height: 20px
+  margin-right: 8px
+  background: linear-gradient(180deg, #F08F8C 0%, #F7C063 99.17%)
+  border-radius: 50%
+
+.card__icon-clock
+  svg
+    width: 10px
+    height: 10px
+
+.card__icon-location
+  svg
+    width: 8px
+    height: 11px
+
+.card__tags-wrap
+  display: flex  
+  padding-top: 6px
+
+.card__tag
+  display: flex
+  justify-content: center
+  align-items: center
+  width: auto
+  height: 30px
+  margin-bottom: 17px
+  margin-right: 8px
+  padding: 0 17px
+  padding-bottom: 2px
+  +OpenSansRegular
+  font-size: 14px
+  color: #A2A0A0
+  border: 1px solid #C9C6C6
+  box-sizing: border-box
+  border-radius: 32px
+  cursor: pointer
+  transition: all ease 0.2s
+
+  &:hover
+    color: #FFFFFF
+    background: linear-gradient(270deg, #F9B65D 0.11%, #FF9E80 100%)
+    border: 1px solid #FD8E3F
+
+.card__btns-bot
+  display: flex
+  align-items: flex-start
+  padding-bottom: 16px
+ 
+.card__like-btn,
+.card__comments-btn,
+.card__notifications-btn
+  display: flex
+  align-items: center
+  border: none
+  background: transparent
+  margin-right: 21px
+  font-size: 14px
+  +OpenSansRegular
+  color: #CAC9C9  
+  cursor: pointer
+
+  &--active
+    color: #F29F7F
+
+.card__like-icon
+  width: 17px
+  height: 15px
+  margin-right: 5px
+
+  svg
+    width: 17px
+    height: 15px
+
+.card__comments-icon
+  width: 15px
+  height: 14px
+  margin-right: 5px
+
+  svg
+    width: 15px
+    height: 14px
+
+.card__notifications-icon
+  width: 16px
+  height: 16px
+  margin-right: 5px
+  
+  svg
+    width: 16px
+    height: 16px  
