@@ -1,0 +1,341 @@
+.post-create
+  background: #fff
+  box-shadow: 0 2px 12px 0 rgba(225, 225, 224, .84)
+  border-radius: 10px
+
+.post-create__tabs
+  display: flex
+  background-color: #fff
+
+.post-create__tab--default
+  width: 467px
+  background-image: linear-gradient(90deg, #f6b459 3%, #f78e7c 100%)
+  border-top-right-radius: 10px
+  border-bottom-right-radius: 10px
+  border-bottom-left-radius: 40px
+
+.post-create__tab--active
+  border-top-left-radius: 10px
+  width: 150px
+
+.post-create__tab-btn
+  background-color: transparent
+  color: #fff
+  border: none
+  +OpenSansSemiBold
+  font-size: 18px
+  cursor: pointer
+  padding: 22px 33px
+
+  .post-create__tab--active &
+    color: #a2a0a0
+
+.post-create__body
+  padding: 20px
+
+.post-create__form-message
+  border-bottom: 2px solid #d8d8d8
+  display: flex
+  align-items: center
+  padding-bottom: 12px
+
+.post-create__form-message-author
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  margin-right: 18px
+
+  img
+    width: 100%
+
+.post-create__form-message-textarea
+  border: none
+  width: calc(100% - 68px)
+  min-width: calc(100% - 68px)
+  max-width: calc(100% - 68px)
+  min-height: 44px
+  max-height: 150px
+  +OpenSansRegular
+  font-size: 17px
+  line-height: 1.4
+  color: #333
+
+.post-create__form-things-add
+  position: absolute
+  width: 17px
+  height: 17px
+  top: 16px
+  right: -8px
+
+.post-create__form-things-add-btn
+  background-color: transparent
+  border: none
+  cursor: pointer
+
+.post-create__form-things
+  margin-top: 16px
+  display: flex
+  flex-wrap: wrap
+
+  align-items: center
+  position: relative
+
+.post-create__form-time,
+.post-create__form-place
+  cursor: pointer
+
+.post-create__form-help
+  width: 200px
+
+#post-create__form-help-button
+  background-color: transparent
+  border: none
+  +OpenSansRegular
+  font-size: 18px
+  color: #a2a0a0
+  width: 100%
+  padding: 8px 0
+
+.ui-button .ui-icon.post-create__form-help-icon,
+.ui-button:hover .ui-icon.post-create__form-help-icon,
+.ui-button:focus .ui-icon.post-create__form-help-icon
+  background-image: url('../images/icons/arrow-down-gray.svg')
+  background-position-y: 10px
+
+.post-create__form-things-icon,
+.post-create__form-time,
+.post-create__form-place
+  background-image: linear-gradient(-180deg, #f08f8c 0%, #f7c063 100%)
+  border-radius: 50%
+  width: 28px
+  height: 28px
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-right: 16px
+  border: none
+
+  svg
+    max-width: 14px
+    max-height: 18px
+
+.post-create__form-things-list
+  display: flex
+  flex-wrap: wrap
+  width: 515px
+
+.post-create__form-things-item
+  border: 1px solid rgba(#c9c6c6, .7)
+  border-radius: 32px
+  +OpenSansRegular
+  font-size: 17px
+  color: #a2a0a0
+  padding: 8px 28px
+  cursor: pointer
+  transition: .15s ease-out
+  margin-top: 4px
+  margin-bottom: 4px
+
+  &:not(:last-child)
+    margin-right: 12px
+
+  &:hover
+    background-image: linear-gradient(-180deg, #f08f8c 0%, #f7c063 100%)
+    border-color: #f08f8c
+    color: #fff
+
+.post-create__form-things-item--active
+  background-image: linear-gradient(-180deg, #f08f8c 0%, #f7c063 100%)
+  border-color: #f08f8c
+  color: #fff
+  box-shadow: 0 0 10px 2px rgba(#f08f8c, .5)
+
+.post-create__form-things-field
+  margin-top: 10px
+  display: none
+
+  input
+    width: 250px
+    padding: 4px 8px
+    border-radius: 5px
+    border: 1px solid rgba(201, 198, 198, .7)
+    margin-right: 16px
+
+  button
+    +OpenSansRegular
+    background-color: transparent
+    border: 1px solid #f7c063
+    color: #a2a0a0
+    border-radius: 15px
+    padding: 8px 12px
+    cursor: pointer
+    transition: .15s ease-out
+    font-size: 14px
+
+    &:hover
+      color: #fff
+      background-color: #f7c063
+
+.post-create__form-things-field--show
+  display: flex
+
+.post-create__form-wrapper
+  display: flex
+  align-items: center
+
+.post-create__form-wrapper--top
+  justify-content: flex-end
+
+.post-create__form-wrapper--bottom
+  margin-top: 24px
+  justify-content: space-between
+
+.post-create__form-attach
+  display: flex
+
+.post-create__form-attach-text
+  +OpenSansRegular
+  font-size: 16px
+  color: #a2a0a0
+  margin-right: 12px
+
+.post-create__form-attach-btn
+  background-color: transparent
+  border: none
+  cursor: pointer
+  position: relative
+
+  &:not(:last-child)
+    margin-right: 8px
+
+.post-create__form-attach-wrapper
+  position: relative
+
+.post-create__form-attach-people
+  opacity: 0
+  visibility: hidden
+  background-color: #fff
+  box-shadow: 0 1px 4px 1px rgba(185, 181, 181, .5)
+  border-radius: 8px
+  position: absolute
+  left: -127px
+  top: calc(100% + 20px)
+  width: 270px
+  max-height: 275px
+
+  &:before
+    content: ''
+    position: absolute
+    width: 12px
+    height: 12px
+    box-shadow: 0 0 9px 3px rgba(185, 181, 181, .5)
+    transform: rotate(45deg)
+    top: -6px
+    left: calc(50% - 6px)
+    z-index: 0
+
+.post-create__form-attach-people--visible
+  opacity: 1
+  visibility: visible
+
+.post-create__form-attach-people-list
+  max-height: 240px
+  overflow-y: auto
+  transition: .2s ease-out
+  z-index: 1
+  position: relative
+  background-color: #fff
+
+.post-create__form-attach-people-list-title
+  padding: 8px
+  font-size: 14px
+  color: #a2a0a0
+  position: relative
+  background-color: #fff
+  z-index: 1
+
+.post-create__form-attach-people-item
+  padding: 7px 12px
+  display: flex
+  align-items: center
+  cursor: pointer
+
+.post-create__form-attach-people-item--checked
+  background-color: #f1f2f6
+
+.post-create__form-attach-people-item-photo
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  margin-right: 8px
+
+  img
+    width: 100%
+
+.post-create__form-attach-people-item-name
+  margin-right: 10px
+  +OpenSansSemiBold
+  font-size: 14px
+  color: #a2a0a0
+
+.post-create__form-attach-btn-file--active
+  position: relative
+
+  &:after
+    content: ''
+    position: absolute
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    background-color: #f7c063
+    bottom: 0
+    right: -4px
+
+.post-create__form-attach-btn--photo:before
+  left: 5px
+
+.post-create__form-privacy-btn
+  background-color: transparent
+  border: none
+  cursor: pointer
+  position: relative
+  margin-right: 8px
+
+.post-create__form-privacy-icon
+  svg
+    width: 14px
+
+.post-create__form-privacy-icon--false
+  .post-create__form-privacy-btn--private &
+    display: none
+
+.post-create__form-privacy-icon--true
+  display: none
+
+  .post-create__form-privacy-btn--private &
+    display: block
+
+.post-create__form-attach-input
+  opacity: 0
+  visibility: hidden
+  position: absolute
+  left: -9999px
+
+.post-create__form-submit
+  display: flex
+  align-items: center 
+
+.post-create__form-submit-btn
+  @extend %gradient-btn
+  margin: 0
+  background-image: linear-gradient(-90deg, #F88E7D 0%, #F6B459 100%)
+
+.post-create__form--note
+  display: none
+
+  .post-create__body--note &
+    display: block
+
+.post-create__form--event
+  .post-create__body--note &
+    display: none

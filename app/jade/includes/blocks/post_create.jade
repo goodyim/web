@@ -1,0 +1,105 @@
+.post-create
+  .post-create__tabs
+    .post-create__tab.post-create__tab--active
+      button#create-active-tab.post-create__tab-btn(type='button')
+        | Событие
+
+    .post-create__tab.post-create__tab--default
+      button#create-disabled-tab.post-create__tab-btn(type='button')
+        | Запись
+
+  #create-post-body.post-create__body
+    form.post-create__form.post-create__form--event
+      .post-create__form-wrapper.post-create__form-wrapper--top
+        .post-create__form-help
+          select#post-create__form-help.post-create__form-help(name='help', required)
+            option(value='Помощь детям') Помощь детям
+            option(value='Помощь животным') Помощь животным
+
+      .post-create__form-message
+        .post-create__form-message-author
+          +retina_img_png('Ionova')
+
+        textarea.post-create__form-message-textarea(cols='30', placeholder='Описание')
+
+      .post-create__form-things
+        .post-create__form-things-icon
+          +things_icon        
+
+        #things-list.post-create__form-things-list
+          .post-create__form-things-item(data-thing='3-5 вещей') 3-5 вещей
+          .post-create__form-things-item(data-thing='авто') авто
+          .post-create__form-things-item(data-thing='знания') знания
+          .post-create__form-things-item(data-thing='время') время
+
+        .post-create__form-things-add
+          button#add-things.post-create__form-things-add-btn(type='button')
+            +plus_orange_icon
+
+        .post-create__form-things-field
+          input#post-create__form-things-field(type='text', placeholder='Чем ещё вы можете помочь?')
+          button#add-thing(type='button') Добавить
+
+      .post-create__form-wrapper.post-create__form-wrapper--bottom
+        .post-create__form-attach
+          .post-create__form-attach-text
+            | Прикрепить:
+
+          label.post-create__form-attach-btn.post-create__form-attach-btn-file
+            input#event-attach-file.post-create__form-attach-input(type='file')
+            +camera_gray_icon
+
+          div.post-create__form-attach-wrapper
+            button#event-attach-people.post-create__form-attach-btn(type='button')
+              +user_gray_icon
+
+            #event-attach-people-list.post-create__form-attach-people
+              ul.post-create__form-attach-people-list
+                li.post-create__form-attach-people-item
+                  .post-create__form-attach-people-item-photo
+                    +retina_img_png('Ionova')
+
+                  .post-create__form-attach-people-item-name
+                    p Some name
+                
+                li.post-create__form-attach-people-item
+                  .post-create__form-attach-people-item-photo
+                    +retina_img_png('Ionova')
+
+                  .post-create__form-attach-people-item-name
+                    p Some name
+
+        .post-create__form-submit
+          button#change-privacy.post-create__form-privacy-btn(type='button', data-private='false')
+            .post-create__form-privacy-icon.post-create__form-privacy-icon--false
+              +privacy_unlock_gray_icon
+            .post-create__form-privacy-icon.post-create__form-privacy-icon--true
+              +privacy_lock_gray_icon
+
+          button.post-create__form-submit-btn(type='submit')
+            | Опубликовать
+    form.post-create__form.post-create__form--note
+      .post-create__form-message
+        .post-create__form-message-author
+          +retina_img_png('Ionova')
+
+        textarea.post-create__form-message-textarea(cols='30', placeholder='Описание')
+
+      .post-create__form-wrapper.post-create__form-wrapper--bottom
+        .post-create__form-attach
+          .post-create__form-attach-text
+            | Прикрепить:
+
+          label.post-create__form-attach-btn.post-create__form-attach-btn-file
+            input#note-attach-file.post-create__form-attach-input(type='file')
+            +camera_gray_icon
+
+        .post-create__form-submit
+          button#note-change-privacy.post-create__form-privacy-btn(type='button', data-private='false')
+            .post-create__form-privacy-icon.post-create__form-privacy-icon--false
+              +privacy_unlock_gray_icon
+            .post-create__form-privacy-icon.post-create__form-privacy-icon--true
+              +privacy_lock_gray_icon
+
+          button.post-create__form-submit-btn(type='submit')
+            | Опубликовать

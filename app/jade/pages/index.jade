@@ -4,6 +4,9 @@ include ../includes/mixins/mixins.jade
 doctype html
 html(lang='en')
   include ../includes/head.jade
+  include ../includes/dependecies/js-jquery.jade
+  include ../includes/dependecies/js-jqueryui.jade
+  include ../includes/dependecies/js-tokenize2.jade
 
   body
     #page.page
@@ -19,12 +22,7 @@ html(lang='en')
               button.feed__tab(type='button')
                 | Все события
 
-            .feed__post
-              .feed__post-tabs
-                .feed__post-tab.feed__post-tab--event
-                  button.feed__post-tab-btn(type='button')
-                    | Событие
+            include ../includes/blocks/post_create.jade
 
-                .feed__post-tab.feed__post-tab--note
-                  button.feed__post-tab-btn(type='button')
-                    | Запись
+    script(src='js/pages/feed-page.js')
+    include ../includes/footer.jade
