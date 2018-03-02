@@ -370,6 +370,7 @@
   cursor: pointer
   border-radius: 50%
   border: 1px solid #f6b173
+  position: relative
 
   input:checked + &
     background-color: #f6b173
@@ -392,6 +393,39 @@
 .auth__form-resource--education
   svg
     margin-left: 6px
+
+.auth__form-resource-mask-name
+  position: absolute
+  bottom: -30px
+  left: auto
+  opacity: 0
+  visibility: hidden
+  z-index: 1 // to overflow form
+  background-color: #fff
+  padding: 4px 8px
+  +OpenSansRegular
+  font-size: 14px
+  color: #f6af70
+  box-shadow: 0 2px 14px 1px #d9d8d7
+  border-radius: 17px
+  transition: opacity .2s ease-out, bottom .25s ease-out
+  transition-delay: .5s
+
+  .auth__form-resource-mask:hover &
+    opacity: 1
+    visibility: visible
+    bottom: -35px
+
+  &:after
+    content: ''
+    position: absolute
+    width: 12px
+    height: 12px
+    background-color: #fff
+    left: calc(50% - 6px)
+    top: -6px
+    transform: rotate(45deg) skew(8deg)
+    box-shadow: -6px -6px 10px -1px rgba(0, 0, 0, .1)
 
 #auth__form-field-input-country-button,
 #auth__form-field-input-city-button
