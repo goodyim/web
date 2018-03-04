@@ -15,9 +15,10 @@ html(lang='en')
         main.container
           section.feed
             .feed__tabs
-              button.feed__tab(type='button') Все записи
-              button.feed__tab(type='button') Добрости
-              button.feed__tab(type='button') Все события
+              .feed__tabs-wrapper
+                button.feed__tab(type='button') Все записи
+                button.feed__tab(type='button') Добрости
+                button.feed__tab(type='button') Все события
 
             include ../includes/blocks/post_create.jade
 
