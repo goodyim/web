@@ -3,8 +3,14 @@
     h2.card__title
       | Помощь детям
 
-    button(type='button').card__actions-btn
-      i
+    .card__actions
+      button(type='button').card__actions-btn
+        +more_actions_icon
+      
+      .card__actions-tooltip
+        .card__actions-list
+          button.card__actions-item(type='button') Пожаловаться
+          button.card__actions-item(type='button') Что-то ещё
 
   .card__pic
     +retina_img_png('userprofile-item1', '')

@@ -3,7 +3,8 @@ var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
     htmlbeautify  = require('gulp-html-beautify'),
-    jade          = require('gulp-jade');
+    jade          = require('gulp-jade'),
+    jsImport      = require('gulp-js-import');
 
 var path = {
   sass:   { watch: './app/sass/**/*.sass' },
@@ -51,7 +52,7 @@ gulp.task('browser-sync', function(){
 });
 
 gulp.task('fileMove', () => {
-  gulp.src(path.js.watch).pipe(gulp.dest('./dist/js'))
+  gulp.src(path.js.watch).pipe(jsImport({hideConsole: true})).pipe(gulp.dest('./dist/js'))
   gulp.src(path.fonts.watch).pipe(gulp.dest('./dist/fonts'))
   gulp.src(path.img.watch).pipe(gulp.dest('./dist/images'))
   gulp.src(path.libs.watch).pipe(gulp.dest('./dist/libs'))
