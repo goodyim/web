@@ -9,14 +9,16 @@
   &.card--feed
     width: 100%
     padding: 15px 25px
+    box-shadow: 0px 2px 12px 0 #e1e1e0
 
     &:not(:last-child)
-      margin-bottom: 32px
+      margin-bottom: 24px
 
 .card__head
   display: flex
   justify-content: space-between
   padding-top: 8px
+  margin-bottom: 10px
 
   .card--feed &
     padding: 0
@@ -24,10 +26,15 @@
 .card__title
   position: relative
   padding-left: 15px
-  margin-bottom: 10px
   +LatoBold
   font-size: 15px
   color: #FC8C69
+
+  &:empty
+    padding: 0
+    
+    &:before
+      display: none
 
   .card--feed &
     font-size: 22px
@@ -43,6 +50,58 @@
     border-radius: 50%
     background: linear-gradient(90deg, #FB776A 0%, #FC9E67 100%)
 
+.card__actions
+  position: relative
+  margin-left: auto
+
+.card__actions-tooltip
+  opacity: 0
+  visibility: hidden
+  background-color: #fff
+  box-shadow: 0 1px 4px 1px rgba(185, 181, 181, .5)
+  border-radius: 8px
+  position: absolute
+  left: calc(-75px + 12px)
+  top: calc(100% + 8px)
+  min-width: 150px
+  z-index: 1 // to overflow card preview
+
+  .card__actions-btn--active + &
+    opacity: 1
+    visibility: visible
+
+  &:before
+    content: ''
+    position: absolute
+    border: 12px solid black
+    border-color: transparent transparent #fff #fff
+    transform-origin: 0 0
+    transform: rotate(135deg)
+    box-shadow: -2px 2px 11px -3px rgba(185, 181, 181, 0.5)
+    top: 0
+    left: 95px
+    z-index: 0
+
+.card__actions-tooltip--active:before
+  border-color: transparent transparent #f1f2f6 #f1f2f6
+
+.card__actions-list
+  border-radius: 8px
+  overflow: hidden
+
+.card__actions-item
+  display: block
+  width: 100%
+  text-align: center
+  padding: 7px 12px
+  cursor: pointer
+  background-color: #fff
+  border: none
+  +OpenSansRegular
+  
+  &:hover
+    background-color: #f1f2f6
+
 .card__actions-btn
   position: relative
   width: 29px
@@ -50,30 +109,17 @@
   border: none
   background-color: transparent
   cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
 
-  i
-    position: absolute
-    top: 8px
-    right: 10px
-    width: 3px
+  svg
+    width: 17px
     height: 3px
-    border-radius: 50%
-    background-color: #D6D5D5
 
-    &:before,
-    &:after
-      position: absolute
-      top: 0
-      left: -7px
-      content: ''
-      width: 3px
-      height: 3px
-      border-radius: 50%
-      background-color: #D6D5D5
-
-    &:after
-      left: auto
-      right: -7px
+    .card--feed &
+      width: 23px
+      height: 5px
 
 .card__pic
   display: block
@@ -189,7 +235,6 @@
 
 .card__text
   width: 242px
-  height: 60px
   margin-bottom: 14px
   +LatoSemiBold
   font-size: 14px
@@ -266,7 +311,7 @@
   box-sizing: border-box
   border-radius: 32px
   cursor: pointer
-  transition: all ease 0.2s
+  transition: all ease .2s
 
   .card--feed &
     font-size: 17px
@@ -294,7 +339,10 @@
   color: #CAC9C9  
   cursor: pointer
 
-  &--active
+  .card--feed &
+    font-size: 17px
+
+  &:hover
     color: #F29F7F
 
 .card__like-icon
@@ -302,27 +350,39 @@
   height: 15px
   margin-right: 5px
 
+  .card--feed &
+    width: 27px
+    height: 24px
+
   svg
-    width: 17px
-    height: 15px
+    width: 100%
+    height: 100%
 
 .card__comments-icon
   width: 15px
   height: 14px
   margin-right: 5px
 
+  .card--feed &
+    width: 24px
+    height: 24px
+
   svg
-    width: 15px
-    height: 14px
+    width: 100%
+    height: 100%
 
 .card__notifications-icon
   width: 16px
   height: 16px
   margin-right: 5px
+
+  .card--feed &
+    width: 22px
+    height: 23px
   
   svg
-    width: 16px
-    height: 16px  
+    width: 100%
+    height: 100%
 
 .card__footer
   display: flex

@@ -96,12 +96,6 @@
   width: 100%
   padding: 8px 0
 
-.ui-button .ui-icon.post-create__form-help-icon,
-.ui-button:hover .ui-icon.post-create__form-help-icon,
-.ui-button:focus .ui-icon.post-create__form-help-icon
-  background-image: url('../images/icons/arrow-down-gray.svg')
-  background-position-y: 10px
-
 .post-create__form-things-icon,
 .post-create__form-time,
 .post-create__form-place
@@ -226,13 +220,18 @@
   &:before
     content: ''
     position: absolute
-    width: 12px
-    height: 12px
-    box-shadow: 0 0 9px 3px rgba(185, 181, 181, .5)
-    transform: rotate(45deg)
-    top: -6px
-    left: calc(50% - 6px)
+    border: 12px solid black
+    border-color: transparent transparent #fff #fff
+    transform-origin: 0 0
+    -webkit-transform: rotate(-45deg)
+    transform: rotate(135deg)
+    box-shadow: -2px 2px 11px -3px rgba(185, 181, 181, 0.5)
+    top: 0
+    left: calc(50% + 17px)
     z-index: 0
+
+.post-create__form-attach-people--active:before
+  border-color: transparent transparent #f1f2f6 #f1f2f6
 
 .post-create__form-attach-people--visible
   opacity: 1
@@ -245,6 +244,7 @@
   z-index: 1
   position: relative
   background-color: #fff
+  border-radius: 8px
 
 .post-create__form-attach-people-list-title
   padding: 8px

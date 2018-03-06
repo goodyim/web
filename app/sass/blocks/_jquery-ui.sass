@@ -1,0 +1,118 @@
+#ui-datepicker-div
+  &.ui-datepicker table
+    margin: 0
+
+  &.ui-widget.ui-widget-content
+    margin-left: 20px
+    padding: 0
+    +OpenSansRegular
+
+  .ui-datepicker-month,
+  .ui-datepicker-year,
+  &.ui-datepicker th
+    +OpenSansSemiBold
+
+  &.ui-datepicker td
+    padding: 0
+
+  .ui-state-default.ui-state-highlight
+    background-image: linear-gradient(-269deg, #fc9e67 0%, #fb786b 100%)
+    color: #fff
+    border-color: #fc9e67
+
+  .ui-datepicker-prev.ui-corner-all,
+  .ui-datepicker-next.ui-corner-all
+    border: 1px solid transparent
+    cursor: pointer
+
+  .ui-datepicker-prev.ui-corner-all.ui-state-hover
+    border: 1px solid #ccc
+    left: 2px
+    top: 2px
+
+  .ui-datepicker-next.ui-corner-all.ui-state-hover
+    border: 1px solid #ccc
+    right: 2px
+    top: 2px
+
+  .ui-widget-header
+    background-color: #fafafa
+
+  .ui-state-default,
+  &.ui-widget-content .ui-state-default
+    border: 1px solid #f0f0f0
+    background-color: #fafafa
+    text-align: center
+
+  &.ui-widget-content .ui-state-hover
+    background-color: #f0f0f0
+
+  .ui-state-active
+    color: #333 !important
+  
+  &.ui-widget-content .ui-state-highlight.ui-state-active
+    color: #fff !important
+
+  &.ui-widget-content .ui-state-active
+    border-color: #fc9e67 !important
+
+[aria-labelledby='auth__form-field-input-country-button'],
+[aria-labelledby='auth__form-field-input-city-button']
+  width: 270px !important
+  margin-left: 20px
+
+  & > li > div
+    padding: 8px 16px !important
+
+.ui-state-active,
+.ui-widget-content .ui-state-active
+  background-color: #ecf0f1 !important
+  color: #333 !important
+  border-color: transparent !important
+
+// _auth.sass
+
+.auth__form-field-select
+  width: 33.3333%
+
+  .ui-selectmenu-button
+    padding: 12px 20px
+
+  .ui-selectmenu-button.ui-button
+    width: 100%
+    box-shadow: 0 3px 4px 0 rgba(225, 224, 224, .5)
+    +OpenSansRegular
+    font-size: 14px
+    color: #243238
+    background-color: #fff
+    display: flex
+    align-items: center
+    flex-direction: row-reverse
+    justify-content: space-between
+
+.auth__form-field-select--first .ui-selectmenu-button
+  border-top-left-radius: 32px
+  border-bottom-left-radius: 32px
+  border-bottom-right-radius: 0
+  border-top-right-radius: 0
+
+.auth__form-field-select--second .ui-selectmenu-button
+  border-radius: 0
+
+.auth__form-field-select--third .ui-selectmenu-button
+  border-top-left-radius: 0
+  border-bottom-left-radius: 0
+  border-bottom-right-radius: 32px
+  border-top-right-radius: 32px
+
+// END _auth.sass
+
+// _post-create.sass
+
+.ui-button .ui-icon.post-create__form-help-icon,
+.ui-button:hover .ui-icon.post-create__form-help-icon,
+.ui-button:focus .ui-icon.post-create__form-help-icon
+  background-image: url('../images/icons/arrow-down-gray.svg')
+  background-position-y: 10px
+
+// END _post-create.sass

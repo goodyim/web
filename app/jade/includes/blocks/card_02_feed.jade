@@ -3,8 +3,14 @@
     h2.card__title
       | Помощь детям
 
-    button(type='button').card__actions-btn
-      i
+    .card__actions
+      button(type='button').card__actions-btn
+        +more_actions_icon
+      
+      .card__actions-tooltip
+        .card__actions-list
+          button.card__actions-item(type='button') Пожаловаться
+          button.card__actions-item(type='button') Что-то ещё
 
   .card__pic
     +retina_img_png('userprofile-item1', '')
@@ -37,13 +43,13 @@
     .card__item
       .card__icon-bg
         .card__icon-clock
-          +clock-icon
+          +clock_icon
       | 5 декабря в 10:00
 
     .card__item
       .card__icon-bg
         .card__icon-location
-          +location-icon
+          +location_icon
       | Милютинский переулок,5
 
   ul.card__tags-wrap
@@ -54,17 +60,17 @@
     .card__btns-bot
       button(type='button').card__like-btn.card__like-btn--active
         .card__like-icon
-          +like-icon
+          +like_icon
         | 14
 
       button(type='button').card__comments-btn
         .card__comments-icon
-          +comments-icon
+          +comments_icon
         | 2
 
       button(type='button').card__notifications-btn
         .card__notifications-icon
-          +notifications-icon
+          +share_icon
         | 1
     
     .card__status

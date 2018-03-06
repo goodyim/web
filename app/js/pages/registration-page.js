@@ -21,4 +21,4 @@ if (window.jQuery || typeof jQuery !== 'undefined') {
     second.classList.add('auth__content--active')
  }
 
-})()
+})();

@@ -2,9 +2,15 @@
   margin: 0 50px
   
   .icons
-    max-width: 300px
+    max-width: 900px
+    width: 100%
+    margin: 0 auto
+    display: flex
+    flex-wrap: wrap
   
   .icon
+    width: calc(33.3333% - 20px)
+    margin: 10px
     padding: 5px
     margin-bottom: 16px
     background-color: #fff
@@ -13,6 +19,9 @@
   .icon__icon
     padding: 10px
     background-color: #333
+
+    &--bg-light
+      background-color: #f0f0f0
 
   .icon__name
     margin-top: 8px

@@ -193,45 +193,6 @@
     margin: 0
     display: none
 
-.auth__form-field-select
-  width: 33.3333%
-
-  .ui-selectmenu-button
-    padding: 12px 20px
-
-  .ui-selectmenu-button.ui-button
-    width: 100%
-    box-shadow: 0 3px 4px 0 rgba(225, 224, 224, .5)
-    +OpenSansRegular
-    font-size: 14px
-    color: #243238
-    background-color: #fff
-    display: flex
-    align-items: center
-    flex-direction: row-reverse
-    justify-content: space-between
-  
-.ui-state-active,
-.ui-widget-content .ui-state-active
-  background-color: #ecf0f1 !important
-  color: #333 !important
-  border-color: transparent !important
-
-.auth__form-field-select--first .ui-selectmenu-button
-  border-top-left-radius: 32px
-  border-bottom-left-radius: 32px
-  border-bottom-right-radius: 0
-  border-top-right-radius: 0
-
-.auth__form-field-select--second .ui-selectmenu-button
-  border-radius: 0
-
-.auth__form-field-select--third .ui-selectmenu-button
-  border-top-left-radius: 0
-  border-bottom-left-radius: 0
-  border-bottom-right-radius: 32px
-  border-top-right-radius: 32px
-
 .auth__form-field-input
   border: 1px solid #d7d7d7
   box-shadow: 0 3px 4px 0 rgba(225, 224, 224, .5)
@@ -409,6 +370,7 @@
   cursor: pointer
   border-radius: 50%
   border: 1px solid #f6b173
+  position: relative
 
   input:checked + &
     background-color: #f6b173
@@ -432,6 +394,39 @@
   svg
     margin-left: 6px
 
+.auth__form-resource-mask-name
+  position: absolute
+  bottom: -30px
+  left: auto
+  opacity: 0
+  visibility: hidden
+  z-index: 1 // to overflow form
+  background-color: #fff
+  padding: 4px 8px
+  +OpenSansRegular
+  font-size: 14px
+  color: #f6af70
+  box-shadow: 0 2px 14px 1px #d9d8d7
+  border-radius: 17px
+  transition: opacity .2s ease-out, bottom .25s ease-out
+  transition-delay: .5s
+
+  .auth__form-resource-mask:hover &
+    opacity: 1
+    visibility: visible
+    bottom: -35px
+
+  &:after
+    content: ''
+    position: absolute
+    width: 12px
+    height: 12px
+    background-color: #fff
+    left: calc(50% - 6px)
+    top: -6px
+    transform: rotate(45deg) skew(8deg)
+    box-shadow: -6px -6px 10px -1px rgba(0, 0, 0, .1)
+
 #auth__form-field-input-country-button,
 #auth__form-field-input-city-button
   border: 1px solid #d7d7d7
@@ -443,69 +438,3 @@
   padding: 12px 20px
   width: 100%
   background-color: #fff
-
-#ui-datepicker-div
-  &.ui-datepicker table
-    margin: 0
-
-  &.ui-widget.ui-widget-content
-    margin-left: 20px
-    padding: 0
-    +OpenSansRegular
-
-  .ui-datepicker-month,
-  .ui-datepicker-year,
-  &.ui-datepicker th
-    +OpenSansSemiBold
-
-  &.ui-datepicker td
-    padding: 0
-
-  .ui-state-default.ui-state-highlight
-    background-image: linear-gradient(-269deg, #fc9e67 0%, #fb786b 100%)
-    color: #fff
-    border-color: #fc9e67
-
-  .ui-datepicker-prev.ui-corner-all,
-  .ui-datepicker-next.ui-corner-all
-    border: 1px solid transparent
-    cursor: pointer
-
-  .ui-datepicker-prev.ui-corner-all.ui-state-hover
-    border: 1px solid #ccc
-    left: 2px
-    top: 2px
-
-  .ui-datepicker-next.ui-corner-all.ui-state-hover
-    border: 1px solid #ccc
-    right: 2px
-    top: 2px
-
-  .ui-widget-header
-    background-color: #fafafa
-
-  .ui-state-default,
-  &.ui-widget-content .ui-state-default
-    border: 1px solid #f0f0f0
-    background-color: #fafafa
-    text-align: center
-
-  &.ui-widget-content .ui-state-hover
-    background-color: #f0f0f0
-
-  .ui-state-active
-    color: #333 !important
-  
-  &.ui-widget-content .ui-state-highlight.ui-state-active
-    color: #fff !important
-
-  &.ui-widget-content .ui-state-active
-    border-color: #fc9e67 !important
-
-[aria-labelledby='auth__form-field-input-country-button'],
-[aria-labelledby='auth__form-field-input-city-button']
-  width: 270px !important
-  margin-left: 20px
-
-  & > li > div
-    padding: 8px 16px !important

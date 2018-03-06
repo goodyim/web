@@ -102,21 +102,29 @@ html(lang='en')
                       input(type='checkbox', value='money')
                       .auth__form-resource-mask
                         +ruble_icon
+                        .auth__form-resource-mask-name
+                          | деньгами
 
                     label.auth__form-resource
                       input(type='checkbox', value='car')
                       .auth__form-resource-mask
                         +car_icon
+                        .auth__form-resource-mask-name
+                          | авто
 
                     label.auth__form-resource
                       input(type='checkbox', value='time')
                       .auth__form-resource-mask
-                        +clock_icon
+                        +hourglass_icon
+                        .auth__form-resource-mask-name
+                          | время
 
                     label.auth__form-resource.auth__form-resource--education
                       input(type='checkbox', value='education')
                       .auth__form-resource-mask
                         +education_icon
+                        .auth__form-resource-mask-name
+                          | обучение
 
                 .auth__form-field.auth__form-field--relative
                   span.auth__form-field-title
@@ -127,21 +135,29 @@ html(lang='en')
                       input(type='checkbox', value='children')
                       .auth__form-resource-mask
                         +child_icon
+                        .auth__form-resource-mask-name
+                          | детям
 
                     label.auth__form-resource
                       input(type='checkbox', value='animals')
                       .auth__form-resource-mask
                         +animal_icon
+                        .auth__form-resource-mask-name
+                          | животным
 
                     label.auth__form-resource
                       input(type='checkbox', value='pensioners')
                       .auth__form-resource-mask
                         +grand_parent_icon
+                        .auth__form-resource-mask-name
+                          | пожилым
 
                     label.auth__form-resource
                       input(type='checkbox', value='cars')
                       .auth__form-resource-mask
                         +car_icon
+                        .auth__form-resource-mask-name
+                          | авто
                 
                 .auth__form-wrapper.auth__form-wrapper--second
                   button.auth__form-submit.auth__form-submit--registration(type='submit')

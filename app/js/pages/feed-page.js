@@ -114,6 +114,9 @@ if (window.jQuery || typeof jQuery !== 'undefined') {
   items.map((el) => el.addEventListener('click', toggleActiveStatus))
 
   function toggleActiveStatus () {
+    if (this === this.parentNode.children[0]) {
+      this.parentNode.parentNode.classList.toggle('post-create__form-attach-people--active')
+    }
     this.classList.toggle('post-create__form-attach-people-item--checked')
   }
 })();
