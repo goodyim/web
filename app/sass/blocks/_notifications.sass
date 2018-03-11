@@ -1,40 +1,15 @@
 .notifications
   @extend %page-wrapper
-  min-height: 825px
-  margin-top: 50px
+  min-height: calc(100vh - 60px - 50px - 70px)
+  padding-top: 31px
   padding-bottom: 60px
-
-.notifications__tabs-wrap
-  display: flex
-  flex-direction: column
-  align-items: center
-  width: 100%
-  padding-top: 24px
-
-.notifications__switcher
-  @extend %switcher
-
-.notifications__switcher-tab
-  @extend %switcher__tab
-
-.notifications__switcher-tab--active
-  border-bottom: 5px solid #F9AB3F
-  color: #1f1e1e
 
 .notifications__item-list
   padding: 0 64px
-  margin-top: 31px
-
-.notifications__item
-  &:last-child
-    .notifications__item-link
-      .notifications__inner-wrap
-        border-color: transparent
 
 .notifications__item-link
   display: flex
   align-items: center
-  height: 99px
 
 .notifications__userpic
   width: 70px
@@ -44,17 +19,20 @@
 .notifications__inner-wrap
   display: flex  
   align-items: center
-  width: calc(100% - 90px)
-  height: 99px
+  flex-grow: 1
+  padding: 20px 0
   border-bottom: 1px solid #D8D8D8
+
+  .notifications__item:last-child &
+    border-color: transparent
 
 .notifications__dis
   display: flex
   flex-direction: column
   justify-content: center
   align-items: flex-start
+  flex-shrink: 0
   width: 355px
-  height: 65px  
   padding-right: 30px
 
 .notifications__title
@@ -62,8 +40,6 @@
   +LatoRegular
   font-size: 22px
   color: #262525  
-  overflow: hidden  
-  text-overflow: ellipsis 
 
   &--active
     position: relative
@@ -95,24 +71,28 @@
   +OpenSansRegular
   font-size: 18px
   color: #A2A0A0
-  white-space: nowrap
-  overflow: hidden
-  text-overflow: ellipsis
 
 .notifications__message
-  width: calc(100% - 355px)
-  height: 59px
+  flex-grow: 1
   padding-right: 30px
 
-.notifications__message-text
+.notifications__message-text  
   display: block
   margin-bottom: 8px
   +OpenSansRegular
   font-size: 18px
   color: #262525
-  white-space: nowrap
-  overflow: hidden
-  text-overflow: ellipsis
+
+  &--withgradient
+    position: relative
+    &::after 
+      position: absolute
+      content: ""
+      bottom: 0
+      left: 0
+      height: 30px
+      width: 100%
+      background: linear-gradient(to top, rgba(255,255,255,1) 20%,rgba(255,255,255,0) 100%)
 
 .notifications__time
   display: block
