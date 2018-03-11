@@ -1,0 +1,121 @@
+.notifications
+  @extend %page-wrapper
+  min-height: 825px
+  margin-top: 50px
+  padding-bottom: 60px
+
+.notifications__tabs-wrap
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  padding-top: 24px
+
+.notifications__switcher
+  @extend %switcher
+
+.notifications__switcher-tab
+  @extend %switcher__tab
+
+.notifications__switcher-tab--active
+  border-bottom: 5px solid #F9AB3F
+  color: #1f1e1e
+
+.notifications__item-list
+  padding: 0 64px
+  margin-top: 31px
+
+.notifications__item
+  &:last-child
+    .notifications__item-link
+      .notifications__inner-wrap
+        border-color: transparent
+
+.notifications__item-link
+  display: flex
+  align-items: center
+  height: 99px
+
+.notifications__userpic
+  width: 70px
+  height: 70px
+  margin-right: 20px
+
+.notifications__inner-wrap
+  display: flex  
+  align-items: center
+  width: calc(100% - 90px)
+  height: 99px
+  border-bottom: 1px solid #D8D8D8
+
+.notifications__dis
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  width: 355px
+  height: 65px  
+  padding-right: 30px
+
+.notifications__title
+  display: block
+  +LatoRegular
+  font-size: 22px
+  color: #262525  
+  overflow: hidden  
+  text-overflow: ellipsis 
+
+  &--active
+    position: relative
+    padding-right: 25px
+
+    &:before,
+    &:after
+      position: absolute
+      content: ''
+      top: 14px
+      right: 12px
+      width: 8px
+      height: 3px
+      background: linear-gradient(180deg, #FAA572 0%, #FB8E6B 100%)
+      transform: rotate(45deg)
+      border-radius: 1px
+
+    &:after
+      top: 11px
+      right: 1px
+      width: 16px
+      height: 3px
+      transform: rotate(-44deg) 
+
+.notifications__event
+  display: block
+  width: 100%
+  margin-top: 7px
+  +OpenSansRegular
+  font-size: 18px
+  color: #A2A0A0
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.notifications__message
+  width: calc(100% - 355px)
+  height: 59px
+  padding-right: 30px
+
+.notifications__message-text
+  display: block
+  margin-bottom: 8px
+  +OpenSansRegular
+  font-size: 18px
+  color: #262525
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.notifications__time
+  display: block
+  +OpenSansRegular
+  font-size: 18px
+  color: #A2A0A0
