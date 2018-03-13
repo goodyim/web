@@ -1,0 +1,104 @@
+include ../includes/variables.jade
+include ../includes/mixins/mixins.jade
+
+doctype html
+html(lang='en')
+  include ../includes/head.jade
+
+  body
+    #page.page
+      .content
+        include ../includes/header.jade
+        main.container
+          .edit-event
+            .edit-event__tabs-wrap
+                .edit-event__switcher
+                  button.edit-event__switcher-tab.edit-event__switcher-tab--active(type='button') Активные
+                  button.edit-event__switcher-tab(type='button') В процессе
+                  button.edit-event__switcher-tab(type='button') Завершенные
+
+            .edit-event__card
+              .edit-event__head
+                h2.edit-event__title
+                  | Помощь животным
+
+                .edit-event__wrap-btns
+                  button.edit-event__edit-btn(type='button')
+                    .edit-event__edit-icon
+                      +edit_icon                      
+                  button.edit-event__close-btn(type='button')
+
+              .edit-event__pic
+                +retina_img_png('man&doggo', '')
+
+              .edit-event__inner-wrap
+                .edit-event__user
+                  .edit-event__userpic
+                    +retina_img_png('Ivan', '')
+                  .edit-eventedit-event__user-info
+                    span.edit-event__user-name Ivan Ognevich
+                    time.edit-event__time 15:34
+
+                ul.edit-event__event-participants
+                  li.edit-event__participant
+                    +retina_img_png('participant', '')
+                  li.edit-event__participant
+                    +retina_img_png('participant', '')
+                  li.edit-event__participant
+                    +retina_img_png('participant', '')
+
+              p.edit-event__text
+                | Ребят, давайте отвезем продукты
+                | в питомник для собак? В этот четверг 10:00 
+
+              .edit-event__item-wrapper
+                .edit-event__item
+                  .edit-event__icon-bg
+                    .edit-event__icon-clock
+                      +clock_icon
+                  | 23 ноября в 10:00
+
+                .edit-event__item
+                  .edit-event__icon-bg
+                    .edit-event__icon-location
+                      +location_icon
+                  | Таганская, 27
+
+              ul.edit-event__tags-wrap
+                li.edit-event__tag еда
+                li.edit-event__tag 3-5 вещей
+                li.edit-event__tag хороший настрой
+
+              .edit-event__footer
+                .edit-event__btns-bot
+                  button.edit-event__like-btn.edit-event__like-btn--active(type='button')
+                    .edit-event__like-icon
+                      +like_icon
+                    | 10
+
+                  button.edit-event__comments-btn(type='button')
+                    .edit-event__comments-icon
+                      +comments_icon
+                    | 20
+
+                  button.edit-event__notifications-btn(type='button')
+                    .edit-event__notifications-icon
+                      +share_icon
+                    | 1
+                
+                .edit-event__status
+                  button.edit-event__status-btn(type='button')
+                    | Помочь
+                    i
+                      +edit-btn_icon
+
+            ul.edit-event__participants-list
+              li.edit-event__participant-item
+                | Max Libertu
+              li.edit-event__participant-item
+                | Lisa Kosova
+              li.edit-event__participant-item
+                | Valentun Sergeev
+
+            button.edit-event__add-participant(type='button')
+              | Dmitry Sviridenko
