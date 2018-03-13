@@ -1,0 +1,104 @@
+.notifications
+  @extend %page-wrapper
+  min-height: calc(100vh - 60px - 50px - 70px)
+  padding-top: 31px
+  padding-bottom: 60px
+
+.notifications__item-list
+  padding: 0 64px
+
+.notifications__item-link
+  display: flex
+  align-items: center
+
+.notifications__userpic
+  width: 70px
+  height: 70px
+  margin-right: 20px
+
+.notifications__inner-wrap
+  display: flex  
+  align-items: center
+  flex-grow: 1
+  padding: 20px 0
+  border-bottom: 1px solid #D8D8D8
+
+  .notifications__item:last-child &
+    border-color: transparent
+
+.notifications__dis
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  flex-shrink: 0
+  width: 355px
+  padding-right: 30px
+
+.notifications__title
+  display: block
+  +LatoRegular
+  font-size: 22px
+  color: #262525  
+
+  &--active
+    position: relative
+    padding-right: 25px
+
+    &:before,
+    &:after
+      position: absolute
+      content: ''
+      top: 14px
+      right: 12px
+      width: 8px
+      height: 3px
+      background: linear-gradient(180deg, #FAA572 0%, #FB8E6B 100%)
+      transform: rotate(45deg)
+      border-radius: 1px
+
+    &:after
+      top: 11px
+      right: 1px
+      width: 16px
+      height: 3px
+      transform: rotate(-44deg) 
+
+.notifications__event
+  display: block
+  width: 100%
+  margin-top: 7px
+  +OpenSansRegular
+  font-size: 18px
+  color: #A2A0A0
+
+.notifications__message
+  flex-grow: 1
+  padding-right: 30px
+
+.notifications__message-text  
+  display: block
+  height: 72px
+  overflow: hidden
+  margin-bottom: 8px
+  +OpenSansRegular
+  font-size: 18px
+  color: #262525
+
+  &--withgradient
+    position: relative    
+
+    &::after 
+      position: absolute
+      content: ""
+      bottom: 0
+      left: 0
+      height: 30px
+      width: 100%
+      background: linear-gradient(to top, rgba(255,255,255,1) 20%,rgba(255,255,255,0) 100%)
+
+.notifications__time
+  display: block
+  +OpenSansRegular
+  font-size: 18px
+  color: #A2A0A0
