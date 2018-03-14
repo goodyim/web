@@ -61,6 +61,10 @@
   &:hover
     opacity: 1
 
+  +respond-to($header_breakpoint_medium)
+    display: flex
+    font-size: 6vw
+
   +respond-to(1024px)
     margin: 0
     
@@ -73,7 +77,6 @@
 
     .header__navigation--is-show &
       +OpenSansRegular
-      font-size: 18px
       color: #fff
       
       &:not(:last-child)
@@ -105,13 +108,19 @@
   
   +respond-to($header_breakpoint_medium)
     display: block
-
+    margin-right: 20px
+    width: 35px
+  
   +respond-to($header_breakpoint_small)
     margin-right: 14px
 
   svg
     display: block
     margin: auto
+
+    +respond-to($header_breakpoint_medium)
+      width: 100%
+      height: 100%
 
 .header__actions
   display: flex
