@@ -1,24 +1,6 @@
 .edit-event
   width: 600px
   margin: 0 auto
-  
-.edit-event__tabs-wrap
-  display: flex
-  flex-direction: column
-  align-items: center
-  width: 100%
-  padding-top: 24px
-  margin-bottom: 18px
-
-.edit-event__switcher
-  @extend %switcher
-
-.edit-event__switcher-tab
-  @extend %switcher__tab
-
-.edit-event__switcher-tab--active
-  border-bottom: 5px solid #FA796A
-  color: #1f1e1e
 
 .edit-event__card
   width: 100%
@@ -36,12 +18,9 @@
   margin-bottom: 10px
   padding: 0
 
-.edit-event__title
+.edit-event__title-wrap
   position: relative
-  padding-left: 17px
-  +OpenSansSemiBold
-  font-size: 22px
-  color: #FC8C69    
+  padding-left: 16px
 
   &:before
     position: absolute
@@ -53,11 +32,19 @@
     border-radius: 50%
     background: linear-gradient(90deg, #FB776A 0%, #FC9E67 100%)
 
-  &:empty
-    padding: 0
-    
-    &:before
-      display: none
+.edit-event__editable-title
+  display: block
+  position: relative
+  top: 0
+  left: 0  
+  width: 340px
+  +OpenSansSemiBold
+  font-size: 22px
+  color: #FC8C69  
+  border: transparent  
+
+  &--edit-enable
+    cursor: pointer
 
 .edit-event__wrap-btns
   position: absolute
@@ -77,6 +64,13 @@
   border: none
   cursor: pointer
   background-color: transparent
+  transition: all ease 0.2s
+
+  &:hover
+    opacity: 0.7
+
+  &:active
+    opacity: 1
 
   .edit-event__edit-icon    
     width: 18px
@@ -179,11 +173,17 @@
 
 .edit-event__text
   width: 100%
+  height: 120px
   margin-bottom: 23px
-  +LatoSemiBold
+  +LatoRegular
+  text-align: left
   font-size: 24px
   color: #4d4c4c
-  overflow-y: auto
+  border: none
+  resize: none  
+
+  &--edit-enable
+    cursor: pointer
 
   a
     color: #FC8C69
@@ -257,6 +257,29 @@
     background: linear-gradient(270deg, #f9b65d .1%, #ff9e80 100%)
     border: 1px solid #fd8e3f
 
+  &--removable
+    position: relative
+
+    &::before,
+    &::after
+      position: absolute
+      content: ""
+      top: -5px
+      right: -6px
+      width: 12px
+      height: 1px
+      background-color: rgba(#C9C6C6, .7)
+      transform: rotate(45deg)
+      cursor: pointer
+
+    &::after
+      transform: rotate(-45deg)
+
+    &:hover
+      color: #A2A0A0
+      background: #fff
+      border: 1px solid rgba(#C9C6C6, .7)
+
 .edit-event__footer
   display: flex
   justify-content: space-between
@@ -310,50 +333,34 @@
     width: 100%
     height: 100%
 
-.edit-event__status-btn
-  position: relative
-  top: -10px
+.edit-event__participants-wrap,
+.edit-event__status
   display: flex
-  justify-content: center
-  align-items: center
-  height: 40px
-  background-image: linear-gradient(-90deg, #FB776A 0%, #FC9E67 100%)
-  border-radius: 32px
+  align-items: flex-start
+  padding: 0 24px
+
+.edit-event__participants-title
+  min-width: 98px
+  margin-right: 17px
   +OpenSansSemiBold
-  line-height: 17px
-  font-size: 17px
-  color: #fff
-  padding: 0 47px
-  padding-right: 43px
-  padding-bottom: 3px
-  border: none
-  cursor: pointer
-
-  i
-    display: inline-block
-    vertical-align: middle
-    width: 15px
-    height: 17px
-    margin-left: 10px
-
-    svg
-      width: 100%
-      height: 100%
+  font-size: 16px
+  color: #A2A0A0
 
 .edit-event__participants-list
   display: flex
   flex-wrap: wrap
-  width: 100%
-  padding: 0 24px
-  margin-bottom: 12px
+  width: 100%  
+  margin-bottom: 15px
 
-.edit-event__participant-item
+.edit-event__participant-item,
+.edit-event__add-participant-item
   position: relative
   padding-right: 20px
   margin-right: 16px
   +OpenSansSemiBold
   font-size: 16px
   color: #8F8E8E
+  cursor: pointer
 
   &::after
     position: absolute
@@ -364,18 +371,7 @@
     height: 2px
     background-color: #9E9D9D
 
-.edit-event__add-participant
-  display: block
-  position: relative
-  padding-left: 24px
-  padding-right: 20px
-  border: none
-  background-color: transparent
-  +OpenSansSemiBold
-  font-size: 16px
-  color: #F6AF70
-  cursor: pointer
-
+.edit-event__add-participant-item
   &::before,
   &::after
     position: absolute
@@ -384,7 +380,74 @@
     content: ""
     width: 16px
     height: 2px
-    background-color: #F6AF70
+    background-color: #9E9D9D
 
   &::after
     transform: rotate(90deg)
+
+.edit-event__status
+  display: flex
+  align-items: flex-start
+
+.edit-event__status-title
+  display: flex
+  align-items: center
+  height: 40px
+  margin-right: 35px
+  +OpenSansSemiBold
+  font-size: 16px
+  color: #A2A0A0
+
+.edit-event__status-list
+  display: flex
+  flex-wrap: wrap
+
+.edit-event__status-item
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-shrink: 0
+  height: 40px
+  margin-right: 20px
+  +OpenSansSemiBold
+  font-size: 16px  
+  cursor: pointer
+  -moz-user-select: none /* Mozilla Firefox */
+  -ms-user-select: none /* Internet Explorer */
+  -o-user-select: none /* Opera Presto */
+  -webkit-user-select: none /* Google Chrome, Opera Next, Safari */
+  transition: all ease 0.2s
+
+  .edit-event__status-item-inner    
+    background-image: linear-gradient(-90deg, #FC9E67 0%, #FB776A 100%)      
+    background-clip: text
+    -webkit-background-clip: text
+    color: transparent
+
+  &--active
+   .edit-event__status-item-inner
+    padding: 8px 19px
+    border: 1px solid #FB776A
+    border-radius: 32px
+
+  &:nth-child(2)
+    .edit-event__status-item-inner
+      background-image: linear-gradient(-90deg, #F9CF4A 0%, #F6BB5A 100%)      
+      background-clip: text
+      -webkit-background-clip: text
+      color: transparent
+
+  &--active:nth-child(2)
+    .edit-event__status-item-inner
+      border: 1px solid #F9CF49
+    
+  &:nth-child(3)
+    .edit-event__status-item-inner
+      background-image: linear-gradient(-90deg, #D3DF5B 0%, #B4D748 100%)      
+      background-clip: text
+      -webkit-background-clip: text
+      color: transparent
+
+  &--active:nth-child(3)
+    .edit-event__status-item-inner
+      border: 1px solid #B3D648

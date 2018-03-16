@@ -11,19 +11,13 @@ html(lang='en')
         include ../includes/header.jade
         main.container
           .edit-event
-            .edit-event__tabs-wrap
-                .edit-event__switcher
-                  button.edit-event__switcher-tab.edit-event__switcher-tab--active(type='button') Активные
-                  button.edit-event__switcher-tab(type='button') В процессе
-                  button.edit-event__switcher-tab(type='button') Завершенные
-
             .edit-event__card
-              .edit-event__head
-                h2.edit-event__title
-                  | Помощь животным
+              .edit-event__head   
+                .edit-event__title-wrap     
+                  input.edit-event__editable-title(type="text", value="Помощь животным", disabled, maxlength="22")#editable-title
 
                 .edit-event__wrap-btns
-                  button.edit-event__edit-btn(type='button')
+                  button.edit-event__edit-btn(type='button')#edit-btn
                     .edit-event__edit-icon
                       +edit_icon                      
                   button.edit-event__close-btn(type='button')
@@ -47,9 +41,8 @@ html(lang='en')
                   li.edit-event__participant
                     +retina_img_png('participant', '')
 
-              p.edit-event__text
-                | Ребят, давайте отвезем продукты
-                | в питомник для собак? В этот четверг 10:00 
+              textarea.edit-event__text(rows="4", disabled, maxlength="176")#editable-text
+                | Ребят, давайте отвезем продукты в питомник для собак? В этот четверг 10:00 
 
               .edit-event__item-wrapper
                 .edit-event__item
@@ -64,7 +57,7 @@ html(lang='en')
                       +location_icon
                   | Таганская, 27
 
-              ul.edit-event__tags-wrap
+              ul.edit-event__tags-wrap#tags-list
                 li.edit-event__tag еда
                 li.edit-event__tag 3-5 вещей
                 li.edit-event__tag хороший настрой
@@ -85,20 +78,51 @@ html(lang='en')
                     .edit-event__notifications-icon
                       +share_icon
                     | 1
-                
-                .edit-event__status
-                  button.edit-event__status-btn(type='button')
-                    | Помочь
-                    i
-                      +edit-btn_icon
 
-            ul.edit-event__participants-list
-              li.edit-event__participant-item
-                | Max Libertu
-              li.edit-event__participant-item
-                | Lisa Kosova
-              li.edit-event__participant-item
-                | Valentun Sergeev
+            .edit-event__participants-wrap
+              span.edit-event__participants-title
+                | Участники:
+              ul.edit-event__participants-list#participants
+                li.edit-event__participant-item
+                  | Max Libertu
+                li.edit-event__participant-item
+                  | Lisa Kosova
+                li.edit-event__participant-item
+                  | Valentun Sergeev
+                li.edit-event__participant-item
+                  | Valentun Sergeev
+                li.edit-event__participant-item
+                  | Valentun Sergeev
+                li.edit-event__participant-item
+                  | Valentun Sergeev
+                li.edit-event__participant-item
+                  | Valentun Sergeev
 
-            button.edit-event__add-participant(type='button')
-              | Dmitry Sviridenko
+            .edit-event__participants-wrap
+              span.edit-event__participants-title
+                | Запрошено:
+              ul.edit-event__participants-list
+                li.edit-event__add-participant-item
+                  | Dmitry Sviridenko
+                li.edit-event__add-participant-item
+                  | Dmitry Sviridenko
+                li.edit-event__add-participant-item
+                  | Dmitry Sviridenko
+                li.edit-event__add-participant-item
+                  | Dmitry Sviridenko
+
+            .edit-event__status
+              span.edit-event__status-title
+                | Статус:
+              ul.edit-event__status-list
+                li.edit-event__status-item.edit-event__status-item--active
+                  .edit-event__status-item-inner
+                    | Требует помощи
+                li.edit-event__status-item
+                  .edit-event__status-item-inner
+                    | Выполняется
+                li.edit-event__status-item
+                  .edit-event__status-item-inner
+                    | Завершено
+
+    script(src='js/pages/edit-event-page.js')
