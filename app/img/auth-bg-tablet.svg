@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="768px" height="1024px" viewBox="0 0 768 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #F9F9F9;">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Goody_Autorisation Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0.386639031%" y1="50.386639%" x2="99.613361%" y2="50.386639%" id="linearGradient-1">
+            <stop stop-color="#F7AB42" offset="0%"></stop>
+            <stop stop-color="#FBA093" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Goody_Autorisation-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(217.000000, -4.000000)">
+            <path d="M102.138973,0.862915052 C98.4146616,114.792826 132.573524,203.503384 204.615562,266.994587 C312.678619,362.231392 350.420633,509.272099 358.072296,581.89038 C361.00306,609.704862 381.925181,681.930905 424.210738,729.870867 C445.086805,753.538472 487.753961,779.132964 552.212206,806.654345 L552.212206,2.03763481" id="Path-3" fill="#D8D8D8" opacity="0.36"></path>
+            <path d="M551,712.914615 C536.124689,710.531734 529.715055,707.366753 497.472966,676.959299 C371.959735,558.588008 437.119306,387.890667 279.73233,264.978438 C255.428603,245.998308 222.85816,241.331625 188.377548,226.1393 C163.082162,214.99403 136.741496,199.73565 111.777389,178.458872 C92.1923253,161.766625 73.4545138,141.37014 56.7333777,116.34942 C35.0726199,83.9372823 16.161494,46.4874757 0,4 L551,4 C560.916874,478.19833 560.916874,714.503202 551,712.914615 Z" id="Path-9" fill="url(#linearGradient-1)"></path>
+        </g>
+    </g>
+</svg>

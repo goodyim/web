@@ -8,7 +8,7 @@ html(lang='en')
   include ../includes/head.jade
 
   body
-    main.auth
+    main.auth.auth--registration
       .container.container--relative.auth__wrapper
         header.auth__header
           a.auth__header-logo(href='/')
@@ -28,7 +28,7 @@ html(lang='en')
 
               form#registration-form.auth__form-fields
                 label.auth__form-field
-                  input.auth__form-field-input(type='text', name='name', placeholder='@имя', autocomplete='on', required)
+                  input.auth__form-field-input(type='text', name='name', placeholder='Логин', autocomplete='on', required)
 
                 label.auth__form-field
                   input.auth__form-field-input(type='email', name='email', placeholder='E-mail', autocomplete='off', required)
@@ -45,7 +45,7 @@ html(lang='en')
                     +calendar_icon
 
                 .auth__form-field.auth__form-field--relative
-                  span.auth__form-field-title
+                  span.auth__form-field-title.auth__form-field-title--sex
                     | Ваш пол
 
                   .auth__form-field-radios
@@ -69,7 +69,6 @@ html(lang='en')
                   button.auth__form-submit.auth__form-submit--registration(type='submit')
                     | Зарегистрироваться
 
-                  span или
                   .auth__form-socials
                     a.auth__form-social(href=empty_href)
                       +facebook_icon
