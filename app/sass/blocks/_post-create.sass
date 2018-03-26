@@ -139,10 +139,11 @@
   &:not(:last-child)
     margin-right: 12px
 
-  &:hover
-    background-image: linear-gradient(-180deg, #f08f8c 0%, #f7c063 100%)
-    border-color: #f08f8c
-    color: #fff
+  +respond-from(650px)
+    &:hover
+      background-image: linear-gradient(-180deg, #f08f8c 0%, #f7c063 100%)
+      border-color: #f08f8c
+      color: #fff
 
 .post-create__form-things-item--active
   background-image: linear-gradient(-180deg, #f08f8c 0%, #f7c063 100%)
