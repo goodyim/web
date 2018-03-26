@@ -15,6 +15,10 @@ body
   position: relative
 
 main
+  .mobile-navigation-open-with-transition &
+    overflow: hidden
+    height: calc(100vh - 60px)
+
   +respond-to(1024px)
     min-height: calc(100vh - 91px)
   
@@ -23,7 +27,7 @@ main
 
 .content
   background-color: #f9f9f9
-  transition: .3s ease-out transform
+  transition: .2s ease-out transform
   padding-bottom: 70px
 
   +respond-to(1024px)
@@ -32,3 +36,4 @@ main
   .mobile-navigation-open &
     transform: scale(0.7) translateX(80vw)
     box-shadow: 0 2px 12px 0 #e4855c
+    // max-height: 100vh
