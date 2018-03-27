@@ -1,0 +1,128 @@
+include ../includes/variables.jade
+include ../includes/mixins/mixins.jade
+
+doctype html
+html(lang='en')
+  include ../includes/head.jade
+
+  body
+    #page.page
+      .content
+        include ../includes/header.jade
+        main.container
+          .edit-event
+            .edit-event__card
+              .edit-event__head   
+                .edit-event__title-wrap     
+                  input.edit-event__editable-title(type="text", value="Помощь животным", disabled, maxlength="22")#editable-title
+
+                .edit-event__wrap-btns
+                  button.edit-event__edit-btn(type='button')#edit-btn
+                    .edit-event__edit-icon
+                      +edit_icon                      
+                  button.edit-event__close-btn(type='button')
+
+              .edit-event__pic
+                +retina_img_png('man&doggo', '')
+
+              .edit-event__inner-wrap
+                .edit-event__user
+                  .edit-event__userpic
+                    +retina_img_png('Ivan', '')
+                  .edit-eventedit-event__user-info
+                    span.edit-event__user-name Ivan Ognevich
+                    time.edit-event__time 15:34
+
+                ul.edit-event__event-participants
+                  li.edit-event__participant
+                    +retina_img_png('participant', '')
+                  li.edit-event__participant
+                    +retina_img_png('participant', '')
+                  li.edit-event__participant
+                    +retina_img_png('participant', '')
+
+              textarea.edit-event__text(rows="4", disabled, maxlength="176")#editable-text
+                | Ребят, давайте отвезем продукты в питомник для собак? В этот четверг 10:00 
+
+              .edit-event__item-wrapper
+                .edit-event__item
+                  .edit-event__icon-bg
+                    .edit-event__icon-clock
+                      +clock_icon
+                  | 23 ноября в 10:00
+
+                .edit-event__item
+                  .edit-event__icon-bg
+                    .edit-event__icon-location
+                      +location_icon
+                  | Таганская, 27
+
+              ul.edit-event__tags-wrap#tags-list
+                li.edit-event__tag еда
+                li.edit-event__tag 3-5 вещей
+                li.edit-event__tag хороший настрой
+
+              .edit-event__footer
+                .edit-event__btns-bot
+                  button.edit-event__like-btn.edit-event__like-btn--active(type='button')
+                    .edit-event__like-icon
+                      +like_icon
+                    | 10
+
+                  button.edit-event__comments-btn(type='button')
+                    .edit-event__comments-icon
+                      +comments_icon
+                    | 20
+
+                  button.edit-event__notifications-btn(type='button')
+                    .edit-event__notifications-icon
+                      +share_icon
+                    | 1
+
+            .edit-event__participants-wrap
+              span.edit-event__participants-title
+                | Участники:
+              ul.edit-event__participants-list#participants
+                li.edit-event__participant-item
+                  | Max Libertu
+                li.edit-event__participant-item
+                  | Lisa Kosova
+                li.edit-event__participant-item
+                  | Valentun Sergeev
+                li.edit-event__participant-item
+                  | Valentun Sergeev
+                li.edit-event__participant-item
+                  | Valentun Sergeev
+                li.edit-event__participant-item
+                  | Valentun Sergeev
+                li.edit-event__participant-item
+                  | Valentun Sergeev
+
+            .edit-event__participants-wrap
+              span.edit-event__participants-title
+                | Запрошено:
+              ul.edit-event__participants-list
+                li.edit-event__add-participant-item
+                  | Dmitry Sviridenko
+                li.edit-event__add-participant-item
+                  | Dmitry Sviridenko
+                li.edit-event__add-participant-item
+                  | Dmitry Sviridenko
+                li.edit-event__add-participant-item
+                  | Dmitry Sviridenko
+
+            .edit-event__status
+              span.edit-event__status-title
+                | Статус:
+              ul.edit-event__status-list
+                li.edit-event__status-item.edit-event__status-item--active
+                  .edit-event__status-item-inner
+                    | Требует помощи
+                li.edit-event__status-item
+                  .edit-event__status-item-inner
+                    | Выполняется
+                li.edit-event__status-item
+                  .edit-event__status-item-inner
+                    | Завершено
+
+    script(src='js/pages/edit-event-page.js')
