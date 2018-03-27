@@ -8,6 +8,9 @@ html(lang='en')
   body
     main.auth
       .container.container--relative.auth__wrapper
+        .auth__head-pic
+          img.auth__head-pic-img(src="images/headpic.svg", alt="")
+          
         header.auth__header
           a.auth__header-logo(href='/')
             .auth__header-logo-picture
@@ -18,7 +21,7 @@ html(lang='en')
           a.auth__header-btn(href='registration.html')
             | Регистрация
 
-        .auth__content
+        .auth__content.auth__content--login-page
           .auth__form.auth__form-login
             h1.auth__form-title
               | Goody

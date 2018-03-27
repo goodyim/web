@@ -2,17 +2,22 @@ body
   +font-smoothing
   
 .container
-  max-width: 1215px
+  max-width: 1200px
   margin: 0 auto
   width: 100%
-  padding: 0 20px
   padding-top: 50px
-
-  +respond-to(650px)
-    padding: 0 5px
 
 .container--relative
   position: relative
+  min-height: 100vh  
+  padding-top: 0
+
+  +respond-from(768px)
+    display: flex
+    align-items: center
+    justify-content: center
+    min-height: 100vh
+    padding-top: 0
 
 main
   .mobile-navigation-open-with-transition &
@@ -36,4 +41,3 @@ main
   .mobile-navigation-open &
     transform: scale(0.7) translateX(80vw)
     box-shadow: 0 2px 12px 0 #e4855c
-    // max-height: 100vh
