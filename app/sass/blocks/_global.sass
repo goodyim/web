@@ -7,16 +7,20 @@ body
   width: 100%
   padding-top: 50px
 
-  +respond-to(650px)
-    padding: 0 5px
+  // +respond-to(650px)
+  //   padding: 0 5px
 
 .container--relative
   position: relative
-  display: flex
-  align-items: center
-  justify-content: center
-  min-height: 100vh
+  min-height: 100vh  
   padding-top: 0
+
+  +respond-from(768px)
+    display: flex
+    align-items: center
+    justify-content: center
+    min-height: 100vh
+    padding-top: 0
 
 main
   +respond-to(1024px)

@@ -10,6 +10,9 @@ html(lang='en')
   body
     main.auth.auth--registration
       .container.container--relative.auth__wrapper
+        .auth__head-pic
+          img.auth__head-pic-img(src="images/headpic.svg", alt="")
+
         header.auth__header
           a.auth__header-logo(href='/')
             .auth__header-logo-picture
@@ -70,6 +73,9 @@ html(lang='en')
                     | Зарегистрироваться
 
                   .auth__form-socials
+                    span.auth__form-socials-dis
+                      | Можно через
+                     
                     a.auth__form-social(href=empty_href)
                       +facebook_icon
 
@@ -92,8 +98,8 @@ html(lang='en')
                     option(value='Москва') Москва
                     option(value='Киев') Киев
 
-                .auth__form-field.auth__form-field--relative
-                  span.auth__form-field-title
+                .auth__form-field.auth__form-field--account
+                  span.auth__form-field-title.auth__form-field-title--second-step
                     | Какими ресурсами вы обладаете?
 
                   .auth__form-resources
@@ -125,8 +131,8 @@ html(lang='en')
                         .auth__form-resource-mask-name
                           | обучение
 
-                .auth__form-field.auth__form-field--relative
-                  span.auth__form-field-title
+                .auth__form-field.auth__form-field--account
+                  span.auth__form-field-title.auth__form-field-title--second-step
                     | Кому вы можете помочь?
 
                   .auth__form-resources
@@ -159,11 +165,21 @@ html(lang='en')
                           | авто
                 
                 .auth__form-wrapper.auth__form-wrapper--second
-                  button.auth__form-submit.auth__form-submit--registration(type='submit')
+                  button.auth__form-submit.auth__form-submit--account(type='submit')
                     | Перейти в профиль
+
+                  button.auth__alerts-btn(type='button')
+                    i.auth__alerts-pic-wrap
+                      +settings-pic
+                    span 
+                      | настроить                     
+                    | оповещения                
 
                   //- button.auth__form-notifications(type='button')
                   //-   +settings_icon
                   //-   | оповещения
+
+          a.auth__link-to-login(href="/login.html")
+            | Войти
 
     script(src='js/pages/registration-page.js')
