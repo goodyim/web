@@ -1,11 +1,36 @@
 .notifications
   @extend %page-wrapper
+  position: relative
   min-height: calc(100vh - 60px - 50px - 70px)
-  padding-top: 31px
+  padding-top: 3px
   padding-bottom: 60px
 
+.notifications__tabs-wrap
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  padding-top: 24px
+
+.notifications__switcher
+  @extend %switcher
+
+.notifications__switcher-tab
+  @extend %switcher__tab
+
+.notifications__switcher-tab--active
+  border-bottom: 5px solid #FA796A
+  color: #1f1e1e
+
 .notifications__item-list
+  position: absolute
+  top: -99999px
+  left: 0
+  width: 100%
   padding: 0 64px
+
+  &--active
+    top: 87px
 
 .notifications__item-link
   display: flex
@@ -78,7 +103,7 @@
 
 .notifications__message-text  
   display: block
-  height: 72px
+  max-height: 72px
   overflow: hidden
   margin-bottom: 8px
   +OpenSansRegular
