@@ -4,7 +4,7 @@ header.header
       .header__logo-picture
         +retina_img_png('logotype', 'Goody')
 
-      | Goody
+      span Goody
     
     button.header__burger(type='button', onclick='toggleNavigation()')
       +header_burger_menu_icon
@@ -53,11 +53,11 @@ header.header
         | Поиск
 
     .header__actions
-      button.header__actions-item(type='button')
+      button.header__actions-item(type='button', title="Профиль")
         +profile_icon
 
-      button.header__actions-item(type='button')
+      button.header__actions-item(type='button', title="Уведомления")
         +notifications_icon
 
-      button.header__actions-item(type='button')
+      button.header__actions-item(type='button', title="Настройки")
         +settings_icon

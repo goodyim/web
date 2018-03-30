@@ -12,10 +12,10 @@ if (window.jQuery || typeof jQuery !== 'undefined') {
   }
 
   var ACTIVE_CLASSES = {
-    tab: 'feed__tab--active'
+    tab: 'tabs-switcher__tab--active'
   }
 
-  var tabs = HTMLCollectionToArray(document.getElementsByClassName('feed__tab'))
+  var tabs = HTMLCollectionToArray(document.getElementsByClassName('tabs-switcher__tab'))
 
   tabs[0].classList.add(ACTIVE_CLASSES.tab)
 

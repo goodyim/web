@@ -13,14 +13,8 @@ html(lang='en')
       .content
         include ../includes/header.jade
         main.container
-          section.feed
-            .feed__tabs
-              .feed__tabs-wrapper
-                button.feed__tab(type='button') Все
-                button.feed__tab(type='button') Записи
-                button.feed__tab(type='button') События
-                button.feed__tab(type='button') Добрости
-
+          .feed
+            include ../includes/blocks/tabs_switcher.jade
             include ../includes/blocks/post_create.jade
 
             .feed__content
