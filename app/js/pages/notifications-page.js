@@ -7,9 +7,6 @@
   var textItems = HTMLCollectionToArray(document.getElementsByClassName('notifications__message-text'))
 
   textItems.map(function(item) {
-    console.log('item', item)
-    console.log('item.scrollHeight :', item.scrollHeight)
-    console.log('item.clientHeight :', item.clientHeight)
     if(item.scrollHeight > item.clientHeight) {
       item.classList.add('notifications__message-text--withgradient')
     }
