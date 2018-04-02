@@ -48,3 +48,53 @@ if (content) {
     }
   }
 }
+
+(function() {
+  //expand textarea in post-crete if quantity of symbols greater then 27 & show hint if if quantity of symbols greater then 62:
+
+  function HTMLCollectionToArray (HTMLCollection) {
+    return Array.prototype.slice.call(HTMLCollection)
+  }
+
+  var textBlocks = HTMLCollectionToArray(document.getElementsByClassName('post-create__text-block'))
+
+  textBlocks.map(textblock => {
+    var textArea = textblock.getElementsByClassName('post-create__form-message-textarea')[0];
+    textArea.addEventListener('keydown', (e) => {
+      var arr = e.target.value.split('')
+      var counter = 0
+      arr.map(item => counter++) 
+    
+      if(counter > 20) {
+        textArea.classList.add('post-create__form-message-textarea--extended') 
+      } 
+      if(counter < 20) {
+        textArea.classList.remove('post-create__form-message-textarea--extended') 
+      } 
+      if(counter == 50) {
+        hint.classList.add('post-create__hint--show')  
+      } 
+    })
+    var hint = textblock.getElementsByClassName('post-create__hint')[0];
+    console.log('hint', hint)
+
+    hint.addEventListener('click', (e) => {
+      hint.classList.remove('post-create__hint--show')
+    });
+  })
+
+
+  //open modal witch short notes:
+
+  var addNoteBtn = document.querySelector('.post-create__fast-add-btn');
+  var shortNotesModal = document.querySelector('.post-create__fast-add');  
+
+  addNoteBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    shortNotesModal.classList.toggle('post-create__fast-add--active')
+  });
+
+
+
+
+})();

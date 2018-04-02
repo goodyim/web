@@ -55,8 +55,8 @@ if (window.jQuery || typeof jQuery !== 'undefined') {
 
     if (value !== '') {
       var div = document.createElement('div')
-      div.classList.add('post-create__form-things-item')
-      div.classList.add('post-create__form-things-item--active')
+      div.classList.add('post-create__tag')
+      div.classList.add('post-create__tag--active')
       div.dataset.thing = value
       div.innerHTML = value
       thingsList.appendChild(div)
@@ -71,8 +71,8 @@ if (window.jQuery || typeof jQuery !== 'undefined') {
   function thingTogleStatus () {
     var target = event.target
     
-    if (target.classList.contains('post-create__form-things-item')) {
-      target.classList.toggle('post-create__form-things-item--active')
+    if (target.classList.contains('post-create__tag')) {
+      target.classList.toggle('post-create__tag--active')
     } 
   }
 
@@ -100,7 +100,7 @@ if (window.jQuery || typeof jQuery !== 'undefined') {
   btn.addEventListener('click', addActiveStatuss)
 
   function addActiveStatuss () {
-    list.classList.toggle('post-create__form-attach-people--visible')
+    list.classList.toggle('post-create__people-list--visible')
   }
 })();
 
