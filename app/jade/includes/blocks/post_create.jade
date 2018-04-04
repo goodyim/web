@@ -41,7 +41,7 @@
           .post-create__tag(data-thing='3-5 вещей') 3-5 вещей
           .post-create__tag(data-thing='авто') авто
           .post-create__tag(data-thing='знания') знания
-          .post-create__tag(data-thing='время') время
+          //- .post-create__tag(data-thing='время') время
 
         button#add-things.post-create__add-tag-btn(type='button')
           +plus_orange_icon
@@ -105,8 +105,10 @@
         .post-create__fast-add
           .post-create__fast-add-backdrop
           .post-create__fast-add-modal
+            button.post-create__fast-add-cancel(type='button')
+              | Отмена
             h3.post-create__fast-add-header
-              | Быстрая Запись
+              | Быстрая Запись:
 
             ul.post-create__fast-add-list
               li.post-create__fast-add-item
@@ -136,6 +138,53 @@
                     +elderly-icon                  
                   button.post-create__fast-add-inner-item(type='button')
                     +cash-icon
+
+              li.post-create__fast-add-item
+                h6.post-create__fast-add-title
+                  | Подарил
+                ul.post-create__fast-add-inner
+                  button.post-create__fast-add-inner-item(type='button')
+                    +money-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +gift-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +dress-icon                  
+                  button.post-create__fast-add-inner-item(type='button')
+                    +books-icon
+
+
+
+
+
+
+              li.post-create__fast-add-item
+                h6.post-create__fast-add-title
+                  | Подарил
+                ul.post-create__fast-add-inner
+                  button.post-create__fast-add-inner-item(type='button')
+                    +money-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +gift-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +dress-icon                  
+                  button.post-create__fast-add-inner-item(type='button')
+                    +books-icon
+
+              li.post-create__fast-add-item
+                h6.post-create__fast-add-title
+                  | Подарил
+                ul.post-create__fast-add-inner
+                  button.post-create__fast-add-inner-item(type='button')
+                    +money-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +gift-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +dress-icon                  
+                  button.post-create__fast-add-inner-item(type='button')
+                    +books-icon
+
+            
+
 
       .post-create__form-wrapper.post-create__form-wrapper--note
         .post-create__form-attach

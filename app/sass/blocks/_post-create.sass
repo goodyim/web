@@ -4,6 +4,9 @@
   box-shadow: 0 1px 12px 0 #E1E1E0
   border-radius: 10px
 
+  +respond-from(600px)
+    margin: 0 0 19px
+
 .post-create__tabs
   display: flex
   background-color: #fff
@@ -16,9 +19,16 @@
   border-bottom-right-radius: 5px
   border-bottom-left-radius: 15px
 
+  +respond-from(600px)
+    border-top-right-radius: 10px
+    border-bottom-left-radius: 26px
+
 .post-create__tab--active
   border-top-left-radius: 10px
   width: 150px
+
+  +respond-from(600px)
+    width: 135px
 
 .post-create__tab-btn
   background-color: transparent
@@ -32,8 +42,15 @@
   .post-create__tab--active &
     color: #a2a0a0
 
+  +respond-from(600px)
+    font-size: 18px
+    padding: 13px 20px 13px 27px
+
 .post-create__body
   padding: 13px 11px 18px
+
+  +respond-from(600px)
+    padding: 16px 27px 25px
 
 .post-create__form-wrapper
   display: flex
@@ -41,10 +58,16 @@
   align-items: center
   margin-bottom: 10px
 
+  +respond-from(600px)
+    margin: 0
+
 .post-create__form-wrapper--bottom
   margin-top: 17px
   margin-bottom: 0
   justify-content: space-between
+
+  +respond-from(600px)
+    margin-top: 19px
 
 .post-create__form-wrapper--note
   margin-top: 26px
@@ -79,12 +102,28 @@
     height: 12px
     margin: 0 auto
 
+  +respond-from(768px)
+    width: 28px
+    height: 28px
+
+    svg
+      width: 16px
+      height: 15px
+      margin: 0 auto
+
 .post-create__select-location-btn
   margin-left: 16px
 
   svg
     width: 10px
     height: 20px
+
+  +respond-from(768px)
+    margin-left: 15px
+
+    svg
+      width: 12px
+      height: 16px
 
 .post-create__form-message  
   position: relative
@@ -100,6 +139,12 @@
   height: 35px
   border-radius: 50%
   background: #FFD700
+
+  +respond-from(600px)
+    position: relative
+    top: -15px
+    width: 50px
+    height: 50px
 
 .post-create__form-message-text
   +LatoBold
@@ -126,6 +171,14 @@
     height: 65px
     margin-bottom: 5px
 
+    +respond-from(600px)
+      height: 46px
+
+  +respond-from(600px)
+    padding: 0 7px
+    margin-top: 0
+    font-size: 17px
+
 .post-create__hint
   display: none
   position: absolute
@@ -134,26 +187,26 @@
   width: 165px
   text-align: center
   font-size: 10px
-  color: #ffffff
+  color: #000000
   +LatoBold
   font-weight: 700
   text-transform: uppercase
-  background-color: grey
+  background-color: #fff
+  box-shadow: 0 1px 4px 1px rgba(185, 181, 181, .5)
+  border-radius: 8px
   padding: 10px
-  border-radius: 3px
   z-index: 10
   cursor: default
 
   &::after
     position: absolute
+    top: -9px
+    left: 72px
     content: ''
-    top: -10px
-    right: calc(50% - 8px)
-    width: 0
-    height: 0
-    border-style: solid
-    border-width: 0 8px 10px 8px
-    border-color: transparent transparent grey transparent
+    border: 12px solid black
+    border-color: transparent transparent #fff #fff
+    transform: rotate(135deg)
+    box-shadow: -2px 2px 11px -3px rgba(185, 181, 181, 0.5)    
 
   &--show
     display: block
@@ -164,6 +217,9 @@
   align-items: flex-start
   position: relative
 
+  +respond-from(600px)
+    margin-top: 27px
+
 .post-create__form-things-icon
   margin-left: 0
   margin-top: 2px
@@ -171,6 +227,9 @@
   svg
     max-width: 14px
     max-height: 18px
+
+  +respond-from(600px)
+    margin-top: 5px
 
 .post-create__add-tag-btn
   position: absolute
@@ -181,6 +240,20 @@
   background-color: transparent
   border: none
   cursor: pointer
+
+  svg
+    width: 17px
+    height: 17px
+    transition: transform ease .5s
+  
+  +respond-from(600px)
+    top: 12px
+    right: -11px
+
+  &--active
+    svg
+      transform: rotate(135deg)
+
 
 #post-create__form-help-button
   background-color: transparent
@@ -199,6 +272,10 @@
   padding-left: 8px
   padding-right: 35px
 
+  +respond-from(600px)
+    padding-left: 13px
+    padding-right: 5px
+
 .post-create__tag
   border: 1px solid rgba(#c9c6c6, .7)
   border-radius: 32px
@@ -207,20 +284,28 @@
   color: #a2a0a0
   padding: 4px 15px
   cursor: pointer
-  transition: .15s ease-out
+  transition: background-image ease-out .15s 
   margin-bottom: 10px
   margin-right: 9px
 
   &:hover
     background-image: linear-gradient(-180deg, #f08f8c 0%, #f7c063 100%)
-    border-color: #f08f8c
+    border-color: transparent
+    border-top-color: #f08f8c
+    border-bottom-color: #f7c063
     color: #fff
+
+  +respond-from(600px)
+    padding: 7px 27px
+    margin-right: 13px    
+    font-size: 17px
 
 .post-create__tag--active
   background-image: linear-gradient(-180deg, #f08f8c 0%, #f7c063 100%)
-  border-color: #f08f8c
+  border-color: transparent
+  border-top-color: #f08f8c
+  border-bottom-color: #f7c063
   color: #fff
-  box-shadow: 0 0 10px 2px rgba(#f08f8c, .5)
 
 .post-create__form-things-field
   display: none
@@ -235,14 +320,17 @@
     border: 1px solid rgba(201, 198, 198, .7)
     margin-right: 16px
 
+    +respond-from(600px)
+      padding: 4px 15px
+
   button
     width: 92px
     flex-shrink: 0
-    +OpenSansRegular
+    +OpenSansSemiBold
     background-color: transparent
-    border: 1px solid #f7c063
-    color: #a2a0a0
-    border-radius: 15px
+    border: 1px solid #F9CF49
+    color: #F9CF49
+    border-radius: 25px
     padding: 8px 12px
     cursor: pointer
     transition: .15s ease-out
@@ -262,11 +350,12 @@
 .post-create__form-attach-text
   display: none
 
-  // +OpenSansRegular
-  // font-size: 16px
-  // color: #a2a0a0
-  // margin-right: 12px
-
+  +respond-from(600px)
+    display: block
+    margin-right: 11px
+    +OpenSansRegular
+    font-size: 16px
+    color: #A2A0A0
 
 .post-create__form-attach-file
   margin-right: 18px
@@ -279,6 +368,10 @@
     width: 19px
     height: 15px
 
+    +respond-from(600px)
+      width: 23px
+      height: 18px
+
 .post-create__form-attach-people
   background-color: transparent
   border: none
@@ -288,6 +381,10 @@
   svg
     width: 15px
     height: 14px
+
+    +respond-from(600px)
+      width: 17px
+      height: 19px
 
 .post-create__people-list
   width: 270px
@@ -372,11 +469,17 @@
   position: relative
   margin-right: 15px
 
+  +respond-from(600px)
+    margin-right: 18px
+
 .post-create__form-privacy-icon--false,
 .post-create__form-privacy-icon--true
   svg
     width: 11px
     height: 20px
+
+    +respond-from(600px)
+      width: 14px
 
 .post-create__form-privacy-icon--false
   .post-create__form-privacy-btn--private &
@@ -411,12 +514,20 @@
   border: none
   cursor: pointer
 
+  +respond-from(600px)
+    width: 179px
+    height: 40px
+    font-size: 16px
+
 .post-create__form--note
   display: none
 
   .post-create__body--note &
     display: block
     padding-top: 10px
+
+    +respond-from(600px)
+      padding-top: 33px
 
 .post-create__form--event
   .post-create__body--note &
@@ -440,6 +551,15 @@
     height: 24px
     margin: 0 auto
 
+  +respond-from(600px)
+    top: -6px
+    right: -2px
+    width: 36px
+    height: 36px
+
+    svg
+      width: 36px
+      height: 36px
 
 .post-create__fast-add
   display: none
@@ -458,17 +578,42 @@
   z-index: 4
   background-color: rgba(0, 0, 0, .5)
 
+  +respond-from(600px)
+    display: none
+
 .post-create__fast-add-modal
   position: fixed
   top: 20px
-  left: calc(50% - 135px)
-  width: 270px
-  padding: 30px 25px
+  left: calc(50% - 140px)
+  width: 280px
+  height: calc(100vh - 40px)
+  padding: 30px 5px 30px 25px
   background: #FFFFFF
   border: 1px solid #EEEEF2
   box-shadow: 0 2px 12px 0 rgba(197,197,196,0.66)
   border-radius: 10px
   z-index: 6
+
+  +respond-from(600px)
+    position: absolute
+    top: auto
+    left: auto
+    right: -14px
+    bottom: 46px
+    width: 251px
+    height: 239px
+    padding: 19px 5px 30px 12px
+
+    &::after
+      position: absolute
+      bottom: -14px
+      right: 14px
+      content: ''
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 20px 15px 0 15px
+      border-color: #ffffff transparent transparent transparent
 
 .post-create__fast-add-header
   margin-bottom: 12px
@@ -476,7 +621,46 @@
   font-size: 16px
   text-align: center
   text-transform: uppercase
-  color: #A2A0A0
+  color: #000000
+
+  +respond-from(600px)
+    display: none
+
+.post-create__fast-add-cancel
+  position: absolute
+  top: 8px
+  right: 8px
+  width: 25px
+  height: 25px
+  font-size: 0
+  background-color: transparent
+  border: none
+  cursor: pointer
+  
+  &::before,
+  &::after
+    position: absolute
+    top: 11px
+    left: 0
+    content: ''
+    width: 25px
+    height: 2px
+    background-color: orange
+    transform: rotate(45deg)
+
+  &::after
+    transform: rotate(-45deg)
+
+  +respond-from(600px)
+    display: none
+
+.post-create__fast-add-list
+  overflow-x: auto
+  height: calc(100vh - 160px)
+  padding-right: 20px  
+
+  +respond-from(600px)
+    height: 200px
 
 .post-create__fast-add-title
   margin-bottom: 7px
@@ -484,11 +668,17 @@
   font-size: 16px
   color: #A2A0A0
 
+  +respond-from(600px)
+    margin-bottom: 9px
+
 .post-create__fast-add-inner
   display: flex
   justify-content: space-between
   align-items: flex-start
   flex-wrap: wrap
+
+  +respond-from(600px)
+    justify-content: flex-start
 
 .post-create__fast-add-inner-item
   width: 45px
@@ -505,3 +695,19 @@
   svg
     width: 45px
     height: 45px
+
+  +respond-from(600px)
+    width: 30px
+    height: 30px
+    margin-bottom: 7px
+
+    &:nth-child(4n) 
+      margin-right: 12px
+
+    &:nth-child(5n) 
+      margin-right: -1px
+
+    svg
+      width: 30px
+      height: 30px
+

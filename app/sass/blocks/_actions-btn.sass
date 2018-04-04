@@ -1,0 +1,87 @@
+.actions-btn__wrap
+  position: relative
+  margin-left: auto
+
+.actions-btn__btn
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 26px
+  height: 24px
+  border: none
+  background-color: transparent
+  cursor: pointer  
+
+  i
+    display: block
+    position: relative
+    width: 3px
+    height: 3px
+    margin: auto
+    background-color: #D6D5D5
+    border-radius: 50%
+
+    &::before,
+    &::after
+      position: absolute
+      top: 0
+      left: -7px
+      content: ''
+      width: 3px
+      height: 3px
+      background-color: #D6D5D5
+      border-radius: 50%
+
+    &::after
+      left: 7px
+    
+
+.actions-btn__tooltip
+  opacity: 0
+  visibility: hidden
+  background-color: #fff
+  box-shadow: 0 1px 4px 1px rgba(185, 181, 181, .5)
+  border-radius: 8px
+  position: absolute
+  left: calc(-75px + 12px)
+  top: calc(100% + 8px)
+  min-width: 150px
+  z-index: 1 // to overflow card preview
+
+  .card__actions-btn--active + &
+    opacity: 1
+    visibility: visible
+
+  &:before
+    content: ''
+    position: absolute
+    border: 12px solid black
+    border-color: transparent transparent #fff #fff
+    transform-origin: 0 0
+    transform: rotate(135deg)
+    box-shadow: -2px 2px 11px -3px rgba(185, 181, 181, 0.5)
+    top: 0
+    left: 95px
+    z-index: 0
+
+.actions-btn__tooltip--active:before
+  border-color: transparent transparent #f1f2f6 #f1f2f6
+
+.actions-btn__list
+  border-radius: 8px
+  overflow: hidden
+
+.actions-btn__item
+  display: block
+  width: 100%
+  text-align: center
+  padding: 7px 12px
+  cursor: pointer
+  background-color: #fff
+  border: none
+  +OpenSansRegular
+  
+  &:hover
+    background-color: #f1f2f6
+

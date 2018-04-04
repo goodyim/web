@@ -4,8 +4,8 @@
     return Array.prototype.slice.call(HTMLCollection)
   }
 
-  var buttons = document.getElementsByClassName('card__actions-btn')
-  var firstBtns = HTMLCollectionToArray(document.getElementsByClassName('card__actions-list')).map((el) => el.children[0])
+  var buttons = document.getElementsByClassName('actions-btn__btn')
+  var firstBtns = HTMLCollectionToArray(document.getElementsByClassName('.actions-btn__list')).map((el) => el.children[0])
   
 
   for (var i = 0; i < buttons.length; i++) {
@@ -18,15 +18,15 @@
   }
 
   function openMoreActionsPopup () {
-    this.classList.toggle('card__actions-btn--active')
+    this.classList.toggle('actions-btn__btn--active')
   }
 
   function mouseoverFirstElement () {
-    this.parentNode.parentNode.classList.add('card__actions-tooltip--active')
+    this.parentNode.parentNode.classList.add('actions-btn__tooltip--active')
   }
 
   function mouseleaveFirstElement () {
-    this.parentNode.parentNode.classList.remove('card__actions-tooltip--active')
+    this.parentNode.parentNode.classList.remove('actions-btn__tooltip--active')
   }
 
 })();

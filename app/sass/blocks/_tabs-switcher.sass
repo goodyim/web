@@ -3,10 +3,13 @@
   width: 275px
   margin: 0 auto 22px
 
-  +respond-from(768px)
+  +respond-from(600px)
     width: 513px
     margin-bottom: 44px
     border-bottom: 1px solid #d5d4d4
+
+  +respond-from(1440px)
+    margin-bottom: 31px
 
 .tabs-switcher__tab  
   position: relative
@@ -33,7 +36,7 @@
     &::after
       display: none
 
-  +respond-from(768px)
+  +respond-from(600px)
     border: none
     padding: 10px 35px  
     background-color: transparent
@@ -50,5 +53,5 @@
 .tabs-switcher__tab--active
   color: #1F1E1E
 
-  +respond-from(768px)
+  +respond-from(600px)
     border-bottom: 5px solid #F7AB41
