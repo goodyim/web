@@ -1,0 +1,90 @@
+// NEED-HELP CARD
+
+.card-event--need-help
+  box-shadow: 0 0 20px -2px #F4AB75
+
+  .card-event__head
+    .card-event__title
+      color: #FC8C69
+
+      &:before
+        background-image: linear-gradient(-90deg, #FB776A 0%, #FC9E67 100%)
+
+  .card-event__bot-wrap  
+    .card-event__join-create-btn
+      padding: 6px 16px 8px
+      background-image: linear-gradient(-90deg, #FB776A 0%, #FC9E67 100%)
+
+      .card-event__join,
+      .card-event__done
+        display: none
+      .card-event__help
+        display: inline
+
+
+// JOIN CARD
+
+.card-event--join
+  box-shadow: 0 0 20px -2px #F9CD4A
+
+  .card-event__head
+    .card-event__title
+      color: #EFAE3C
+
+      &:before
+        background-image: linear-gradient(-90deg, #F7C163 1%, #FAD062 100%)
+
+  .card-event__bot-wrap  
+    .card-event__join-create-btn
+      background-image: linear-gradient(-90deg, #F7C163 1%, #FAD062 100%)
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+
+      .card-event__join 
+        display: inline
+
+        +respond-from(600px)
+          display: flex 
+          align-items: center
+        svg
+          display: none
+          +respond-from(600px)  
+            display: inline
+            margin-left: 5px
+
+      +respond-from(600px)
+        padding-left: 25px
+        padding-bottom: 8px
+        background-image: linear-gradient(-100deg, #F9CF49 0%, #F6BB5B 100%)
+
+      .card-event__done,
+      .card-event__help
+        display: none
+        
+// DONE CARD
+
+.card-event--done
+
+  .card-event__head
+    .card-event__title
+      color: #C6D63C
+
+      &:before
+        background-image: linear-gradient(-90deg, #B3D648 0%, #D9E15F 100%)
+
+  .card-event__bot-wrap  
+    .card-event__join-create-btn
+      padding: 5px 16px 8px
+      color: #B3D648
+      background: transparent
+      border: 1px solid #B7D74A
+
+      +respond-from(600px)
+        padding: 6px 16px 8px
+
+      .card-event__join,
+      .card-event__help      
+        display: none
+      .card-event__done
+        display: inline

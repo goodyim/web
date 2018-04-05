@@ -1,0 +1,38 @@
+.card-comments
+  button.card-comments__expand-btn(type='button')
+    | Все 
+    span 2 
+    | комментария
+    i
+
+  ul.card-comments__list
+    - for (var i = 0; i < 4; i++) {
+      li.card-comments__comment
+        .card-comments__comment-userpic
+          +retina_img_png('user-comments', '')
+
+        .card-comments__comment-inner
+          h6.card-comments__comment-username
+            | Petr Vitov
+          p.card-comments__comment-text
+            | Согласен
+
+        .card-comments__comment-dis
+          span.card-comments__comment-when
+            | Вчера
+          .card-comments__comment-actions
+            button(type='button').card-comments__comment-btn
+              i
+            button(type='button').card-comments__comment-like-btn
+              i.card-comments__comment-like-empty
+                //+icon-like-empty
+              i.card-comments__comment-like
+                //+icon-like
+    - }
+    
+
+  .card-comments__add-comment
+    .card-comments__comment-userpic
+      +retina_img_png('user-comments', '')
+    textarea.card-comments__add-comment-textarea
+      | Написать комментарий...

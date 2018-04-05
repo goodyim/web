@@ -1,0 +1,62 @@
+.actions
+  display: flex
+  width: 148px
+  margin: 0 auto
+
+  +respond-from(600px)
+    width: 167px
+  
+.actions__like-btn,
+.actions__comments-btn,
+.actions__notifications-btn
+  display: flex
+  align-items: center
+  border: none
+  background: transparent
+  margin-right: 21px
+  font-size: 14px
+  +OpenSansRegular
+  color: #CAC9C9  
+  cursor: pointer
+
+  &:hover
+    color: #F29F7F
+
+  +respond-from(600px)
+    +OpenSansSemiBold
+    font-size: 17px
+    color: #D6D5D5
+
+.actions__like-icon,
+.actions__comments-icon,
+.actions__notifications-icon
+  margin-right: 5px
+
+  svg
+    width: 100%
+    height: 100%
+
+.actions__like-icon
+  width: 17px
+  height: 15px
+
+  +respond-from(600px)
+    width: 27px
+    height: 24px
+
+.actions__comments-icon
+  width: 15px
+  height: 14px
+
+  +respond-from(600px)
+    width: 23px
+    height: 23px
+
+.actions__notifications-icon
+  width: 16px
+  height: 16px
+
+  +respond-from(600px)
+    width: 23px
+    height: 23px
+

@@ -55,10 +55,19 @@
     shortNotesModal.classList.toggle('post-create__fast-add--active')
   });
 
+  
+
+  
+
 })();
 
 // adding things to template
+
 (function () {
+
+  //input with tags:
+  var tagInput = document.querySelector('.post-create__hidden-tag-input');
+  
   var btn = document.getElementById('add-things')
   var btnAdd = document.getElementById('add-thing')
   var input = document.getElementById('post-create__form-things-field')
@@ -84,6 +93,7 @@
       div.classList.add('post-create__tag')
       div.classList.add('post-create__tag--active')
       div.dataset.thing = value
+      tagInput.value = tagInput.value + ', ' + value
       div.innerHTML = value
       thingsList.appendChild(div)
       input.value = ''

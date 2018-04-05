@@ -183,25 +183,25 @@
   display: none
   position: absolute
   bottom: -58px
-  right: calc(50% - 85px)
-  width: 165px
+  right: calc(50% - 100px)
+  width: 200px
+  padding: 10px 20px
   text-align: center
   font-size: 10px
   color: #000000
-  +LatoBold
-  font-weight: 700
-  text-transform: uppercase
-  background-color: #fff
-  box-shadow: 0 1px 4px 1px rgba(185, 181, 181, .5)
-  border-radius: 8px
-  padding: 10px
+  +OpenSansRegular
+  font-size: 13px
+  color: #FB786A
+  background: #FFFFFF
+  box-shadow: 0 2px 8px 0 rgba(159,157,157,0.50)
+  border-radius: 6px  
   z-index: 10
   cursor: default
 
   &::after
     position: absolute
     top: -9px
-    left: 72px
+    left: 91px
     content: ''
     border: 12px solid black
     border-color: transparent transparent #fff #fff
@@ -225,8 +225,12 @@
   margin-top: 2px
 
   svg
-    max-width: 14px
-    max-height: 18px
+    width: 10px
+    height: 20px
+
+    +respond-from(600px)
+      width: 17px
+      height: 12px
 
   +respond-from(600px)
     margin-top: 5px
@@ -306,6 +310,9 @@
   border-top-color: #f08f8c
   border-bottom-color: #f7c063
   color: #fff
+
+.post-create__hidden-tag-input
+  display: none
 
 .post-create__form-things-field
   display: none
@@ -646,6 +653,7 @@
     width: 25px
     height: 2px
     background-color: orange
+    border-radius: 2px
     transform: rotate(45deg)
 
   &::after

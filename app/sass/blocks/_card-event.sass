@@ -1,11 +1,10 @@
-.card-event
-  padding-top: 5px
-  padding-bottom: 1px
-
 .card-event__head
   display: flex
   justify-content: space-between
-  margin-bottom: 4px
+  margin-bottom: 7px
+
+  +respond-from(600px)
+    margin-bottom: 10px
 
 .card-event__title
   position: relative
@@ -23,7 +22,7 @@
 
   &:before
     position: absolute
-    top: calc(50% - 7px)
+    top: calc(50% - 5px)
     left: 0
     content: ''
     width: 11px
@@ -31,22 +30,34 @@
     border-radius: 50%
     background-image: linear-gradient(-90deg, #F7C163 1%, #FAD062 100%)
 
+  +respond-from(600px)
+    +OpenSansSemiBold
+    font-size: 22px
+    color: #F6BE58
+
 .card-event__pic
   display: block
   position: relative
-  width: 260px
-  height: 160px
+  max-height: 380px
   margin-bottom: 8px
   overflow: hidden
 
   img
     width: 100%
 
+  +respond-from(600px)
+    width: 550px
+    height: 380px
+    margin-bottom: 11px
+
 .card-event__inner-wrap
   display: flex
   justify-content: space-between
   align-items: center
   margin-bottom: 8px
+
+  +respond-from(600px)
+    margin-bottom: 20px
 
 .card-event__user
   display: flex
@@ -61,6 +72,10 @@
     width: 100%
     height: 100%
 
+  +respond-from(600px)
+    width: 50px
+    height: 50px
+
 .card-event__user-name
   display: block
   margin-bottom: 1px
@@ -68,11 +83,17 @@
   font-size: 13px
   color: #A2A0A0
 
+  +respond-from(600px)
+    font-size: 16px
+
 .card-event__time
   display: block
   +OpenSansRegular
   font-size: 11px
   color: #A2A0A0
+
+  +respond-from(600px)
+    font-size: 16px
 
 .card-event__event-participants
   display: flex
@@ -81,6 +102,9 @@
   margin-top: 2px
   width: 40px
   cursor: pointer
+
+  +respond-from(600px)
+    margin-top: 7px
 
 .card-event__participant
   position: relative
@@ -100,19 +124,36 @@
     left: -9px
     z-index: 2
 
+    +respond-from(600px)
+      left: -20px
+
   &:nth-child(3)
     left: -18px
     z-index: 1
 
+    +respond-from(600px)
+      left: -37px
+
+  +respond-from(600px)
+    width: 40px
+    height: 40px
+    border: 3px solid #FFFFFF
+
 .card-event__text
-  margin-bottom: 14px
-  +LatoSemiBold
+  margin-bottom: 10px
+  +LatoRegular
   font-size: 18px
   color: #262525
   overflow-y: auto
 
   a
     color: #FC8C69
+
+  +respond-from(600px)
+    +LatoSemiBold
+    margin-bottom: 25px
+    font-size: 24px
+    color: #4D4C4C
 
 .card-event__item-wrapper
   .card--feed &
@@ -121,27 +162,165 @@
 .card-event__item
   display: flex
   align-items: center
-  margin-bottom: 6px
+  margin-bottom: 8px
   +OpenSansRegular
   font-size: 14px
   color: #3E3D3D
+
+  +respond-from(600px)
+    margin-bottom: 14px
+    +OpenSansSemiBold
+    font-size: 17px
+    color: #4D4C4C
 
 .card-event__icon-bg
   display: flex
   justify-content: center
   align-items: center
-  width: 20px
-  height: 20px
+  flex-shrink: 0
+  width: 21px
+  height: 21px
   margin-right: 8px
   background: linear-gradient(180deg, #F08F8C 0%, #F7C063 99.17%)
   border-radius: 50%
+
+  +respond-from(600px)
+    width: 26px
+    height: 26px
+
+.card-event__link  
+  span
+    position: relative
+    padding-right: 30px
+    white-space: nowrap
+    overflow: hidden  
+    text-overflow: ellipsis 
+    transition: all ease .2s
+
+    &::before,
+    &::after 
+      position: absolute
+      top: 7px
+      right: 14px
+      content: ''
+      background-color: #000000
+      width: 8px
+      height: 1px
+      transform: rotate(45deg)
+      transition: all ease .2s
+
+      +respond-from(600px)
+        top: 7px
+        right: 0px
+        width: 11px
+        height: 2px
+        border-radius: 2px
+    
+    &::after 
+      top: 12px
+      transform: rotate(-45deg)
+
+      +respond-from(600px)
+        top: 13px
+
+    &:hover
+      color: #FF881F
+      &::before,
+      &::after 
+        background-color: #FF881F    
 
 .card-event__icon-clock
   svg
     width: 10px
     height: 10px
 
+    +respond-from(600px)
+      width: 13px
+      height: 13px
+
 .card-event__icon-location
   svg
     width: 8px
     height: 11px
+
+    +respond-from(600px)
+      width: 14px
+      height: 14px
+
+.card-event__tags-wrap
+  display: flex
+  flex-wrap: wrap
+  padding-top: 6px
+
+  +respond-from(600px)
+    padding-top: 11px
+
+.card-event__tag
+  display: flex
+  justify-content: center
+  align-items: center
+  width: auto
+  height: 30px
+  margin-bottom: 15px
+  margin-right: 8px
+  padding: 0 17px
+  padding-bottom: 2px
+  +OpenSansRegular
+  font-size: 14px
+  color: #A2A0A0
+  border: 1px solid rgba(#C9C6C6, .7)
+  box-sizing: border-box
+  border-radius: 32px
+  cursor: pointer
+  transition: all ease .2s
+
+  &:hover
+    color: #fff
+    background: linear-gradient(270deg, #f9b65d .1%, #ff9e80 100%)
+    border-color: transparent
+
+  +respond-from(600px)
+    height: 40px
+    padding: 0 24px
+    margin-right: 12px
+    margin-bottom: 23px
+    font-size: 17px
+
+.card-event__bot-wrap 
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-right: 4px
+
+.card-event__actions
+  width: 148px
+
+  +respond-from(768px)
+    width: 167px
+
+.card-event__join-create-btn
+  display: block
+  width: 106px
+  height: 30px
+  padding: 6px 16px
+  border: none
+  +OpenSansSemiBold
+  font-size: 13px
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis    
+  color: #FFFFFF
+  background-image: linear-gradient(-90deg, #F7C163 1%, #FAD062 100%)
+  border-radius: 100px
+  cursor: pointer
+
+  span
+    display: none
+    
+  +respond-from(600px)   
+    width: 207px
+    height: 40px
+    padding-left: 30px
+    padding-bottom: 8px
+    font-size: 17px
+    background-image: linear-gradient(-100deg, #F9CF49 0%, #F6BB5B 100%)

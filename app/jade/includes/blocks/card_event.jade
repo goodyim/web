@@ -1,43 +1,63 @@
-.bestcard.card-event
-  .card-event__head
-    h2.card-event__title
-      | Животные
+.bestcard.card-event.card-event--join
+  .card-event__body
+    .card-event__head
+      h2.card-event__title
+        | Животные
 
-    include ../blocks/actions_btn.jade
+      include ../blocks/actions_btn.jade
 
-  .card-event__pic
-    +retina_img_png('man&doggo', '')
+    .card-event__pic
+      +retina_img_png('man&doggo', '')
 
-  .card-event__inner-wrap
-    .card-event__user
-      .card-event__userpic
-        +retina_img_png('user', '')
-      .card-event__user-info
-        span.card-event__user-name Daria Ionova
-        time.card-event__time 15:34
+    .card-event__inner-wrap
+      .card-event__user
+        .card-event__userpic
+          +retina_img_png('Ionova', '')
+        .card-event__user-info
+          span.card-event__user-name Daria Ionova
+          time.card-event__time 15:34
 
-    ul.card-event__event-participants
-      li.card-event__participant
-        +retina_img_png('participant', '')
-      li.card-event__participant
-        +retina_img_png('participant', '')
-      li.card-event__participant
-        +retina_img_png('participant', '')
+      ul.card-event__event-participants
+        li.card-event__participant
+          +retina_img_png('participant', '')
+        li.card-event__participant
+          +retina_img_png('participant', '')
+        li.card-event__participant
+          +retina_img_png('participant', '')
 
-  p.card-event__text
-    | Друзья, давайте завтра отвезем
-    | в детский дом  необходимые 
-    | вещи, книги… 
+    p.card-event__text
+      | Друзья, давайте завтра отвезем
+      | в детский дом  необходимые 
+      | вещи, книги… 
 
-  .card-event__item-wrapper
-    .card-event__item
+    .card-event__item-wrapper
+      .card-event__item
+        .card-event__icon-bg
+          .card-event__icon-clock
+            +clock_icon
+        | 5 декабря в 10:00
+
+    a.card-event__item.card-event__link(href=empty_href)
       .card-event__icon-bg
-        .card-event__icon-clock
-          +clock_icon
-      | 5 декабря в 10:00
+        .card-event__icon-location
+          +location_icon
+      span Милютинский переулок,5Милютинский
 
-  .card-event__item
-    .card-event__icon-bg
-      .card-event__icon-location
-        +location_icon
-    | Милютинский переулок,5
+    ul.card-event__tags-wrap
+      li.card-event__tag еда
+      li.card-event__tag 3-5 вещей
+
+    .card-event__bot-wrap  
+      .card-event__actions
+        include ../blocks/actions.jade
+
+      button.card-event__join-create-btn(type='button')
+        span.card-event__help
+          | Помочь!
+        span.card-event__join
+          | Присоеденился
+          +check-icon
+        span.card-event__done
+          | Завершено
+        
+  include ../blocks/card_comments.jade
