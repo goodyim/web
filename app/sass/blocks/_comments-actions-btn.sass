@@ -1,19 +1,19 @@
-.actions-btn
+.comments-actions-btn
   position: absolute
-  top: 5px
-  right: 6px
+  top: -3px
+  right: -5px
 
   +respond-from(600px)
     top: 15px
     right: 25px
 
-.actions-btn__btn
+.comments-actions-btn__btn
   position: relative
   display: flex
   align-items: center
   justify-content: center
   width: 26px
-  height: 24px
+  height: 18px
   border: none
   background-color: transparent
   cursor: pointer  
@@ -55,16 +55,16 @@
       &::after
         left: 9px
     
-.actions-btn__tooltip
+.comments-actions-btn__tooltip
   display: none  
   position: absolute
   top: 32px
   right: calc(50% - 27px)
-  width: 150px
+  width: 150px  
+  border-radius: 8px
   background-color: #fff
   box-shadow: 0 1px 4px 1px rgba(185, 181, 181, .5)
-  border-radius: 8px  
-  z-index: 1 // to overflow card preview
+  z-index: 4
 
   +respond-from(715px)
     right: calc(50% - 75px)
@@ -82,19 +82,19 @@
     transform: rotate(45deg)
     background-color: #fff
     box-shadow: 0 1px 4px 1px rgba(185, 181, 181, .5)
-    z-index: 0
+    z-index: -1
 
     +respond-from(715px)
       right: 65px
 
-.actions-btn__list
+.comments-actions-btn__list
   position: relative
   padding: 8px 0
   border-radius: 8px
-  overflow: hidden
   background-color: #fff
+  z-index: 2
 
-.actions-btn__item
+.comments-actions-btn__item
   display: block
   width: 100%
   text-align: left

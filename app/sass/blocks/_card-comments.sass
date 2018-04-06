@@ -1,8 +1,31 @@
 .card-comments
   display: block
-  margin-top: 15px
-  padding: 16px 2px 0
-  border-top: 1px solid #D6D5D5
+  position: relative
+  left: 0
+  top: 0
+  width: 100%
+  max-height: 0
+  padding: 0 9px
+  opacity: 0
+  transition: max-height 0.8s linear .3s, padding 1s, opacity .6s
+  overflow: hidden
+
+  &::before
+    position: absolute
+    top: 0
+    left: 9px
+    content: ''
+    width: calc(100% - 19px)
+    height: 1px
+    background-color: #D6D5D5
+
+  +respond-from(600px)
+    padding: 9px 25px 25px
+
+.card-comments--active
+  padding: 17px 9px 15px
+  opacity: 1
+  transition: max-height 0.8s linear, padding .3s linear 0s, opacity .7s linear .8s
 
 .card-comments__expand-btn
   position: relative
@@ -16,11 +39,12 @@
 
   i
     position: absolute
-    top: 9px
+    top: 13px
     right: 5px
     width: 1px
     height: 1px
     background-color: transparent
+    transform: rotate(180deg)
 
     &::before,
     &::after
@@ -41,31 +65,45 @@
 .card-comments__expand-btn--active
   i
     top: 9px
-    right: 0
-    transform: rotate(180deg)
+    transform: rotate(0deg)
 
 .card-comments__list  
-  border-bottom: 1px solid #D8D8D8
+  padding-top: 9px
+  padding-bottom: 15px
+  max-height: 98px
+  transition: max-height 0.8s linear .3s
+  overflow: hidden
 
-  .card-comments__comment:first-child 
-    display: flex
+  .card-comments__comment:first-child
+    opacity: 1 
+    transition: opacity .7s linear .8s
+
+  .card-comments__comment:nth-child(n + 2)
+    opacity: 0    
 
 .card-comments__list--active
-  .card-comments__comment:nth-child(n+1)
+  transition: max-height 0s linear 0s
+
+  .card-comments__comment:nth-child(n+2)
     display: flex
+    opacity: 1
+    transition: opacity .7s linear .8s
 
 .card-comments__comment
-  display: none
+  display: flex
   align-items: flex-start
   position: relative
-  margin-bottom: 22px  
+  padding-left: 1px
+  margin-bottom: 13px  
+  opacity: 0   
+  transition: opacity .6s
 
   &:last-child
-    margin-bottom: 16px
+    margin-bottom: 0
 
 .card-comments__comment-userpic
-  margin-top: 6px
-  margin-right: 14px
+  margin-top: 5px
+  margin-right: 7px  
 
   img
     display: block
@@ -73,118 +111,128 @@
     width: 30px
     height: 30px
 
-  .card-comments__add-comment &
-    margin-top: 12px
-
 .card-comments__comment-inner
   flex-grow: 1
-  padding-right: 65px
+  padding-right: 40px
 
 .card-comments__comment-username
-  margin-bottom: 6px
+  margin-bottom: 4px
   +OpenSansSemiBold
   font-size: 13px
   color: #A2A0A0
 
 .card-comments__comment-text
+  margin-bottom: 4px
   +LatoRegular
   font-size: 14px
   color: #4D4C4C
 
-.card-comments__comment-dis
+.card-comments__comment-wrap
+  display: flex
+
+.card-comments__comment-time  
+  +OpenSansRegular
+  font-size: 13px
+  color: #A2A0A0
+  margin-right: 15px
+
+.card-comments__comment-reply-btn
+  border: none
+  background-color: transparent
+  +OpenSansRegular
+  font-size: 13px
+  color: #A2A0A0
+  cursor: pointer
+
+.card-comments__comment-actions
   position: absolute
   top: 0
   right: 0
 
-.card-comments__comment-when
-  +OpenSansRegular
-  font-size: 16px
-  color: #A2A0A0
-
-.card-comments__comment-actions
-  position: relative
-
-.card-comments__comment-btn
-  display: flex
-  align-items: center
-  justify-content: center
-  position: absolute
-  top: 11px
-  left: 6px
-  width: 15px
-  height: 11px
-  background-color: transparent
-  border: none
-  cursor: pointer
-  z-index: 2
-
-  i
-    display: block
-    position: relative
-    width: 3px
-    height: 3px
-    background-color: #E0DFDF
-    border-radius: 50%
-
-    &::before,
-    &::after
-      position: absolute
-      top: 0
-      left: -6px
-      content: ''
-      width: 3px
-      height: 3px
-      background-color: #E0DFDF
-      border-radius: 50%
-
-    &::after
-      left: 6px
-
 .card-comments__comment-like-btn
+  display: flex
+  justify-content: flex-end
+  align-items: center
   position: absolute
-  top: 10px
-  right: -2px
-  border: none
-  width: 16px
-  height: 14px
+  top: 21px
+  right: -1px
+  height: 20px
+  border: none  
   background-color: transparent
   cursor: pointer
   z-index: 2
+
+  span
+    margin-right: 3px
+    +OpenSansSemiBold
+    font-size: 13px
+    color: #D6D5D5
     
-  .card-comments__comment-like-empty
-    opacity: 1
+.card-comments__like-icon
+  position: relative
+  width: 11px
+  height: 16px
 
-    svg
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100%
+.card-comments__comment-like-empty
+  opacity: 1
 
-  .card-comments__comment-like
-    opacity: 0
+  svg
+    position: absolute
+    top: 3px
+    right: 1px
+    width: 12px
+    height: 11px
 
-    svg
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100%
+.card-comments__comment-like
+  opacity: 0
+  
+.card-comments__comment-like-btn--active
+  span
+    color: #F88E7D
 
-  &--active
-    .card-comments__comment-like
-      opacity: 1
+  .card-comments__like-icon
     .card-comments__comment-like-empty
       opacity: 0
+    .card-comments__comment-like
+      opacity: 1
+
+      svg
+        position: absolute
+        top: 4px
+        right: -1px
+        width: 13px
+        height: 12px
 
 .card-comments__add-comment
   display: flex
+  position: relative
 
 .card-comments__add-comment-textarea
   flex-grow: 1
   height: auto
-  padding-top: 16px
+  padding-top: 12px
+  margin-right: 25px
   border: none
   +LatoRegular
-  font-size: 18px
-  color: #A2A0A0
+  font-size: 13px
+  color: #4D4C4C
+  resize: none
+
+.card-comments__add-comment-btn
+  position: absolute
+  top: 10px
+  right: -3px
+  display: flex
+  justify-content: center
+  align-items: center  
+  width: 25px
+  height: 25px
+  border: none
+  background-color: transparent
+  cursor: pointer
+  z-index: 1
+
+  svg
+    width: 18px
+    height: 17px
+    margin: 0 auto

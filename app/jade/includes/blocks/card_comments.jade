@@ -6,33 +6,44 @@
     i
 
   ul.card-comments__list
-    - for (var i = 0; i < 4; i++) {
+    - for (var i = 0; i < 5; i++) {
       li.card-comments__comment
-        .card-comments__comment-userpic
-          +retina_img_png('user-comments', '')
-
+        a.card-comments__link-to-profile(href=empty_href)
+          .card-comments__comment-userpic
+            +retina_img_png('user-comments', '')
+        
         .card-comments__comment-inner
-          h6.card-comments__comment-username
-            | Petr Vitov
+          a.card-comments__link-to-profile(href=empty_href)
+            h6.card-comments__comment-username
+              | Petr Vitov
           p.card-comments__comment-text
             | Согласен
 
-        .card-comments__comment-dis
-          span.card-comments__comment-when
-            | Вчера
-          .card-comments__comment-actions
-            button(type='button').card-comments__comment-btn
-              i
-            button(type='button').card-comments__comment-like-btn
+          .card-comments__comment-wrap
+            time.card-comments__comment-time  
+              | 14:23
+            button.card-comments__comment-reply-btn(type='button')
+              | Ответить
+
+        .card-comments__comment-actions
+          include ./comments_actions_btn.jade
+
+          button.card-comments__comment-like-btn(type='button')
+            span
+              | 10
+
+            i.card-comments__like-icon
               i.card-comments__comment-like-empty
-                //+icon-like-empty
+                +comments-like-icon-empty
               i.card-comments__comment-like
-                //+icon-like
-    - }
-    
+                +comments-like-icon-filled
+    - }    
 
   .card-comments__add-comment
     .card-comments__comment-userpic
       +retina_img_png('user-comments', '')
-    textarea.card-comments__add-comment-textarea
-      | Написать комментарий...
+
+    textarea.card-comments__add-comment-textarea(placeholder='Написать комментарий...')
+
+    button.card-comments__add-comment-btn(type='button')
+      +send-btn-icon
