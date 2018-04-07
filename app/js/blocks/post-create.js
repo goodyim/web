@@ -13,23 +13,19 @@
     var hint = textblock.getElementsByClassName('post-create__hint')[0];
 
     textArea.addEventListener('keydown', (e) => {
-
-      //this is to calculate the number of characters:
+      
       var arr = e.target.value.split('')
-      var counter = 0
-      arr.map(item => counter++) 
-      // - end
-    
-      if(counter > 20) {
+          
+      if(arr.length > 20) {
         textArea.classList.add('post-create__form-message-textarea--extended') 
       } 
-      if(counter < 20) {
+      if(arr.length < 20) {
         textArea.classList.remove('post-create__form-message-textarea--extended') 
       } 
-      if(counter == 50) {
+      if(arr.length == 50) {
         hint.classList.add('post-create__hint--show')  
       } 
-      if(counter < 50) {
+      if(arr.length < 50) {
         hint.classList.remove('post-create__hint--show')  
       } 
     })
