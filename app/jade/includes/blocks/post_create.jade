@@ -10,51 +10,61 @@
 
   #create-post-body.post-create__body
     form.post-create__form.post-create__form--event
-      .post-create__form-wrapper.post-create__form-wrapper--top
+      .post-create__form-wrapper
         .post-create__form-help
           select#post-create__form-help.post-create__form-help(name='help', required)
             option(value='Помощь детям') Помощь детям
             option(value='Помощь животным') Помощь животным
+
+        button.post-create__select-date-btn(type='button')
+          +clock_icon
+
+        button.post-create__select-location-btn(type='button')
+          +location_icon
 
       .post-create__form-message
         .post-create__form-message-author
           span.post-create__form-message-text
             | NM
 
-        textarea.post-create__form-message-textarea(cols='30', placeholder='Описание')
+        .post-create__text-block
+          textarea.post-create__form-message-textarea(placeholder='Описание', maxlength='50')
+
+          span.post-create__hint
+            | Описание не должно содержать больше 50 символов
 
       .post-create__form-things
         .post-create__form-things-icon
           +things_icon        
 
-        #things-list.post-create__form-things-list
-          .post-create__form-things-item(data-thing='3-5 вещей') 3-5 вещей
-          .post-create__form-things-item(data-thing='авто') авто
-          .post-create__form-things-item(data-thing='знания') знания
-          .post-create__form-things-item(data-thing='время') время
+        #things-list.post-create__tags-list
+          .post-create__tag(data-thing='3-5 вещей') 3-5 вещей
+          .post-create__tag(data-thing='авто') авто
+          .post-create__tag(data-thing='знания') знания
+          //- .post-create__tag(data-thing='время') время
 
-        .post-create__form-things-add
-          button#add-things.post-create__form-things-add-btn(type='button')
-            +plus_orange_icon
+        input.post-create__hidden-tag-input(type='text', name='good_deal[tags]')
 
-        .post-create__form-things-field
-          input#post-create__form-things-field(type='text', placeholder='Чем ещё вы можете помочь?')
-          button#add-thing(type='button') Добавить
+        button#add-things.post-create__add-tag-btn(type='button')
+          +plus_orange_icon
+
+      .post-create__form-things-field
+        input#post-create__form-things-field(type='text', placeholder='Чем поможете?')
+        button#add-thing(type='button') Добавить        
 
       .post-create__form-wrapper.post-create__form-wrapper--bottom
         .post-create__form-attach
           .post-create__form-attach-text
             | Прикрепить:
 
-          label.post-create__form-attach-btn.post-create__form-attach-btn-file
+          label.post-create__form-attach-file
             input#event-attach-file.post-create__form-attach-input(type='file')
             +camera_gray_icon
+          
+          button#event-attach-people.post-create__form-attach-people(type='button')
+            +user_gray_icon
 
-          div.post-create__form-attach-wrapper
-            button#event-attach-people.post-create__form-attach-btn(type='button')
-              +user_gray_icon
-
-            #event-attach-people-list.post-create__form-attach-people
+            #event-attach-people-list.post-create__people-list
               ul.post-create__form-attach-people-list
                 li.post-create__form-attach-people-item
                   .post-create__form-attach-people-item-photo
@@ -72,26 +82,118 @@
 
         .post-create__form-submit
           button#change-privacy.post-create__form-privacy-btn(type='button', data-private='false')
-            .post-create__form-privacy-icon.post-create__form-privacy-icon--false
+            .post-create__form-privacy-icon--false
               +privacy_unlock_gray_icon
-            .post-create__form-privacy-icon.post-create__form-privacy-icon--true
+            .post-create__form-privacy-icon--true
               +privacy_lock_gray_icon
 
           button.post-create__form-submit-btn(type='submit')
-            | Опубликовать
+            | Создать
     form.post-create__form.post-create__form--note
       .post-create__form-message
         .post-create__form-message-author
-          +retina_img_png('Ionova')
+          span.post-create__form-message-text
+            | NM
 
-        textarea.post-create__form-message-textarea(cols='30', placeholder='Описание')
+        .post-create__text-block
+          textarea.post-create__form-message-textarea(placeholder='Описание', maxlength='50')
 
-      .post-create__form-wrapper.post-create__form-wrapper--bottom
+          span.post-create__hint
+            | Описание не должно содержать больше 50 символов
+
+        button.post-create__fast-add-btn
+          +smile-btn
+
+        .post-create__fast-add
+          .post-create__fast-add-backdrop
+          .post-create__fast-add-modal
+            button.post-create__fast-add-cancel(type='button')
+              | Отмена
+            h3.post-create__fast-add-header
+              | Быстрая Запись:
+
+            ul.post-create__fast-add-list
+              li.post-create__fast-add-item
+                h6.post-create__fast-add-title
+                  | Помог
+                ul.post-create__fast-add-inner
+                  button.post-create__fast-add-inner-item(type='button')
+                    +child-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +elderly-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +animal-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +car-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +nature-icon
+
+              li.post-create__fast-add-item
+                h6.post-create__fast-add-title
+                  | Покормил
+                ul.post-create__fast-add-inner
+                  button.post-create__fast-add-inner-item(type='button')
+                    +animal-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +child-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +elderly-icon                  
+                  button.post-create__fast-add-inner-item(type='button')
+                    +cash-icon
+
+              li.post-create__fast-add-item
+                h6.post-create__fast-add-title
+                  | Подарил
+                ul.post-create__fast-add-inner
+                  button.post-create__fast-add-inner-item(type='button')
+                    +money-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +gift-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +dress-icon                  
+                  button.post-create__fast-add-inner-item(type='button')
+                    +books-icon
+
+
+
+
+
+
+              li.post-create__fast-add-item
+                h6.post-create__fast-add-title
+                  | Подарил
+                ul.post-create__fast-add-inner
+                  button.post-create__fast-add-inner-item(type='button')
+                    +money-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +gift-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +dress-icon                  
+                  button.post-create__fast-add-inner-item(type='button')
+                    +books-icon
+
+              li.post-create__fast-add-item
+                h6.post-create__fast-add-title
+                  | Подарил
+                ul.post-create__fast-add-inner
+                  button.post-create__fast-add-inner-item(type='button')
+                    +money-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +gift-icon
+                  button.post-create__fast-add-inner-item(type='button')
+                    +dress-icon                  
+                  button.post-create__fast-add-inner-item(type='button')
+                    +books-icon
+
+            
+
+
+      .post-create__form-wrapper.post-create__form-wrapper--note
         .post-create__form-attach
           .post-create__form-attach-text
             | Прикрепить:
 
-          label.post-create__form-attach-btn.post-create__form-attach-btn-file
+          label.post-create__form-attach-file
             input#note-attach-file.post-create__form-attach-input(type='file')
             +camera_gray_icon
 
@@ -103,4 +205,4 @@
               +privacy_lock_gray_icon
 
           button.post-create__form-submit-btn(type='submit')
-            | Опубликовать
+            | Создать

@@ -3,9 +3,15 @@ body
   
 .container
   max-width: 1200px
-  margin: 0 auto
   width: 100%
-  padding-top: 50px
+  margin: 0 auto  
+  padding-top: 31px
+
+  +respond-from(768px)
+    padding-top: 22px
+
+  +respond-from(1440px)
+    padding-top: 35px
 
 .container--relative
   position: relative

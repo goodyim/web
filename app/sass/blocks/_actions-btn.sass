@@ -1,0 +1,110 @@
+.actions-btn
+  position: absolute
+  top: 5px
+  right: 6px
+
+  +respond-from(600px)
+    top: 15px
+    right: 25px
+
+.actions-btn__btn
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 26px
+  height: 24px
+  border: none
+  background-color: transparent
+  cursor: pointer  
+
+  i
+    display: block
+    position: relative
+    width: 3px
+    height: 3px
+    margin: auto
+    background-color: #D6D5D5
+    border-radius: 50%
+
+    &::before,
+    &::after
+      position: absolute
+      top: 0
+      left: -7px
+      content: ''
+      width: 3px
+      height: 3px
+      background-color: #D6D5D5
+      border-radius: 50%
+
+    &::after
+      left: 7px
+
+  +respond-from(600px)
+    i
+      width: 5px
+      height: 5px
+
+      &::before,
+      &::after
+        left: -9px
+        width: 5px
+        height: 5px
+
+      &::after
+        left: 9px
+    
+.actions-btn__tooltip
+  display: none  
+  position: absolute
+  top: 32px
+  right: calc(50% - 27px)
+  width: 150px
+  background-color: #fff
+  box-shadow: 0 1px 4px 1px rgba(185, 181, 181, .5)
+  border-radius: 8px  
+  z-index: 1 // to overflow card preview
+
+  +respond-from(715px)
+    right: calc(50% - 75px)
+
+  &--active
+    display: block
+
+  &:before
+    position: absolute
+    top: -8px
+    right: 17px
+    content: ''
+    width: 20px
+    height: 20px
+    transform: rotate(45deg)
+    background-color: #fff
+    box-shadow: 0 1px 4px 1px rgba(185, 181, 181, .5)
+    z-index: 0
+
+    +respond-from(715px)
+      right: 65px
+
+.actions-btn__list
+  position: relative
+  padding: 8px 0
+  border-radius: 8px
+  overflow: hidden
+  background-color: #fff
+
+.actions-btn__item
+  display: block
+  width: 100%
+  text-align: left
+  padding: 7px 20px
+  +OpenSansRegular
+  color: #262525  
+  background-color: #fff
+  border: none
+  cursor: pointer  
+  
+  &:hover
+    background-color: #f1f2f6
+

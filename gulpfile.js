@@ -4,7 +4,8 @@ var gulp          = require('gulp'),
     autoprefixer  = require('gulp-autoprefixer'),
     htmlbeautify  = require('gulp-html-beautify'),
     jade          = require('gulp-jade'),
-    jsImport      = require('gulp-js-import');
+    jsImport      = require('gulp-js-import'),
+    tiny          = require('gulp-tinypng-nokey');
 
 var path = {
   sass:   { watch: './app/sass/**/*.sass' },
