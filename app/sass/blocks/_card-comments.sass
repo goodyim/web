@@ -8,7 +8,6 @@
   padding: 0 9px
   opacity: 0
   transition: max-height 0.8s linear .3s, padding 1s, opacity .6s
-  overflow: hidden
 
   &::before
     position: absolute
@@ -20,7 +19,8 @@
     background-color: #D6D5D5
 
   +respond-from(600px)
-    padding: 9px 25px 25px
+    padding: 0
+    //padding: 9px 25px 25px
 
 .card-comments--active
   padding: 17px 9px 15px
