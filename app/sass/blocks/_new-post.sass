@@ -1,0 +1,283 @@
+.new-post
+  min-width: 290px
+  max-width: 470px
+  margin: 0 auto
+  margin-bottom: 33px
+
+  +respond-from(600px)
+    padding-left: 25px
+
+.new-post__message
+  display: flex
+  padding-left: 9px
+
+  +respond-from(600px)
+    padding-left: 0
+
+.new-post__author
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 35px
+  height: 35px
+  margin-right: 13px
+  border-radius: 50%
+  background: #FFD700
+  overflow: hidden
+
+  +respond-from(600px)
+    width: 40px
+    height: 40px
+    margin-right: 10px
+  
+.new-post__shortname
+  font-size: 14px
+  font-weight: 700
+  color: #FFFFFF
+
+.new-post__text-block
+  flex-grow: 1
+  min-height: 53px
+  padding-top: 10px
+
+.new-post__textarea
+  width: calc(100% - 55px)
+  font-size: 15px
+  border: none
+  background-color: transparent
+  resize: none
+
+  +respond-from(600px)
+    font-size: 17px
+
+.new-post__tags
+  position: relative  
+
+.new-post__tags--active
+  .new-post__tag-list
+    display: flex
+    width: calc(100% - 55px)
+
+    +respond-from(600px)
+      margin-bottom: 15px
+      padding-top: 5px
+
+  .new-post__addtag-btn
+    top: 0
+    transform: rotate(135deg)
+
+.new-post__tag-list
+  display: none
+
+.new-post__tag-item
+  height: 30px
+  border: 1px solid rgba(#c9c6c6, .7)
+  border-radius: 32px
+  font-size: 15px
+  color: #a2a0a0
+  padding: 3px 15px 6px
+  cursor: pointer
+  transition: background-image ease-out .15s 
+  margin-bottom: 10px
+  margin-right: 9px
+
+  &:hover
+    background-image: linear-gradient(-180deg, #f08f8c 0%, #f7c063 100%)
+    border-color: transparent
+    border-top-color: #f08f8c
+    border-bottom-color: #f7c063
+    color: #fff
+
+.new-post__addtag-btn
+  position: absolute
+  top: -51px
+  right: 15px
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 31px
+  height: 31px
+  font-size: 0
+  border-radius: 50%
+  border: 1px solid #F6AF70
+
+  
+  &::before,
+  &::after
+    position: absolute
+    top: 14px
+    left: 9px
+    content: ''
+    width: 11px
+    height: 1px
+    background-color: #F6AF70
+
+  &::after
+    transform: rotate(90deg)
+    top: 14px
+    left: 9px
+
+  +respond-from(600px)
+    top: -57px
+    right: 27px
+    width: 36px
+    height: 36px
+    border: 2px solid #F6AF70
+    cursor: pointer
+
+    &::before,
+    &::after
+      top: 15px
+      width: 14px
+      height: 2px
+    &::after
+      top: 15px
+      left: 9px
+
+
+.new-post__actions
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  padding-left: 14px
+  padding-top: 16px
+
+  +respond-from(768px)
+    padding-top: 0
+    padding-left: 0
+
+.new-post__select-date-btn,
+.new-post__select-location-btn
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 24px
+  height: 24px
+  margin-right: 13px
+  border-radius: 50%
+  background: linear-gradient(180deg, #F08F8C 0%, #F7C063 100%)
+
+  svg
+    width: 13px
+    height: 13px
+
+  +respond-from(600px)
+    width: 28px
+    height: 28px
+    margin-right: 17px
+
+    svg
+      width: 14px
+      height: 15px
+
+.new-post__select-location-btn
+  margin-right: 22px
+  svg
+    width: 18px
+    height: 13px
+    +respond-from(600px)
+      height: 16px
+
+.new-post__form-attach-file
+  display: flex
+  align-items: center
+  margin-right: 14px
+  background-color: transparent
+  border: none
+  cursor: pointer
+  position: relative
+  
+  svg
+    width: 19px
+    height: 15px
+
+    +respond-from(600px)
+      width: 23px
+      height: 18px
+
+  +respond-from(600px)
+    margin-right: 20px
+
+    svg
+      width: 23px
+      height: 18px
+      
+
+.new-post__form-attach-input
+  opacity: 0
+  visibility: hidden
+  position: absolute
+  left: -9999px
+
+.new-post__form-attach-people
+  display: flex
+  align-items: center
+  margin-right: 15px
+  background-color: transparent
+  border: none
+  cursor: pointer
+  position: relative
+  
+  svg
+    width: 15px
+    height: 14px
+
+  +respond-from(600px)
+    margin-right: 18px
+    svg
+      width: 21px
+      height: 17px
+
+.new-post__form-privacy-btn
+  display: flex
+  align-items: center
+  width: 17px
+  padding-top: 2px
+  background-color: transparent
+  border: none
+  cursor: pointer
+  position: relative
+  margin-right: 11px
+
+  +respond-from(768px)
+    padding-top: 5px
+
+.new-post__form-privacy-icon--false,
+.new-post__form-privacy-icon--true
+  svg
+    width: 12px
+    height: 16px
+
+    +respond-from(600px)
+      width: 17px
+      height: 19px
+
+.new-post__form-privacy-icon--false
+  .new-post__form-privacy-btn--private &
+    display: none
+
+.new-post__form-privacy-icon--true
+  display: none
+
+  .new-post__form-privacy-btn--private &
+    display: block
+
+.new-post__form-submit-btn
+  width: 86px
+  height: 30px
+  margin-left: auto
+  font-weight: 600
+  font-size: 13px
+  color: #FFFFFF
+  background: linear-gradient(270deg, #F88E7D 0%, #F6B459 100%)
+  box-shadow: 0px 2px 4px rgba(230, 227, 227, 0.5)
+  border-radius: 100px
+  border: none
+  cursor: pointer
+
+  +respond-from(600px)
+    width: 187px
+    height: 40px
+    font-size: 16px
+    margin-right: 25px
+

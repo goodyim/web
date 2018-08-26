@@ -1,6 +1,19 @@
 .feed
   max-width: 600px
   margin: 0 auto
+  padding-top: 20px
+
+  .container
+    min-width: 320px
+    padding: 0 15px
+
+    +respond-from(600px)
+      width: 470px
+      padding: 0
+
+    +respond-from(1440px)
+      width: 530px
+      padding: 0
 
 // .feed__tabs
 //   display: flex
