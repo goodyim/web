@@ -1,0 +1,40 @@
+html(lang='en')
+  link(rel="stylesheet" href="../../css/friends/friends.css")
+  include ../includes/blocks/head.jade
+  body
+    .container-main
+      header
+      .way
+        h1.way__name Daria Ionova
+        img.way__arrow(src="../../img/arrow.png")
+        h1.way__active Друзья
+      .profile
+        .user
+          h1.user-name Daria Ionova
+          h1.user-city Москва
+          img.user-photo(src="../../img/Daria Ionova.png")
+          button.user__write.button Написать
+          button.user__subscribe.button подписаться
+          .menu
+            .menu__sphere
+              h1.title Сфера помощи
+              p Дети, животные,
+                br
+                пожилые..
+            .menu__rewards
+              h1.title Награды
+              p.number 17
+            .menu__friends-number
+              h1.title Друзья
+              p.number 7
+            .menu__notice
+              h1.title Уведомления
+              p.number 2
+            h1.menu__goodyback Goodyback
+            img.logo-shape(src="../../img/shape.png")
+        .friends
+          include ../includes/blocks/Friends-list-tablet.jade
+        .pictures
+          .search
+            input.search__input(type="text" placeholder="Поиск по именам или тегам" name="поиск")
+          include ../includes/blocks/pictures.jade
