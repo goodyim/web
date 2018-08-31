@@ -145,12 +145,11 @@ button {
           margin-top: 5px;
           display: block;
           font-size: 14px;
-          font-weight: 300;
+          font-weight: 500;
           color: #A2A0A0; } }
       @media only screen and (min-width: 1440px) {
         .friends .friend-text .friend-text__friend-city {
-          color: #1F1E1E;
-          font-weight: regular; } }
+          color: #1F1E1E; } }
     .friends .friend-text .friend-text__about {
       display: none; }
       @media only screen and (min-width: 768px) {
@@ -268,7 +267,7 @@ button {
       flex-shrink: 0;
       padding: 0;
       align-self: flex-start;
-      margin-right: 70px;
+      margin-right: 95px;
       margin-left: 29px;
       margin-top: 0; } }
 
