@@ -41,9 +41,12 @@ header {
   font-weight: 300; }
 
 .search {
-  width: 100%;
+  width: auto;
+  white-space: nowrap;
   position: absolute;
   top: 80px;
+  right: 0;
+  left: 0;
   margin-left: 20px;
   margin-right: 20px; }
   @media only screen and (min-width: 768px) {
