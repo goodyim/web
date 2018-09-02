@@ -19,7 +19,7 @@ gulp.task('sass', function(){
   return gulp.src(path.sass.watch)
   .pipe(sass())
   .pipe(autoprefixer())
-  .pipe(gulp.dest('./dist/css'))
+  .pipe(gulp.dest('app/'))
 });
 
 gulp.task('jadeh', function() {
