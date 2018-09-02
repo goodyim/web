@@ -12,19 +12,21 @@ html(lang='en')
     #page.page
       .content
         include ../includes/header.jade
-        main.container
-          .feed
-            include ../includes/blocks/tabs_switcher.jade
-            include ../includes/blocks/post_create.jade
+        main.feed
+          .container
+            //include ../includes/blocks/tabs_switcher.jade
+            include ../includes/blocks/select_group.jade
+            //include ../includes/blocks/post_create.jade
+            include ../includes/blocks/new_post.jade
 
             .feed__content
               include ../includes/blocks/card_event.jade
               include ../includes/blocks/card_event.jade
               include ../includes/blocks/card_event.jade
 
-    script(src='js/blocks/post-create.js')
+    //script(src='js/blocks/post-create.js')
     script(src='js/blocks/actions-btn.js')
     script(src='js/blocks/comments.js')
-    script(src='js/pages/feed-page.js')
+    //script(src='js/pages/feed-page.js')
     
     include ../includes/footer.jade

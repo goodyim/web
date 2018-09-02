@@ -1,35 +1,66 @@
-.nco
-  @extend %page-wrapper  
-  display: flex
-  align-items: flex-start
-  min-height: 1105px
+.nco   
+  padding-top: 14px
+
+  +respond-from(768px)
+    .container
+      display: flex
+      align-items: flex-start
+      background-color: #fff
+      box-shadow: 0 2px 4px 0 rgba(173, 170, 170, .5)
+      border-radius: 10px      
+
+  +respond-from(1440px)    
+    min-height: 1105px
 
 .nco__information
-  flex-shrink: 0
-  width: 220px
-  align-self: stretch
-  padding-top: 25px
-  background: #FFFFFF
-  box-shadow: 0px 4px 7px rgba(160, 159, 159, 0.5)
-  border-radius: 6px
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+  padding: 0 20px
+  .nco__userpic
+    order: -1    
+
+  +respond-from(768px)
+    flex-shrink: 0
+    width: 220px
+    align-self: stretch
+    padding-top: 25px
+    background: #FFFFFF
+    box-shadow: 0px 4px 7px rgba(160, 159, 159, 0.5)
+    border-radius: 6px
 
 .nco__title
   position: relative
-  +OpenSansSemiBold
-  margin-bottom: 13px
-  text-align: center
-  font-size: 22px  
+  display: flex
+  align-items: flex-start
+  width: calc(100% - 93px)
+  +OpenSansSemiBold  
+  font-size: 20px  
 
-.nco__title--active
+  span 
+    display: block
+    margin-top: 13px
+
+  +respond-from(768px)
+    margin-bottom: 13px
+    text-align: center
+    font-size: 22px 
+
+.nco__check-icon
+  display: none
   position: relative
-  padding-right: 16px
+  width: 18px
+  height: 27px
+  margin-left: 22px
+  bottom: 7px
+  right: 0
 
   &:before,
   &:after
     position: absolute
     content: ''
-    top: 19px
-    right: 33px
+    top: 20px
+    right: 9px
     width: 8px
     height: 3px
     background: linear-gradient(180deg, #FAA572 0%, #FB8E6B 100%)
@@ -37,16 +68,36 @@
     border-radius: 1px
 
   &:after
-    top: 16px
-    right: 22px
+    top: 18px
+    right: -2px
     width: 16px
     height: 3px
     transform: rotate(-44deg) 
 
+.nco__title--active
+  .nco__check-icon
+    display: inline
+  
+
 .nco__userpic
-  width: 123px
-  height: 123px
-  margin: 0 auto 21px
+  flex-shrink: 0
+  width: 80px
+  height: 80px 
+  margin-right: 13px
+
+  img 
+    width: 100%
+    height: auto
+
+  +respond-from(768px)
+    width: 123px
+    height: 123px
+    margin: 0 auto 21px
+
+.nco__info-btns
+  width: 100%
+  display: flex
+  margin-top: 11px
 
 .nco__subscribe-btn
   @extend %transparent-btn
