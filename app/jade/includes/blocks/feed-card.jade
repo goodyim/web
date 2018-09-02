@@ -1,0 +1,57 @@
+.feed-card
+  .feed-card__body
+    .feed-card__head
+      .feed-card__user
+        .feed-card__user-pic
+          +retina_img_png('Ionova', '')
+        .feed-card__user-wrap
+          span.feed-card__name
+            | Ivan Ognevich
+          time.feed-card__time
+            | 15:34
+      ul.feed-card__participants
+        li.feed-card__participant
+          +retina_img_png('participant', '')
+        li.feed-card__participant
+          +retina_img_png('participant', '')
+        li.feed-card__participant
+          +retina_img_png('participant', '')
+
+      .feed-card__actions
+        button.feed-card__actions-btn(type='button')
+          i
+        .feed-card__actions-tooltip
+
+    .feed-card__pic
+      +retina_img_png('man&doggo', '')
+
+    p.feed-card__message
+      | Ребят, давайте отвезем сегодня продукты в питомник для собак?
+
+    .feed-card__item-wrapper
+      .feed-card__item
+        .feed-card__icon-bg
+          .feed-card__icon-clock
+            +clock_icon
+        span
+          | 5 декабря в 10:00
+
+    a.feed-card__item.feed-card__link(href=empty_href)
+      .feed-card__icon-bg
+        .feed-card__icon-location
+          +location_icon
+      span Милютинский переулок,5Милютинский
+
+    ul.feed-card__tags-list
+      li.feed-card__tag 3-5 вещей
+      li.feed-card__tag авто
+
+    .feed-card__bot-wrap  
+      .feed-card__actions
+        include ../blocks/actions.jade
+
+      button.feed-card__main-btn(type='button')
+
+
+
+  .feed-card__comments

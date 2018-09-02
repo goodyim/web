@@ -1,0 +1,213 @@
+.feed-card
+  width: 290px
+  margin: 0 auto 15px
+  padding: 4px 15px 
+  box-shadow: 0px 0px 10px #D7D7D6
+  background: #FFFFFF
+  border-radius: 6px
+
+.feed-card__head
+  display: flex
+  margin-bottom: 5px
+
+.feed-card__user
+  display: flex
+
+.feed-card__user-pic
+  width: 30px
+  height: 30px
+  margin-right: 5px
+  margin-top: 3px
+  border-radius: 50%
+  overflow: hidden
+  img
+    width: 100%
+    height: auto
+.feed-card__user-wrap
+  display: flex
+  flex-direction: column
+
+.feed-card__name
+  display: block
+  font-weight: 600
+  font-size: 13px
+  color: #A2A0A0
+
+.feed-card__time
+  font-weight: 400
+  font-size: 11px
+  color: #A2A0A0
+
+.feed-card__participants
+  display: flex
+  justify-content: space-evenly
+  align-self: flex-start
+  margin-top: 6px
+  margin-left: auto
+  width: 40px
+  cursor: pointer
+
+.feed-card__participant
+  position: relative
+  flex-shrink: 0
+  width: 24px
+  height: 24px
+  border-radius: 50%
+  border: 1px solid #FFFFFF
+  overflow: hidden
+  z-index: 3
+
+  img
+    width: 100%
+    height: 100%
+
+  &:nth-child(2)
+    left: -9px
+    z-index: 2
+
+  &:nth-child(3)
+    left: -18px
+    z-index: 1
+
+.feed-card__actions-btn
+  position: relative
+  width: 17px
+  height: 24px
+  margin-top: 6px
+  margin-left: 8px
+  background-color: transparent
+  border: none
+
+  i
+    position: absolute
+    top: 11px
+    left: 7px
+    width: 3px
+    height: 3px
+    border-radius: 50%
+    background-color: #D6D5D5
+
+    &::before,
+    &::after
+      position: absolute
+      content: ''
+      top: 0
+      left: -7px
+      width: 3px
+      height: 3px
+      border-radius: 50%
+      background-color: #D6D5D5
+
+    &::after
+      left: 7px
+
+.feed-card__pic
+  width: 100%
+  height: 160px
+  margin-bottom: 11px
+  overflow: hidden
+  img
+    width: 100%
+    height: auto
+    transform: translate(0, -5%)
+
+.feed-card__message
+  margin-bottom: 11px
+  line-height: 22px
+  font-size: 17px
+  color: #262525
+
+.feed-card__item-wrapper
+  display: flex
+
+.feed-card__item
+  display: flex
+  align-items: center
+  margin-bottom: 7px
+  font-size: 14px
+  color: #3E3D3D
+
+  span
+    padding-bottom: 2px
+
+.feed-card__icon-bg
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-shrink: 0
+  width: 21px
+  height: 21px
+  margin-right: 9px
+  background: linear-gradient(180deg, #F08F8C 0%, #F7C063 99.17%)
+  border-radius: 50%
+
+.feed-card__link  
+  span
+    position: relative
+    padding-right: 30px
+    white-space: nowrap
+    overflow: hidden  
+    text-overflow: ellipsis 
+    transition: all ease .2s
+
+    &::before,
+    &::after 
+      position: absolute
+      top: 7px
+      right: 14px
+      content: ''
+      background-color: #000000
+      width: 8px
+      height: 1px
+      transform: rotate(45deg)
+      transition: all ease .2s
+    
+    &::after 
+      top: 12px
+      transform: rotate(-45deg)
+
+    &:hover
+      color: #FF881F
+      &::before,
+      &::after 
+        background-color: #FF881F    
+
+.feed-card__icon-clock
+  svg
+    width: 19px
+    height: 11px
+
+.feed-card__icon-location
+  svg
+    width: 15px
+    height: 13px
+    margin-top: 4px
+
+.feed-card__tags-list
+  display: flex
+  flex-wrap: wrap
+  padding-top: 7px
+
+.feed-card__tag
+  display: flex
+  justify-content: center
+  align-items: center
+  width: auto
+  height: 30px
+  margin-bottom: 15px
+  margin-right: 8px
+  padding: 0 17px
+  padding-bottom: 2px
+  +OpenSansRegular
+  font-size: 14px
+  color: #A2A0A0
+  border: 1px solid rgba(#C9C6C6, .7)
+  box-sizing: border-box
+  border-radius: 32px
+  cursor: pointer
+  transition: all ease .2s
+
+  &:hover
+    color: #fff
+    background: linear-gradient(270deg, #f9b65d .1%, #ff9e80 100%)
+    border-color: transparent
