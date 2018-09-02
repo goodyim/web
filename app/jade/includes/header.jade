@@ -1,0 +1,63 @@
+header.header
+  .header__wrapper
+    a.header__logo(href='/')
+      .header__logo-picture
+        +retina_img_png('logotype', 'Goody')
+
+      span Goody
+    
+    button.header__burger(type='button', onclick='toggleNavigation()')
+      +header_burger_menu_icon
+
+    nav.header__navigation#header__navigation
+      a.header__navigation-link.header__navigation-link--map(href=empty_href)
+        span.header__navigation-icon
+          +map_icon
+
+        | Карта
+
+      a.header__navigation-link.header__navigation-link--events(href=empty_href)
+        span.header__navigation-icon
+          +events_icon
+
+        | Мои события 
+
+      a.header__navigation-link.header__navigation-link--goody(href=empty_href)
+        span.header__navigation-icon
+          +star_icon
+
+        | Доброметр
+
+      a.header__navigation-link.header__navigation-link--nko(href='partners.html')
+        span.header__navigation-icon
+          +people_icon
+
+        | Партнеры
+
+      a.header__navigation-link.header__navigation-link--desktop-invisible(href=empty_href)
+        span.header__navigation-icon
+          +profile_icon
+
+        | Профиль
+
+      a.header__navigation-link.header__navigation-link--desktop-invisible(href=empty_href)
+        span.header__navigation-icon
+          +settings_icon
+
+        | Настройки
+
+      a.header__navigation-link.header__navigation-link--desktop-invisible(href=empty_href)
+        span.header__navigation-icon
+          +search_icon
+
+        | Поиск
+
+    .header__actions
+      button.header__actions-item(type='button', title="Профиль")
+        +profile_icon
+
+      button.header__actions-item(type='button', title="Уведомления")
+        +notifications_icon
+
+      button.header__actions-item(type='button', title="Настройки")
+        +settings_icon
