@@ -95,7 +95,8 @@ button {
   border: #FC9E68 1px solid;
   background-color: white;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 14px; }
   @media only screen and (min-width: 768px) {
     button {
       height: 34px; } }
@@ -114,7 +115,7 @@ button {
       margin-right: 0; } }
   @media only screen and (min-width: 1440px) {
     .friends {
-      margin-top: 108px; } }
+      margin-top: 110px; } }
   .friends .friend__photo img {
     width: 30px; }
     @media only screen and (min-width: 768px) {
@@ -148,7 +149,7 @@ button {
           margin-top: 5px;
           display: block;
           font-size: 14px;
-          font-weight: 500;
+          font-weight: 400;
           color: #A2A0A0; } }
       @media only screen and (min-width: 1440px) {
         .friends .friend-text .friend-text__friend-city {
@@ -218,7 +219,7 @@ button {
   background: linear-gradient(to left, #FC9F67, #FB8E6B);
   font-size: 14px;
   color: white;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 12px; }
   @media only screen and (min-width: 1440px) {
     .user__write {
@@ -227,18 +228,15 @@ button {
 .user__subscribe {
   color: #FD8E3F;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 12px; }
-  @media only screen and (min-width: 1440px) {
-    .user__subscribe {
-      margin-top: 15px; } }
 
 .user-city {
   font-size: 14px;
   color: #1F1E1E;
-  line-height: 19px;
-  font-weight: 400;
-  margin-top: 2px; }
+  font-weight: 500;
+  margin-top: 2px;
+  margin-bottom: 11px; }
 
 .user-name {
   font-size: 21px;
@@ -299,7 +297,7 @@ button {
   margin-top: 25px;
   margin-bottom: 9px;
   font-size: 16px;
-  margin-top: 26px;
+  margin-top: 27px;
   font-weight: 400; }
 .menu p {
   font-size: 14px;
@@ -317,7 +315,8 @@ button {
   margin: 0;
   margin-bottom: 13px; }
 .menu .menu__friends-number .title, .menu .menu__notice .title {
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  margin-top: 12px; }
 .menu .menu__friends-number .number, .menu .menu__notice .number {
   margin: 0;
   margin-bottom: 8px; }
