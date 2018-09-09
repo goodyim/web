@@ -1,13 +1,12 @@
 html(lang='en')
-  link(rel="stylesheet" href="../../css/friends/friends.css")
-  include ../includes/blocks/head.jade
+  link(rel="stylesheet" href="css/friends/friends.css")
   body
     .container-main
       header
       .way
         h1.way__name 
           | Daria Ionova
-        img.way__arrow(src="../../img/arrow.png")
+        img.way__arrow(src="images/arrow.png")
         h1.way__active
           | Друзья
       .profile
@@ -16,7 +15,7 @@ html(lang='en')
             | Daria Ionova
           h1.user-city
             | Москва
-          img.user-photo(src="../../img/Daria Ionova.png")
+          img.user-photo(src="images/Daria Ionova.png")
           button.user__write.button
             | Написать
           button.user__subscribe.button
@@ -46,10 +45,10 @@ html(lang='en')
                 | 2
             h1.menu__goodyback 
               | Goodyback
-            img.logo-shape(src="../../img/shape.png")
+            img.logo-shape(src="images/shape.png")
         .friends
           include ../includes/blocks/Friends-list-tablet.jade
         .pictures
           .search
-            input.search__input(type="text" placeholder="Поиск по именам или тегам" name="поиск")
+            input.search__input(type="text" placeholder="Поиск по имени или тегам" name="поиск")
           include ../includes/blocks/pictures.jade

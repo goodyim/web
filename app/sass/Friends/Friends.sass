@@ -7,13 +7,13 @@ body
   padding: 0
   background: white
   @include respond-from(768px)
-    background: #F2F2F2
+    background: #fefefe
 header
   width: 100%
   background: #F8AA3E
   height: 58px
   @include respond-from(768px)
-    height: 55px
+    height: 50px
   @include respond-from(1440px)
     height: 58px
 .container-main
@@ -27,13 +27,15 @@ header
   text-align: left
   height: 34px
   margin-top: 0px
-  padding-left: 16px
+  padding-left: 12px
   font-size: 15px
   outline: none
   color: #9E9E9E
   border: 1px solid #D7D7D7  
   border-radius: 32px
   font-weight: 300
+  @include respond-from(1440px)
+    padding-left: 17px
 .search
   width: auto
   white-space: nowrap 
@@ -48,9 +50,9 @@ header
     margin-right: 30px
     width: 280px
     margin-left: auto
-    margin-top: 20px
+    margin-top: 14px
     position: absolute
-    right: 20px
+    right: 23px
     top: 100px
   @include respond-from(1440px)
     width: 100%
@@ -96,7 +98,7 @@ button
   padding: 0
   @include respond-from(768px)
     width: 90%
-    margin-top: 78px
+    margin-top: 75px
     margin-left: 50px
     margin-right: 0
   @include respond-from(1440px)
@@ -112,7 +114,7 @@ button
       display: block
       cursor: pointer
       margin:
-        left: 15px
+        left: 20px
         right: 50px
     @include respond-from(1440px)
       margin-right: 0px
@@ -164,28 +166,28 @@ button
     background-color: white
     border-radius: 6px
     @include respond-from(1440px)
-      box-shadow: 7px 0 10px -10px #979797, -7px 0 10px -10px #979797
+      box-shadow: 7px 0 10px -10px #979797
       margin-top: 52px
       width: auto
       margin:
-        left: 60px
-        right: 60px
+        left: 120px
+        right: 70px
 .user
   display: none
   @include respond-from(768px)
     display: block
-    box-shadow: 8px 0 10px -10px #979797, -8px 0 10px -10px #979797
+    box-shadow: 8px 0 10px -10px #979797, -7px 0 15px -10px #979797
     height: 100%
     border-radius: 6px
     width: 180px
     flex-shrink: 0
-    margin-left: 18px
+    margin-left: 15px
     button
       width: 126px
       height: 34px
   @include respond-from(1440px)
     width: 220px
-    margin-left: 60px
+    margin-left: 0px
     margin-top: 20px
 .user__write
   background: linear-gradient(to left, #FC9F67, #FB8E6B)
@@ -206,13 +208,14 @@ button
   font-weight: 500
   margin-top: 2px
   margin-bottom: 11px
-.user-photo
 .user-name
   font-size: 21px
   line-height: 29px
   font-weight: 600
   margin-top: 18px
   margin-bottom: 0
+  @include respond-from(768px)
+    margin-top: 14px
 .pictures-list
   @include respond-to(1440px)
     width: 0px
@@ -233,7 +236,7 @@ button
     flex-shrink: 0
     padding: 0
     align-self: flex-start
-    margin-right: 95px
+    margin-right: 83px
     margin-left: 29px
     margin-top: 0
 .pictures__picture 
