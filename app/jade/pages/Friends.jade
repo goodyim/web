@@ -1,8 +1,12 @@
+include ../includes/variables.jade
+include ../includes/mixins/mixins.jade
+
 html(lang='en')
-  link(rel="stylesheet" href="css/friends/friends.css")
+  include ../includes/head.jade
   body
     .container-main
       header
+        include ../includes/header.jade
       .way
         h1.way__name 
           | Daria Ionova
