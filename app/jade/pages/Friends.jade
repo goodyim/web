@@ -4,9 +4,11 @@ include ../includes/mixins/mixins.jade
 html(lang='en')
   include ../includes/head.jade
   body
+    include ../includes/header.jade
+    include ../includes/dependecies/js-jquery.jade
+    include ../includes/dependecies/js-jqueryui.jade
+    include ../includes/dependecies/js-tokenize2.jade
     .container-main
-      header
-        include ../includes/header.jade
       .way
         h1.way__name 
           | Daria Ionova
@@ -56,3 +58,4 @@ html(lang='en')
           .search
             input.search__input(type="text" placeholder="Поиск по имени или тегам" name="поиск")
           include ../includes/blocks/pictures.jade
+          
