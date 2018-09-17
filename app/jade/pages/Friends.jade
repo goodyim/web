@@ -55,16 +55,10 @@ html(lang='en')
                   | Goodyback
                 img.logo-shape(src="images/shape.png")
             .friends
-              include ../includes/blocks/Friends-list-tablet.jade
+              include ../includes/blocks/friends-list-tablet.jade
             .pictures
               .search
                 input.search__input(type="text" placeholder="Поиск по имени или тегам" name="поиск")
               include ../includes/blocks/pictures.jade
-
-
-          
-    script(src='js/blocks/post-create.js')
-    script(src='js/blocks/comments.js')
-    script(src='js/blocks/comments.js')
-    script(src='js/pages/feed-page.js')    
+ 
     include ../includes/footer.jade    
