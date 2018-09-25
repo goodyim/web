@@ -7,11 +7,18 @@ body
   background: #F9F9F9
 
 .notifications
+  margin:
+    left: 14px
+    right: 14px
   background: #F9F9F9
-  margin: 0
   padding: 0
   height: 100%
+  +respond-from(768px)
+    margin:
+      left: 34px
+      right: 27px
   +respond-from(1440px)
+    margin: 0
     background-color: #fff
     box-shadow: 0 2px 4px 0 rgba(173, 170, 170, .5)
     border-radius: 10px
@@ -34,13 +41,13 @@ body
     margin-top: 30px
 
 .notifications__switcher
-  +respond-from(768px)
-    margin-bottom: 0px
-    border-bottom: 1px solid #d5d4d4
   margin:
     left: auto
     right: auto 
     bottom: 0
+  +respond-from(768px)
+    margin-bottom: 0px
+    border-bottom: 1px solid #d5d4d4
 
 .notifications__switcher-tab
   background: #F9F9F9
@@ -83,78 +90,85 @@ body
 
 .notifications__switcher-tab--active
   color: #1f1e1e
+
   +respond-from(768px)
     border-bottom: 5px solid #F9AB3F
     
 .notifications__item-list
-  margin-top: 0px
-  padding-left: 14px
-  padding-right: 14px
+  display: none
+  margin-top: 32px
+
   +respond-from(768px)
-    padding: 
-      left: 34px
-      right: 27px
-    margin-top: 40px
+    max-width: 100%
+    width: fit-content 
+    margin:
+      left: auto
+      right: auto 
+    margin-top: 32px
+
   +respond-from(1440px)
-    margin-top: 0px
-  position: absolute
-  top: -99999px
-  left: 0
-  width: 100%
-  +respond-from(1440px)
+    width: auto
+    margin:
+      left: 0
+      right: 0 
+    margin-top: 42px
     padding: 0 64px
 
   &--active
-    top: 87px
+    display: block
 
 .notifications__item-link
-  .notifications__item:first-child &  
-    margin-top: 28px
-    +respond-from(768px)
-      margin-top: 48px
-    +respond-from(1440px)
-      margin-top: 30px
-.notifications__item
-  margin-right: 14px
-
-
-.notifications__item-link
+  margin-right: -10px
   display: flex
   align-items: center
-  width: auto
   margin-top: 11px
   padding-bottom: 12px
+  position: relative
+
   +respond-from(768px)
-    border-bottom: 1px solid #D8D8D8
+    max-width: 100%
+    width: 100%
     padding-bottom: 0
     border: none
-    margin-top: 4px
+    margin-top: 2px
+
   +respond-from(1440px)
-    margin-top: 3px
-  +respond-to(768px)
-    position: relative
+    width: auto
+    margin-top: 2px
+
+  &:before
+    content: ""
+    position: absolute
+    left: 0
+    bottom: 0
+    margin-left: 8px
+    height: 1px
+    width: calc(100% - 22px)
+    border-bottom: 1px solid #D8D8D8
+
+    +respond-from(768px)
+      margin-left: 80px
+      width: calc(100% - 70px)
+    +respond-from(1440px)
+
+      margin-left: 90px
+      width: calc(100% - 90px)
+
+  .notifications__item:last-child &
     &:before
-      content: ""
-      position: absolute
-      left: 0
-      bottom: 0
-      margin-left: 10px
-      height: 1px
-      width: 100%
-      border-bottom: 1px solid #D8D8D8
-    .notifications__item:last-child &
-      &:before
-        border-bottom: none
+      border-bottom: none
 
 .notifications__userpic
   width: 40px
   height: 40px
   margin-right: 8px
+
   +respond-from(768px)
     margin-right: 21px
     width: 60px
     height: 60px
     margin-top: -6px
+
   +respond-from(1440px)
     width: 70px
     height: 70px  
@@ -164,23 +178,28 @@ body
   img
     width: 40px
     height: 40px
+
     +respond-from(768px)
       width: 60px
       height: 60px
+
     +respond-from(1440px)
       width: 70px
       height: 70px  
 
 .notifications__inner-wrap
-  +respond-from(768px)
-    display: flex  
+  width: 100%
+  overflow: hidden
+  height: 42px
   align-items: center
-  flex-grow: 1
   white-space: nowrap
   padding:
     top: 0px
     bottom: 0
+
   +respond-from(768px)
+    height: 97px
+    display: flex  
     border-bottom: 1px solid #D8D8D8
 
   .notifications__item:last-child &
@@ -191,25 +210,27 @@ body
   flex-direction: column
   justify-content: center
   align-items: flex-start
+  padding-right: 0px
   flex-shrink: 0
   width: auto
   +respond-from(768px)
     margin-right: 55px
-  +respond-from(1440px)
-    width: 355px
-  padding-right: 0px
+  +respond-from(1440px)  
+    margin-right: 133px
 
 .notifications__title
   margin-top: 0px
   font-size: 14px
-  +respond-from(768px)
-    margin-top: 9px
-    font-size: 22px
-  +respond-from(768px)
-    margin-top: 12px
   display: block
   +LatoRegular
   color: #262525  
+
+  +respond-from(768px)
+    margin-top: 9px
+    font-size: 22px
+
+  +respond-from(768px)
+    margin-top: 12px
 
   &--active
     position: relative
@@ -239,40 +260,37 @@ body
   font-size: 14px
   +respond-from(768px)
     display: block
-    width: 100%
+    width: 220px
     margin-top: 8px
     +OpenSansRegular
     font-size: 18px
     color: #A2A0A0  
     padding-bottom: 22px
 
-.notifications__message
-  flex-grow: 1
+.notifications__message 
   position: relative
-  padding-right: 0px
-  display: flex
+  padding-right: 42px
+  display: block
   +respond-from(768px)
-    max-width: 500px
-    margin-left: auto
-    margin-right: auto
+    padding-right: 24px
     display: block
-  +respond-from(1440px)
-    margin-left: 0
+    height: 100%
 
 .notifications__message-text 
-  max-width: 20vh
+  color: #A2A0A0
   font-size: 14px 
-  margin-top: 4px
-  +respond-from(768px)
-    max-width: 500px
-    font-size: 18px
-    margin-top: 0px
-    margin-bottom: 8px
+  margin-top: 2px
   display: block 
   max-height: 72px
   overflow: hidden
   +OpenSansRegular
-  color: #262525
+  +respond-from(768px)
+    color: #262525
+    font-size: 18px
+    margin-top: 18px
+    margin-bottom: 4px
+  +respond-from(1440px)  
+    margin-bottom: 0px
 
   &--withgradient
     position: relative    
@@ -290,12 +308,13 @@ body
   position: absolute
   width: auto
   bottom: 24px
-  right: -8px
+  right: 15px
   font-size: 11px
-  +respond-from(768px)
-    position: static
-    margin: 0 
-    font-size: 18px
   display: block
   +OpenSansRegular
   color: #A2A0A0
+  +respond-from(768px)
+    position: static
+    margin-top: 8px
+    font-size: 18px
+ 

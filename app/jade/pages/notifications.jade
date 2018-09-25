@@ -17,8 +17,8 @@ html(lang='en')
                 button(type='button').notifications__switcher-tab Сообщения
 
             ul.notifications__item-list              
-              li.notifications__item.first
-                a.notifications__item-link.first(href=empty_href)
+              li.notifications__item
+                a.notifications__item-link(href=empty_href)
                   .notifications__userpic
                     +retina_img_png('userpic', 'Детский дом')
 
@@ -43,10 +43,10 @@ html(lang='en')
                       .notifications__title.notifications__title--active
                         | Детский дом №5
                       span.notifications__event
-                        | День открытых дверей 
+                        | Давайте поможем собачкам
                     .notifications__message
                       p.notifications__message-text
-                        | Ваша заявка на участие одобрена
+                        | Ваш комментарий понравился Ivan…
                       time.notifications__time
                         | 12:50          
 
@@ -60,7 +60,7 @@ html(lang='en')
                       .notifications__title.notifications__title--active
                         | Детский дом №5
                       span.notifications__event
-                        | День открытых дверей 
+                        | Давайте поможем собачкам
                     .notifications__message
                       p.notifications__message-text
                         | Ваша заявка на участие одобрена
@@ -85,7 +85,7 @@ html(lang='en')
                         | 12:50
 
             ul.notifications__item-list              
-              li.notifications__item.first
+              li.notifications__item
                 a.notifications__item-link(href=empty_href)
                   .notifications__userpic
                     +retina_img_png('userpic', 'Детский дом')
