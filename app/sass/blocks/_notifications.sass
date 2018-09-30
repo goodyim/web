@@ -3,8 +3,12 @@
 body, html, .container, .content, .page
   height: 100%
 
+#page.page
+  .content
+    background: #F9F9F9 
+
 body
-  background: #F9F9F9
+  background: #F9F9F9    
 
 .notifications
   margin:
@@ -111,7 +115,7 @@ body
     margin:
       left: 0
       right: 0 
-    margin-top: 42px
+    margin-top: 40px
     padding: 0 64px
 
   &--active
@@ -134,7 +138,7 @@ body
 
   +respond-from(1440px)
     width: auto
-    margin-top: 2px
+    margin-top: 3px
 
   &:before
     content: ""
@@ -147,8 +151,8 @@ body
     border-bottom: 1px solid #D8D8D8
 
     +respond-from(768px)
-      margin-left: 80px
-      width: calc(100% - 70px)
+      margin-left: 82px
+      width: calc(100% - 82px)
     +respond-from(1440px)
 
       margin-left: 90px
@@ -164,12 +168,13 @@ body
   margin-right: 8px
 
   +respond-from(768px)
-    margin-right: 21px
+    margin-right: 22px
     width: 60px
     height: 60px
     margin-top: -6px
 
   +respond-from(1440px)
+    margin-right: 18px
     width: 70px
     height: 70px  
     margin-top: -6px
@@ -208,15 +213,16 @@ body
 .notifications__dis
   display: flex
   flex-direction: column
-  justify-content: center
+  justify-content: space-between
   align-items: flex-start
   padding-right: 0px
   flex-shrink: 0
   width: auto
   +respond-from(768px)
+    height: 100%
     margin-right: 55px
   +respond-from(1440px)  
-    margin-right: 133px
+    margin-right: 138px
 
 .notifications__title
   margin-top: 0px
@@ -226,34 +232,32 @@ body
   color: #262525  
 
   +respond-from(768px)
-    margin-top: 9px
+    margin-bottom: auto
+    margin-top: auto
     font-size: 22px
 
-  +respond-from(768px)
-    margin-top: 12px
+    &--active
+      position: relative
+      padding-right: 25px
 
-  &--active
-    position: relative
-    padding-right: 25px
+      &:before,
+      &:after
+        position: absolute
+        content: ''
+        top: 16px
+        right: 12px
+        width: 8px
+        height: 3px
+        background: linear-gradient(180deg, #FAA572 0%, #FB8E6B 100%)
+        transform: rotate(45deg)
+        border-radius: 1px
 
-    &:before,
-    &:after
-      position: absolute
-      content: ''
-      top: 14px
-      right: 12px
-      width: 8px
-      height: 3px
-      background: linear-gradient(180deg, #FAA572 0%, #FB8E6B 100%)
-      transform: rotate(45deg)
-      border-radius: 1px
-
-    &:after
-      top: 11px
-      right: 1px
-      width: 16px
-      height: 3px
-      transform: rotate(-44deg) 
+      &:after
+        top: 14px
+        right: 1px
+        width: 16px
+        height: 3px
+        transform: rotate(-44deg) 
 
 .notifications__event
   display: none
@@ -261,11 +265,15 @@ body
   +respond-from(768px)
     display: block
     width: 220px
-    margin-top: 8px
+    margin-top: 0
+    margin-bottom: 23px
     +OpenSansRegular
     font-size: 18px
     color: #A2A0A0  
-    padding-bottom: 22px
+    padding-bottom: 0
+    &:empty
+      margin-top: 0
+      margin-bottom: 0
 
 .notifications__message 
   position: relative
