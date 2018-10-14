@@ -33,6 +33,22 @@ html(lang='en')
                         | Ваша заявка на участие одобрена
                       time.notifications__time
                         | 12:50
+              li.notifications__item
+                a.notifications__item-link(href=empty_href)
+                  .notifications__userpic
+                    +retina_img_png('userpic', 'Детский дом')
+
+                  .notifications__inner-wrap
+                    .notifications__dis
+                      .notifications__title.notifications__title--active
+                        | Ivan Ognevich
+                      span.notifications__event
+                        | Давайте поможем собачкам
+                    .notifications__message
+                      p.notifications__message-text
+                        | Ваш комментарий понравился Ivan Ognevich, Lisa Kosova
+                      time.notifications__time
+                        | 12:50          
 
               li.notifications__item
                 a.notifications__item-link(href=empty_href)
@@ -42,9 +58,9 @@ html(lang='en')
                   .notifications__inner-wrap
                     .notifications__dis
                       .notifications__title.notifications__title--active
-                        | Детский дом №5
+                        | Дом ветеранов
                       span.notifications__event
-                        | День открытых дверей 
+                        | Сбор средств для ветеранов
                     .notifications__message
                       p.notifications__message-text
                         | Ваша заявка на участие одобрена
@@ -59,9 +75,8 @@ html(lang='en')
                   .notifications__inner-wrap
                     .notifications__dis
                       .notifications__title.notifications__title--active
-                        | Детский дом №5
+                        | Lisa Kosova
                       span.notifications__event
-                        | День открытых дверей 
                     .notifications__message
                       p.notifications__message-text
                         | Ваша заявка на участие одобрена
@@ -130,6 +145,26 @@ html(lang='en')
                         | Ваша заявка на участие одобрена
                       time.notifications__time
                         | 12:50
+              li.notifications__item
+                a.notifications__item-link(href=empty_href)
+                  .notifications__userpic
+                    +retina_img_png('userpic', 'Детский дом')
+
+                  .notifications__inner-wrap
+                    .notifications__dis
+                      .notifications__title.notifications__title--active
+                        | Детский дом №5
+                      span.notifications__event
+                        | День открытых дверей 
+                    .notifications__message
+                      p.notifications__message-text
+                        | Ваша заявка на участие одобрена
+                        | Ваша заявка на участие одобрена
+                        | Ваша заявка на участие одобрена
+                        | Ваша заявка на участие одобрена
+                      time.notifications__time
+                        | 12:50        
     
+    script(src='js/index.js')
     script(src='js/pages/notifications-page.js')
               
