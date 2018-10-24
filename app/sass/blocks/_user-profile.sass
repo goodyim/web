@@ -1,105 +1,477 @@
-.user-profile
-  @extend %page-wrapper
-  margin-top: 50px
-  display: flex
+.container
+  .profile
+    background: #F9F9F9
+    height: 100%
+    margin-top: 0
+    width: auto
+    +respond-from(1440px)
+      margin-top: 73px
+      height: 1200px
+      background: white
 
-.user-profile__information
-  width: 220px
-  min-height: 734px
-  padding-top: 25px
-  background: #FFFFFF
-  box-shadow: 0px 4px 7px rgba(160, 159, 159, 0.5)
-  border-radius: 6px
-
-.user-profile__name
-  +OpenSansSemiBold
-  margin-bottom: 13px
-  text-align: center
-  font-size: 22px  
-
-.user-profile__userpic
-  width: 123px
-  height: 123px
-  margin: 0 auto 15px
-
-.user-profile__write-btn
-  @extend %gradient-btn
+.user-profile__user
   display: block
-  width: 135px
-  height: 40px
-  margin: 0 auto 13px
-  font-size: 16px
-  text-align: center
-  padding: 0
 
-.user-profile__subscribe-btn
-  @extend %transparent-btn
-  display: block
-  margin: 0 auto 18px
+  +respond-from(768px)
+    margin-right: 15px
+    background: white
+    margin-top: 30px
+    display: block
+    box-shadow: 8px 0 10px -10px #979797, -7px 0 15px -10px #979797
+    height: 100%
+    border-radius: 6px
+    width: 180px
+    flex-shrink: 0
+    button
+      width: 136px
+      height: 40px
 
-.user-profile__case
-  padding-top: 12px
-  padding-bottom: 9px
-  font-size: 16px
-  color: #A2A0A0
-  text-align: center
-  border-bottom: 1px solid #D8D8D8    
+      +respond-from(1440px)
+        width: 126px
+        height: 34px
 
-  &:last-of-type
-    border-bottom: none
+  +respond-from(1440px)
+    margin-right: 0
+    width: 220px
+    margin-left: 0px
+    margin-top: 0
 
-.user-profile__case-title 
-  display: block  
-  +OpenSansSemiBold  
-  margin-bottom: 10px
+  .user-profile__button-write
+    display: none 
+    background: linear-gradient(to left, #FC9F67, #FB8E6B)
+    font-size: 14px
+    color: white
+    font-weight: 600
+    margin-top: 10px
 
-.user-profile__case-number
-  display: block  
-  +OpenSansRegular
+    +respond-from(768px)
+      margin-left: auto
+      margin-right: auto
+      display: block
 
-.user-profile__btn-wrap
-  display: flex
-  flex-direction: column
-  align-items: center
-  padding-top: 17px
+    +respond-from(1440px)
+      margin-top: 9px
 
-.user-profile__back-btn
-  display: inline-block
-  margin-bottom: 6px
-  +OpenSansSemiBold
-  font-size: 16px
+.user-profile__button-subscribe
+  display: none 
   color: #FD8E3F
-  border: none
-  background: transparent
-  cursor: pointer
+  font-size: 14px   
+  font-weight: 600  
+  margin-top: 12px
 
-.user-profile__goodyback-icon
-  width: 25px
-  height: 18px
+  +respond-from(768px)
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+.user-profile__user-city
+  display: block
+  font-size: 14px
+  color: #1F1E1E
+  font-weight: 500
+  margin: 0
+  margin-top: -4px
+
+  +respond-from(768px)
+    margin-top: 2px
+    margin-bottom: 11px
+    display: none
+
+  +respond-from(1440px)
+    display: block
+
+.user-profile__user-name
+  position: relative
+  font-size: 21px
+  line-height: 29px
+  font-weight: 600
+  margin-top: 0
+  margin-bottom: 0
+
+  +respond-from(768px)
+    margin-right: 6px
+    margin-top: 27px
+
+  +respond-from(1440px)
+    margin-top: 18px  
+    margin-right: 0
+
+.user-profile__user-photo
+  order: -1
+  width: 80px
+  height: 80px
+
+  +respond-from(768px)
+    height: 123px
+    width: 123px
+    margin-top: 12px
+
+  +respond-from(1440px)
+    height: 110px
+    width: 110px
+    margin-top: 0
+.user-profile__user-information
+  display: flex
+  margin:
+    top: 14px
+    bottom: 14px
+    left: 20px
+
+  +respond-from(768px)
+    display: block
+    margin: 0
+.user-profile__user-information-text
+  height: fit-content
+  margin:
+    top: auto
+    bottom: auto
+    left: 13px
+
+  +respond-from(768px)
+    margin: 0
+
+.user-profile__case-list
+  border-top: #D8D8D8 solid 1px 
+  padding-top: 0
+
+  +respond-from(768px)
+    border-top: none
+    padding-top: 0px
+
+.user-profile__title
+  font-size: 17px 
+  color: #A2A0A0  
+  font-weight: 400
+
+  +respond-from(768px)
+    font-size: 16px 
+    color: black 
+    font-weight: 600
+    margin-bottom: 15px
+
+.user-profile__number
+  font-size: 17px 
+  color: black 
+
+  +respond-from(768px)
+    font-size: 14px 
+    color: #A2A0A0 
+
+.user-profile__logo-goodyback
+  color: #FD8E3F
+  margin: 0
+  padding-left: 18px
+  padding-bottom: 13px
+  font-size: 17px
+  margin-top: 12px
+  font-weight: 400
+  border-bottom: 1px solid #D8D8D8
+
+  +respond-from(768px)
+    font-size: 16px
+    border-bottom: none
+    margin-top: 15px
+    padding-bottom: 0
+    margin-bottom: 8px
+    padding-left: 0
+
+.user-profile__case-sphere
+  padding-left: 18px
+  margin-top: 13px 
+  padding-bottom: 13px
+
+  +respond-from(768px)
+    padding-left: 0px
+    margin-top: 8px 
+
+  +respond-from(1440px)
+    padding-bottom: 22px
+    margin-top: 6px 
+    .user-profile__number 
+      margin-top: 6px
+
+  .user-profile__title 
+    margin-bottom: 0px
+
+    +respond-from(768px)
+      margin-bottom: 9px
+
+    +respond-from(1440px) 
+      margin-bottom: 7px
+
+  .user-profile__number 
+    display: none
+    margin-top: 8px
+
+    +respond-from(768px)
+      display: block
+      margin-top: 0
+
+.user-profile__case-rewards
+  padding:
+    left: 18px
+    top: 12px
+    bottom: 15px
+
+  +respond-from(768px)
+    padding:
+      left: 0px
+      top: 12px
+      bottom: 13px
+
+  .user-profile__title
+    margin: 0
+
+    +respond-from(768px)
+      margin-bottom: 5px
+
+  .user-profile__number
+    margin: 0
+    margin-right: 5px
+    +respond-from(768px)
+      margin-bottom: 0px
+
+.user-profile__case-friends-number
+  padding:
+    left: 18px
+    top: 12px
+    bottom: 15px
+
+  +respond-from(768px)
+    padding:
+      left: 0px
+      top: 12px
+      bottom: 8px
+
+  .user-profile__title
+    margin: 0
+
+    +respond-from(768px)
+      color: black
+      margin-bottom: 5px
+      margin-top: 0
+
+  .user-profile__number
+    margin-right: 4px
+
+    +respond-from(768px)
+      margin-bottom: 0px
+
+    +respond-from(1440px)
+      margin-bottom: -2px
+
+.user-profile__case-notice    
+  padding:
+    left: 18px
+    top: 12px
+    bottom: 15px
+
+  +respond-from(768px)
+    padding:
+      left: 0
+      top: 12px
+      bottom: 8px
+
+  .user-profile__title
+    margin: 0
+
+    +respond-from(768px)
+      margin-bottom: 5px
+
+  .user-profile__number
+    margin-right: 4px
+
+    +respond-from(768px)
+      margin-bottom: 0px
+
+    +respond-from(1440px)
+      margin-bottom: -2px    
+
+.user-profile__case-sphere,
+.user-profile__case-rewards, 
+.user-profile__case-friends-number, 
+.user-profile__case-notice
+  display: flex
+  border-bottom: 1px solid #D8D8D8
+
+  +respond-from(768px)
+    display: block
+  .user-profile__number 
+    order: -1
+
+.user-profile__logo-shape
+  +respond-to(768px)
+    display: none
 
 .user-profile__activity
+  width: fit-content
   flex-grow: 1
   display: flex
   flex-direction: column
   justify-content: flex-start
   align-items: center
-  padding-top: 17px
+  flex-wrap: wrap
 
 .user-profile__item-list
+  margin:
+    left: auto
+    right: auto
   display: none
-  justify-content: space-between
-  width: 825px
-  padding-top: 15px
+  justify-content: space-around
+  width: fit-content
+  margin-top: 12px
+  flex-wrap: wrap
 
   &--active
     display: flex  
 
+  +respond-from(768px)  
+    margin-top: 19px
+
+  +respond-from(1440px)  
+    margin-top: 27px
+
+.user-profile__tabs-wrap
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  padding-top: 0px
+  +respond-from(768px)
+    padding-top: 0
+    margin-top: 0 
+  +respond-from(1440px)
+    margin-top: 26px
+
 .user-profile__switcher
-  @extend %switcher
+  display: flex
+  border-bottom: 1px solid #d5d4d4
+  margin:
+    left: auto
+    right: auto 
+    bottom: 0
+  +respond-from(768px)
+    margin-top: 67px
+  +respond-from(1440px)  
+    margin-top: 0px
 
 .user-profile__switcher-tab
-  @extend %switcher__tab
-  
+  padding-bottom: 26px
+  display: flex
+  position: relative
+  background: #F9F9F9
+  font-size: 16px
+  margin-top: 20px
+  height: 19px
+  color: #a2a0a0 
+  border: none
+  width: auto
+  border-radius: 0
+
+  &:first-child
+    padding-left: 5px
+    padding-right: 2px
+
+    +respond-from(768px)
+      border-right: none
+      padding-left: 18px
+      padding-right: 20px
+      margin-right: -4px
+
+    +respond-from(1440px)  
+      padding-left: 22px
+
+  &:last-child
+    padding-left: 29px
+    padding-right: 5px
+
+    +respond-from(768px)
+      padding-left: 24px 
+      padding-right: 24px
+
+    +respond-from(1440px) 
+      padding-left: 28px  
+      padding-right: 22px 
+
+  +respond-from(768px) 
+    margin-top: 0px   
+    border: none
+    padding-bottom: 26px
+    background-color: transparent
+    display: flex
+    +OpenSansRegular
+    font-size: 15px
+    cursor: pointer
+    margin-bottom: 0px
+
+  +respond-from(1440px)    
+    padding-bottom: 35px
+    font-size: 18px
+
 .user-profile__switcher-tab--active
-  border-bottom: 5px solid #FA796A
   color: #1f1e1e
+  border-bottom: 4px solid #FA796A
+
+  +respond-from(1440px)
+    border-bottom: 5px solid #FA796A
+
+.user-profile__switcher-tab__number
+  margin-left: 5px
+  +respond-from(1440px)
+    display: none
+
+.card
+  margin-right: 0
+
+.user-profile__settings
+  cursor: pointer
+  width: 23px
+  height: 23px
+  position: absolute
+  margin-left: 13px
+  margin-top: 3px
+
+  +respond-from(768px)
+    width: 19px
+    height: 19px  
+    margin-left: 1px
+    margin-top: -2px
+
+  +respond-from(1440px)
+    width: 23px
+    height: 23px
+    margin-left: 8px
+    margin-top: 3px
+
+.user-profile__switcher-tab__text
+  max-width: 83px
+  overflow: hidden
+
+  +respond-from(768px)
+    max-width: none
+
+.user-profile__user-button
+  padding-bottom: 8px
+  display: none
+
+  +respond-from(768px)
+    display: block
+
+  +respond-from(1440px)
+    padding-bottom: 18px
+
+  .button
+    font-size: 14px
+
+    +respond-from(768px)
+      font-size: 16px 
+
+    +respond-from(1440px)
+      font-size: 14px
+
+.user-profile__open-icon
+  cursor: pointer
+  margin-left: 10px
+
+  +respond-from(768px)
+    display: none

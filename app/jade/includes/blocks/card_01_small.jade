@@ -1,7 +1,20 @@
 li.card
   .card__head
-    h2.card__title
-      | Помощь детям
+    .card__inner-wrap
+      .card__user
+        .card__userpic
+          +retina_img_png('user', '')
+        .card__user-info
+          span.card__user-name Daria Ionova
+          time.card__time 15:34
+
+      ul.card__event-participants
+        li.card__participant
+          +retina_img_png('participant', '')
+        li.card__participant
+          +retina_img_png('participant', '')
+        li.card__participant
+          +retina_img_png('participant', '')
 
     button(type='button').card__actions-btn
       +more_actions_icon
@@ -11,43 +24,11 @@ li.card
 
     button(type='button').card__pic-btn
       +pic-btn
-    
-  .card__inner-wrap
-    .card__user
-      .card__userpic
-        +retina_img_png('user', '')
-      .card__user-info
-        span.card__user-name Daria Ionova
-        time.card__time 15:34
-
-    ul.card__event-participants
-      li.card__participant
-        +retina_img_png('participant', '')
-      li.card__participant
-        +retina_img_png('participant', '')
-      li.card__participant
-        +retina_img_png('participant', '')
 
   p.card__text
     | Друзья, давайте завтра отвезем
     | в детский дом  необходимые 
     | вещи, книги… 
-
-  .card__item
-    .card__icon-bg
-      .card__icon-clock
-        +clock_icon
-    | 5 декабря в 10:00
-
-  .card__item
-    .card__icon-bg
-      .card__icon-location
-        +location_icon
-    | Милютинский переулок,5
-
-  ul.card__tags-wrap
-    li.card__tag 3-5 вещей
-    li.card__tag авто
 
   .card__btns-bot
     button(type='button').card__like-btn.card__like-btn--active
