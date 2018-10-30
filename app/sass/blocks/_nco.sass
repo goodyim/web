@@ -77,7 +77,6 @@
 .nco__title--active
   .nco__check-icon
     display: inline
-  
 
 .nco__userpic
   flex-shrink: 0
@@ -104,6 +103,9 @@
   display: block
   margin: 0 auto 12px
 
+.nco__cases-list
+  width: 100%
+
 .nco__case
   padding-top: 8px
   padding-bottom: 8px
@@ -128,7 +130,9 @@
   display: flex
   justify-content: space-between
   flex-wrap: wrap
-  padding: 33px 74px
+
+  +respond-from(600px)
+    padding: 33px 74px
 
 .nco__dis-card
   @extend %block-wrap
@@ -197,8 +201,10 @@
   justify-content: space-between
   flex-wrap: wrap
   align-content: flex-start
-  width: 290px
-  padding: 23px 30px
+
+  +respond-from(600px)
+    width: 290px
+    padding: 23px 30px
 
 .nco__form-title
   width: 100%
@@ -295,6 +301,7 @@
   @extend %switcher__tab
 
 .nco__switcher-tab--active
+  padding-bottom: 5%
   border-bottom: 5px solid #FA796A
   color: #1f1e1e
 
