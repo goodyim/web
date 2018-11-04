@@ -13,13 +13,13 @@ html(lang='ru')
           .nco
             .container
               .nco__information
-                h2.nco__title.nco__title--active 
+                h2.nco__title.nco__title--active
                   span Детский дом
                     i.nco__check-icon
 
                 .nco__userpic
                   +retina_img_png('orphan_asylum', 'Детский дом')
-                
+
                 .nco__info-btns
                   button(type='button').nco__subscribe-btn Написать
                   button(type='button').nco__subscribe-btn Подписаться
@@ -37,16 +37,16 @@ html(lang='ru')
 
               .nco__activity-grid
                 .nco__dis-card
-                  h2.nco__dis-card-title 
+                  h2.nco__dis-card-title
                     | Детский дом №5
 
                   p.nco__dis-card-text
                     | Наш Детский дом №5 находится в ЮАО г. Москвы,
                     | в районе Бирюлево-Восточное, который был открыт
                     | 06 ноября 1996 года для детей-сирот с отклонениями
-                    | в развитии и в котором теперь постоянно проживают 
-                    | 50 – 60 детей в возрасте от 4 до 18 лет. Поэтому 
-                    | основной нашей задачей является подготовка детей 
+                    | в развитии и в котором теперь постоянно проживают
+                    | 50 – 60 детей в возрасте от 4 до 18 лет. Поэтому
+                    | основной нашей задачей является подготовка детей
                     | к самостоятельной жизни в обществе. Вся работа нашей
                     | большой семьи спланирована с учетом имеющихся нарушений
                     | у воспитанников — нами созданы благоприятные условия.
@@ -92,7 +92,7 @@ html(lang='ru')
                   .nco__checkbox-wrap
                     input(type='checkbox' id='monthly').nco__checkbox
                     label(for='monthly').nco__label
-                      | Помогать ежемесячно 
+                      | Помогать ежемесячно
                       i
 
                 .nco__tabs-wrap
@@ -101,7 +101,7 @@ html(lang='ru')
                     button(type='button').nco__switcher-tab В процессе
                     button(type='button').nco__switcher-tab Завершенные
 
-                  .nco__content 
+                  .nco__content
                     .nco__item-list#first-list
                       - for (var i=0; i<3; i++) {
                         include ../includes/blocks/card_01_small.jade
@@ -117,5 +117,4 @@ html(lang='ru')
                         include ../includes/blocks/card_01_small.jade
                       - }
 
-    script(src='js/blocks/more-actions.js')
     script(src='js/pages/nco-page.js')
