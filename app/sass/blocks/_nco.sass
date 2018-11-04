@@ -1,4 +1,4 @@
-.nco   
+.nco
   padding-top: 14px
 
   +respond-from(768px)
@@ -7,18 +7,20 @@
       align-items: flex-start
       background-color: #fff
       box-shadow: 0 2px 4px 0 rgba(173, 170, 170, .5)
-      border-radius: 10px      
+      border-radius: 10px
 
-  +respond-from(1440px)    
+  +respond-from(1440px)
     min-height: 1105px
 
 .nco__information
   display: flex
   flex-wrap: wrap
   align-items: flex-start
+  justify-content: center
+  height: 100%
   padding: 0 20px
   .nco__userpic
-    order: -1    
+    order: -1
 
   +respond-from(768px)
     flex-shrink: 0
@@ -33,18 +35,18 @@
   position: relative
   display: flex
   align-items: flex-start
-  width: calc(100% - 93px)
-  +OpenSansSemiBold  
-  font-size: 20px  
+  // width: calc(100% - 93px)
+  +OpenSansSemiBold
+  font-size: 20px
 
-  span 
+  span
     display: block
     margin-top: 13px
 
   +respond-from(768px)
     margin-bottom: 13px
     text-align: center
-    font-size: 22px 
+    font-size: 22px
 
 .nco__check-icon
   display: none
@@ -72,7 +74,7 @@
     right: -2px
     width: 16px
     height: 3px
-    transform: rotate(-44deg) 
+    transform: rotate(-44deg)
 
 .nco__title--active
   .nco__check-icon
@@ -81,10 +83,10 @@
 .nco__userpic
   flex-shrink: 0
   width: 80px
-  height: 80px 
+  height: 80px
   margin-right: 13px
 
-  img 
+  img
     width: 100%
     height: auto
 
@@ -112,18 +114,18 @@
   font-size: 16px
   color: #A2A0A0
   text-align: center
-  border-bottom: 1px solid #D8D8D8    
+  border-bottom: 1px solid #D8D8D8
 
   &:last-of-type
     border-bottom: none
 
-.nco__case-title 
-  display: block  
-  +OpenSansSemiBold  
+.nco__case-title
+  display: block
+  +OpenSansSemiBold
   margin-bottom: 5px
 
 .nco__case-number
-  display: block  
+  display: block
   +OpenSansRegular
 
 .nco__activity-grid
@@ -136,10 +138,10 @@
 
 .nco__dis-card
   @extend %block-wrap
-  width: 517px  
+  width: 517px
   padding: 23px 60px 23px 40px
 
-.nco__dis-card-title   
+.nco__dis-card-title
   margin-bottom: 14px
   +LatoRegular
   font-size: 22px
@@ -164,7 +166,7 @@
   +OpenSansRegular
   font-size: 15px
   color: #FD8E3F
-  text-decoration: 
+  text-decoration:
   cursor: pointer
 
 .nco__dis-card-icon
@@ -231,7 +233,7 @@
   +LatoRegular
   text-align: center
   border: 1px solid #FAA74A
-  box-sizing: border-box  
+  box-sizing: border-box
   border-radius: 6px
 
   &:placeholder
@@ -248,9 +250,9 @@
 .nco__checkbox
   display: none
 
-.nco__checkbox:checked 
+.nco__checkbox:checked
   & + .nco__label
-    i:before 
+    i:before
       position: absolute
       top: 7px
       left: 1px
@@ -260,7 +262,7 @@
       background-color: #BAB9B9
       transform: rotate(40deg)
 
-    i:after 
+    i:after
       position: absolute
       top: 5px
       left: 4px
