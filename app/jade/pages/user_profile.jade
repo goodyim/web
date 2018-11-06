@@ -71,22 +71,24 @@ html(lang='en')
                     p.user-profile__switcher-tab__number
                       | (7)
 
-              .user-profile__content 
+              .user-profile__content
+                - var CardNumber = 5  
                 ul.user-profile__item-list#first-list
-                  - for (var i=0; i<4; i++) {
+                  - for (var i=0; i<CardNumber; i++) {
                     include ../includes/blocks/card_01_small.jade
                   - }
 
                 ul.user-profile__item-list#second-list
-                  - for (var i=0; i<4; i++) {
+                  - for (var i=0; i<CardNumber; i++) {
                     include ../includes/blocks/card_01_small.jade
                   - }
 
                 ul.user-profile__item-list#third-list
-                  - for (var i=0; i<4; i++) {
+                  - for (var i=0; i<CardNumber; i++) {
                     include ../includes/blocks/card_01_small.jade
                   - }
 
     script(src='js/blocks/more-actions.js')
     script(src='js/pages/user-profile-page.js')
+    script(src='js/index.js')
                 
