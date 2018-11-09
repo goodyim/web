@@ -10,58 +10,85 @@ html(lang='en')
       .content
         include ../includes/header.jade
         main.container
-          .user-profile
-            .user-profile__information
-              h2.user-profile__name 
-                | Daria Ionova
+          .profile
+            .user-profile__user
+              .user-profile__user-information
+                .user-profile__user-information-text
+                  h1.user-profile__user-name
+                    | Daria Ionova
+                    img.user-profile__settings(src="images/settings.png")
+                  h1.user-profile__user-city
+                    | Москва
+                img.user-profile__user-photo(src="images/Daria Ionova.png")
 
-              .user-profile__userpic
-                +retina_img_png('Ionova', 'Ionova')
-              
-              button(type='button').user-profile__write-btn Написать
-              button(type='button').user-profile__subscribe-btn Подписаться
+              .user-profile__user-button
+                button.user-profile__button-write.button
+                  | Написать
+                button.user-profile__button-subscribe.button
+                  | Подписаться
 
-              ul.user-profile__cases-list
-                li.user-profile__case
-                  span.user-profile__case-title Записей
-                  span.user-profile__case-number 17
-                li.user-profile__case
-                  span.user-profile__case-title Добрых дел
-                  span.user-profile__case-number 17
-                li.user-profile__case
-                  span.user-profile__case-title Наград
-                  span.user-profile__case-number 17
-                li.user-profile__case
-                  span.user-profile__case-title Друзей
-                  span.user-profile__case-number 26
+              .user-profile__case-list
+                .user-profile__case-sphere
+                  h1.user-profile__title 
+                    | Сфера помощи
+                    img.user-profile__open-icon(src="images/open-icon.png")
+                  p.user-profile__number
+                    | Дети, Животные,
+                    br
+                    | Пожилые..
 
-              .user-profile__btn-wrap
-                button(type='button').user-profile__back-btn Goodyback
-                .user-profile__goodyback-icon
-                  +retina_img_png('goodyback-icon', '')
+                .user-profile__case-rewards
+                  h1.user-profile__title 
+                    | Награды
+                  p.user-profile__number 
+                    | 17
+
+                .user-profile__case-friends-number
+                  h1.user-profile__title
+                    | Друзья
+                  p.user-profile__number 
+                    | 7
+
+                .user-profile__case-notice
+                  h1.user-profile__title
+                    | Уведомления
+                  p.user-profile__number
+                    | 2    
+
+                h1.user-profile__logo-goodyback 
+                  | Goodyback
+                img.user-profile__logo-shape(src="images/shape.png")
 
             .user-profile__activity
-              .user-profile__switcher
-                button(type='button').user-profile__switcher-tab Активные
-                button(type='button').user-profile__switcher-tab В процессе
-                button(type='button').user-profile__switcher-tab Завершенные
+              .user-profile__tabs-wrap
+                .user-profile__switcher
+                  button(type='button').user-profile__switcher-tab
+                    p.user-profile__switcher-tab__text Активные
+                    p.user-profile__switcher-tab__number
+                      | (10)
+                  button(type='button').user-profile__switcher-tab   
+                    p.user-profile__switcher-tab__text Завершенные
+                    p.user-profile__switcher-tab__number
+                      | (7)
 
-              .user-profile__content 
+              .user-profile__content
+                - var CardNumber = 5
                 ul.user-profile__item-list#first-list
-                  - for (var i=0; i<3; i++) {
+                  - for (var i=0; i<CardNumber; i++) {
                     include ../includes/blocks/card_01_small.jade
                   - }
 
                 ul.user-profile__item-list#second-list
-                  - for (var i=0; i<3; i++) {
+                  - for (var i=0; i<CardNumber; i++) {
                     include ../includes/blocks/card_01_small.jade
                   - }
 
                 ul.user-profile__item-list#third-list
-                  - for (var i=0; i<3; i++) {
+                  - for (var i=0; i<CardNumber; i++) {
                     include ../includes/blocks/card_01_small.jade
                   - }
 
     script(src='js/blocks/more-actions.js')
     script(src='js/pages/user-profile-page.js')
+    script(src='js/index.js')
                 
