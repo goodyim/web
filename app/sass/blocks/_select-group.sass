@@ -5,17 +5,30 @@
   justify-content: space-between
   width: 290px
   margin: 0 auto
-  margin-bottom: 30px
+  margin-bottom: 26px
 
   +respond-from(600px)
     width: 452px
-    margin-bottom: 40px
+    margin-bottom: 36px
 
 .select
   position: relative
   &:nth-child(3)
     .select__list
       right: -4px
+
+.select--opened
+  .select__btn
+    i
+      top: 31px
+      right: 20px
+      transform: rotate(180deg)
+    +respond-from(600px)
+      i
+        top: 34px
+        right: 15px
+  .select__list
+    display: block
 
 .select__btn
   position: relative
@@ -24,8 +37,12 @@
   font-size: 15px
   background-color: transparent
   border: none
+  i
+    position: absolute
+    top: 0
+    right: 0
 
-  &::before,&::after
+  i::before,i::after
     position: absolute
     top: 15px
     right: 9px
@@ -35,18 +52,20 @@
     background-color: #1F1E1E
     transform: rotate(45deg)
   
-  &::after
+  i::after
     right: 5px
     transform: rotate(-45deg)
 
   +respond-from(600px)
     font-size: 18px
+    i
+      top: -3px
 
-    &::before
-      top: 14px
+    i::before
+      top: 18px
       right: 6px
-    &::after
-      top: 14px
+    i::after
+      top: 18px
       right: 1px
     
 .select__btn-mob-text
@@ -61,7 +80,7 @@
 .select__list
   position: absolute
   top: 32px
-  display: block
+  display: none
   min-width: 190px
   padding: 20px 25px
   //border: 1px solid #979797

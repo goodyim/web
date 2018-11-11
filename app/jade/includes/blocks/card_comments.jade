@@ -43,7 +43,9 @@
     .card-comments__comment-userpic
       +retina_img_png('user-comments', '')
 
-    textarea.card-comments__add-comment-textarea(placeholder='Написать комментарий...')
+    .card-comments__textarea-wrap
+      textarea.card-comments__add-comment-textarea(placeholder='Написать комментарий...')
+      .card-comments__hidden-block
 
     button.card-comments__add-comment-btn(type='button')
       +send-btn-icon

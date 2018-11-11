@@ -6,16 +6,19 @@
 
     .new-post__text-block
       textarea.new-post__textarea(placeholder='Описание', maxlength='50')
+      .new-post__hidden-block
+      span.new-post__hint
+        | Описание не должно содержать больше 50 символов
 
-  .new-post__tags
-    ul.new-post__tag-list
+  .new-post__tags.new-post__tags--active
+    ul#things-list.new-post__tag-list
       li.new-post__tag-item
         | вещи
       li.new-post__tag-item
         | авто
       li.new-post__tag-item
         | еда
-    .new-post__addtag-btn
+    #add-things.new-post__addtag-btn
       | Добавить тэги
 
   .new-post__actions

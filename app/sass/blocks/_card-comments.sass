@@ -4,17 +4,16 @@
   left: 0
   top: 0
   width: 100%
-  max-height: 0
-  padding: 0 9px
-  opacity: 0
+  padding-top: 13px
+  margin-top: 15px
   transition: max-height 0.8s linear .3s, padding 1s, opacity .6s
 
   &::before
     position: absolute
     top: 0
-    left: 9px
+    left: -1px
     content: ''
-    width: calc(100% - 19px)
+    width: 100%
     height: 1px
     background-color: #D6D5D5
 
@@ -24,11 +23,12 @@
 
 .card-comments--active
   padding: 17px 9px 15px
-  opacity: 1
   transition: max-height 0.8s linear, padding .3s linear 0s, opacity .7s linear .8s
 
 .card-comments__expand-btn
   position: relative
+  display: flex
+  width: auto
   padding-right: 20px
   +OpenSansRegular
   font-size: 14px
@@ -39,7 +39,7 @@
 
   i
     position: absolute
-    top: 13px
+    top: 17px
     right: 5px
     width: 1px
     height: 1px
@@ -61,6 +61,8 @@
       top: 2px
       right: -1px
       transform: rotate(-45deg)
+  span 
+    margin: 0 4px
 
 .card-comments__expand-btn--active
   i
@@ -68,7 +70,6 @@
     transform: rotate(0deg)
 
 .card-comments__list
-  padding-top: 9px
   padding-bottom: 15px
   max-height: 98px
   transition: max-height 0.8s linear .3s
@@ -109,10 +110,13 @@
     position: static
     width: 30px
     height: 30px
+    background-color: lightgrey
+    border-radius: 50%
 
 .card-comments__comment-inner
   flex-grow: 1
   padding-right: 40px
+  padding-top: 2px
 
 .card-comments__comment-username
   margin-bottom: 4px
@@ -121,7 +125,7 @@
   color: #A2A0A0
 
 .card-comments__comment-text
-  margin-bottom: 4px
+  margin-bottom: 2px
   +LatoRegular
   font-size: 14px
   color: #4D4C4C
@@ -145,8 +149,8 @@
 
 .card-comments__comment-actions
   position: absolute
-  top: 0
-  right: 0
+  top: 2px
+  right: 1px
 
 .card-comments__comment-like-btn
   display: flex
@@ -179,7 +183,7 @@
     position: absolute
     top: 3px
     right: 1px
-    width: 12px
+    width: 9px
     height: 11px
 
 .card-comments__comment-like
@@ -206,16 +210,26 @@
   display: flex
   position: relative
 
-.card-comments__add-comment-textarea
+.card-comments__textarea-wrap
+  position: relative
   flex-grow: 1
-  height: auto
-  padding-top: 12px
+  min-height: 23px
   margin-right: 25px
+  margin-top: 11px
+
+.card-comments__add-comment-textarea  
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%  
   border: none
-  +LatoRegular
   font-size: 13px
   color: #4D4C4C
   resize: none
+
+.card-comments__hidden-block
+  min-height: 23px  
 
 .card-comments__add-comment-btn
   position: absolute
