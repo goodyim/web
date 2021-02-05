@@ -1,11 +1,24 @@
 .card
-  width: 260px
-  min-height: 454px
-  padding: 0 10px
-  margin-top: 10px
+  margin:
+    left: 0px
+    right: 15px
+  width: 290px
+  float: left
+  margin-bottom: 15px
+  min-height: 261px
+  padding: 0 15px
   background: #FFFFFF
-  box-shadow: 0px 2px 20px 2px rgba(150, 149, 149, 0.5)
+  box-shadow: 0px -1px 20px -1px rgba(150, 149, 149, 0.5)
   border-radius: 6px
+
+  +respond-from(768px) 
+    margin-left: 0
+    margin-right: 15px 
+    width: 260px
+    padding: 0 9px
+
+  +respond-from(1440px)
+    margin-right: 25px
 
   &.card--feed
     width: 100%
@@ -18,8 +31,11 @@
 .card__head
   display: flex
   justify-content: space-between
-  padding-top: 8px
-  margin-bottom: 10px
+  margin-top: 9px
+  margin-bottom: 0px
+  height: 31px
+  +respond-from(768px)
+    margin-top: 9px
 
   .card--feed &
     padding: 0
@@ -105,8 +121,11 @@
 
 .card__actions-btn
   position: relative
-  width: 29px
-  height: 23px
+  width: 17px
+  height: 3px
+  margin:
+    top: auto
+    bottom: auto
   border: none
   background-color: transparent
   cursor: pointer
@@ -114,9 +133,21 @@
   align-items: center
   justify-content: center
 
+  +respond-from(768px)
+    transform: rotate(90deg)
+    width: fit-content
+    height: fit-content
+    margin-right: -4px  
+    margin-top: 15px
+    margin-bottom: 0
+
   svg
     width: 17px
     height: 3px
+
+    +respond-from(768px)
+      width: 17px
+      height: 3px
 
     .card--feed &
       width: 23px
@@ -125,16 +156,22 @@
 .card__pic
   display: block
   position: relative
-  width: 241px
+  width: 260px
   height: 160px
   margin-bottom: 2px
+  margin-top: 4px
+
+  +respond-from(768px) 
+    width: 241px
+    height: 160px
 
   .card--feed &
     width: 100%
     height: inherit
 
-    img
-      width: 100%
+  img
+    width: 100%
+    height: 160px
 
 .card__pic-btn
   position: absolute
@@ -163,16 +200,26 @@
   display: flex
   justify-content: space-between
   align-items: center
-  margin-bottom: 11px
+  margin-bottom: 0
+  width: 100%
+  +respond-from(768px)
+    margin-right: -10px
 
 .card__user
   display: flex
   align-items: center
 
 .card__userpic
-  width: 28px
-  height: 28px
-  margin-right: 8px
+  width: 30px
+  height: 30px
+  margin-right: 5px
+  margin-bottom: 2px
+
+  +respond-from(768px)
+    margin-right: 8px
+    width: 28px
+    height: 28px
+    margin-bottom: 0
 
   .card--feed &
     width: 50px
@@ -182,12 +229,22 @@
       width: 100%
       height: 100%
 
+.card__user-info
+  height: fit-content
+  margin-bottom: 2px
+
 .card__user-name
   display: block
-  margin-bottom: 3px
+  margin-top: 0px
+  margin-bottom: 0px
   +OpenSansSemiBold
   font-size: 13px
   color: #A2A0A0
+
+  +respond-from(768px)
+    margin-top: 0px
+    padding-bottom: 3px
+    margin-bottom: 0px
 
   .card--feed &
     font-size: 16px
@@ -197,6 +254,13 @@
   +OpenSansRegular
   font-size: 11px
   color: #A2A0A0
+  margin-right: auto
+  width: fit-content
+  margin-bottom: 6px
+
+  +respond-from(768px)
+    margin-top: -5px
+    margin-bottom: 0px
 
   .card--feed &
     font-size: 16px
@@ -204,18 +268,33 @@
 .card__event-participants
   display: flex
   justify-content: space-evenly
-  width: 50px
+  width: fit-content
+  margin-left: auto
+  margin-right: -10px 
+  margin-top: -2px
+
+  +respond-from(768px)
+    margin-right: -5px
+    margin-top: 2px
+
+  +respond-from(1440px)
+    margin-top: 0
 
   .card--feed &
     width: inherit
 
 .card__participant
   position: relative
-  width: 19px
-  height: 19px
+  width: 21px
+  height: 21px
   border-radius: 50%
   overflow: hidden
   z-index: 3
+  margin-bottom: 2px
+
+  +respond-from(768px)
+    width: 19px
+    height: 19px
 
   .card--feed &
     width: 34px
@@ -226,21 +305,35 @@
       width: 100%
       height: 100%
 
+  +respond-from(768px)
+    margin-bottom: 0
+    width: 19px
+    height: 19px
+
+  img
+    width: 100%
+    height: 100%  
+    
   &:nth-child(2)
-    left: -5px
+    left: -8px
     z-index: 2
 
   &:nth-child(3)
-    left: -10px
+    left: -16px
     z-index: 1
 
 .card__text
   width: 242px
-  margin-bottom: 14px
+  margin-top: 9px
   +LatoSemiBold
-  font-size: 14px
+  font-size: 17px
   color: #262525
   overflow-y: auto
+  text-align: start
+  margin-bottom: 12px
+
+  +respond-from(768px)
+    font-size: 16px
 
   a
     color: #FC8C69
@@ -325,7 +418,7 @@
 .card__btns-bot
   display: flex
   align-items: flex-start
-  padding-bottom: 16px
+  padding-bottom: 10px
  
 .card__like-btn,
 .card__comments-btn,
@@ -408,3 +501,4 @@
 
 .card__status-btn--done
   background-image: linear-gradient(-90deg, #B3D648 0%, #D9E15F 100%)
+
